@@ -1,0 +1,169 @@
+<!--
+LISTA DE HACERES CON EL CODIGO
+
+    - hacerlo que el diseño se visualmente para celular y tablet   *
+    - pasar el main JS para poder hacer el filtro de catalogo   *
+    - crear pestaña de ver detalles
+    - crear pestaña/pagina de carrito   *
+    - crear funcionalidad a catalogo con el filtro si no se hizo antes con el main
+    + primera revision de colores y diseño de perez
+    - pasar el iniciar sesion a JS para que se muestre registrarse o iniciar sesion mediantes una 
+       condicion con el local storage   *
+    - enviar a la resdes sociales si se seleciona alguna del footer   *
+    - agregar ya la especifidad o crear bien las cards ya con las prendas y sus especificidades
+    + segunda revision de colores y diseño de perez
+    - subirlo a Apps Script y crear su "base de datos" en la hoja de calculo   *
+    - preguntar si ahi alguna mejor forma de subir la pagina con una base de datos mas segura
+    + tercera y ultima revision de colores y diseño de perez
+    - ultima prueba de calidad de bolañitos y presentarlo al mundo si es posible
+
+    * => significa que bolañitos haga un testo de lo q se lleva hasta el momento
+
+
+Subir a github como respaldo y por si vasquez o bolaños quieren menter mano en especial para
+ bolaños haga las pruebas de calidad gitPulleando el codigo
+
+cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agregar el texto informativo
+ de realizar un push para que los demas sepan de cambios e informacion
+-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewSkin - Catálogo</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="catalogo" onclick="abrirCatalogo()">
+                catálogo
+            </div>
+            <div class="logo">
+                👕 NewSkin
+            </div>
+            <div class="right-menu">
+                <div class="login" onclick="iniciarSesion()">
+                    Iniciar sesión
+                </div>
+                <div class="carrito" onclick="abrirCarrito()">
+                    🛒 Carrito (0)
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="productos">
+            <div class="card">
+
+                <div class="imagen">
+                    <img src="" alt="modelo 1">
+                </div>
+                <div class="nombre">Modelo 1</div>
+                <div class="precio">$45.000</div>
+                <div class="descripcion">
+                    Algodón premium, estilo urbano
+                </div>
+                <button class="btn">
+                    Ver detalles
+                </button>
+
+            </div>
+            <div class="card">
+
+                <div class="imagen">
+                    <img src="" alt="modelo 2">
+                </div>
+                <div class="nombre">Modelo 2</div>
+                <div class="precio">$45.000</div>
+                <div class="descripcion">
+                    Algodón premium, estilo urbano
+                </div>
+                <button class="btn">
+                    Ver detalles
+                </button>
+
+            </div>
+            <div class="card">
+
+                <div class="imagen">
+                    <img src="" alt="modelo 3">
+                </div>
+                <div class="nombre">Modelo 3</div>
+                <div class="precio">$45.000</div>
+                <div class="descripcion">
+                    Algodón premium, estilo urbano
+                </div>
+                <button class="btn">
+                    Ver detalles
+                </button>
+
+            </div>
+            <div class="card">
+
+                <div class="imagen">
+                    <img src="" alt="modelo 4">
+                </div>
+                <div class="nombre">Modelo 4</div>
+                <div class="precio">$45.000</div>
+                <div class="descripcion">
+                    Algodón premium, estilo urbano
+                </div>
+                <button class="btn">
+                    Ver detalles
+                </button>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div>
+                <p><b>NewSkin © 2026</b></p>
+                <p>Soacha - Bogotá</p>
+                <p>WhatsApp: 3XX XXX XXXX</p>
+            </div>
+
+            <div>
+                <span onclick="abrirInstagram()" class="social">Instagram</span> |
+                <span onclick="abrirTikTok()" class="social">TikTok</span> |
+                <span onclick="abrirFacebook()" class="social">Facebook</span>
+            </div>
+        </div>
+    </footer>
+</body>
+<!--Script solo de prueba para botones y funiones basica borrar cuando ya sae el verdadero JS-->
+<script>
+
+    //HEADER
+    function abrirCatalogo() {
+        alert("Mostrando catálogo");
+    }
+
+    function iniciarSesion() {
+        alert("Abrir ventana de inicio de sesión");
+    }
+
+    function abrirCarrito() {
+        alert("Ir al carrito");
+    }
+
+    //FOOTER
+    function abrirInstagram() {
+        alert("Cuenta Instagram");
+    }
+
+    function abrirTikTok() {
+        alert("Cuenta TikTok");
+    }
+
+    function abrirFacebook() {
+        alert("Cuenta Facebook");
+    }
+
+</script>
+</html>
