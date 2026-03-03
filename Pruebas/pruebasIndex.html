@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewSkin - PRUEBA</title>
+
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+        }
+
+        /* ===== HEADER ===== */
+
+        header {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 20px 40px;
+            position: relative;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .catalogo {
+            cursor: pointer;
+        }
+
+        .logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .right-menu {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .carrito,
+        .login {
+            cursor: pointer;
+        }
+
+        /* MENU MOVIL */
+        .mobile-menu {
+            display: none;
+            background: white;
+            border-top: 1px solid #ccc;
+            padding: 15px;
+        }
+
+        .mobile-menu p {
+            padding: 10px 0;
+            cursor: pointer;
+        }
+
+        /* ===== MAIN ===== */
+
+        main {
+            padding: 40px;
+        }
+
+        /* ✅ GRID CORRECTO PARA 4 CARDS */
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* ===== CARD ===== */
+
+        .card {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .imagen {
+            width: 100%;
+            height: 180px;
+            border: 1px solid #aaa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .nombre {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .precio {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .descripcion {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background: #555;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #333;
+        }
+
+        /* ===== FOOTER ===== */
+
+        footer {
+            margin-top: 60px;
+            border-top: 1px solid #ccc;
+            padding: 30px 40px;
+            background: white;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .social {
+            cursor: pointer;
+        }
+
+
+
+        
+        /* ================================================= */
+        /* 🧢 MODAL PRODUCTO */
+        /* ================================================= */
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        /* 🧢 CAJA MODAL */
+        .modal-box {
+            background: white;
+            width: 900px;
+            border-radius: 10px;
+            display: flex;
+            gap: 30px;
+            padding: 25px;
+            position: relative;
+        }
+
+        /* 🧢 CERRAR */
+        .cerrar {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        /* 🧢 IMAGEN */
+        .img-section {
+            width: 45%;
+        }
+
+        .img-principal {
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        .miniaturas {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .miniaturas img {
+            width: 70px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+        }
+
+        /* 🧢 INFO */
+        .info {
+            width: 55%;
+        }
+
+        .tallas button {
+            padding: 8px 15px;
+            margin-right: 10px;
+            border: 1px solid #aaa;
+            background: white;
+            cursor: pointer;
+        }
+
+        .tallas button.activa {
+            background: #444;
+            color: white;
+        }
+
+        .cantidad {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .cantidad button {
+            width: 35px;
+            height: 35px;
+        }
+
+        .precio {
+            margin-left: auto;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .acciones {
+            display: flex;
+            gap: 15px;
+        }
+
+        .comprar {
+            flex: 1;
+            background: #444;
+            color: white;
+            padding: 12px;
+            border: none;
+        }
+
+        .carrito-btn {
+            flex: 1;
+            border: 1px solid #444;
+            background: white;
+            padding: 12px;
+        }
+
+
+
+        /* ===== TABLET ===== */
+
+        @media (max-width:1024px) {
+
+            .logo {
+                font-size: 22px;
+            }
+
+            /* 2 columnas */
+            .productos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        /* ===== CELULAR ===== */
+
+        @media (max-width:600px) {
+
+            header {
+                padding: 15px;
+            }
+
+            .catalogo,
+            .right-menu {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav {
+                justify-content: space-between;
+            }
+
+            .logo {
+                position: static;
+                transform: none;
+                margin: auto;
+                font-size: 22px;
+            }
+
+            /* lista vertical */
+            .productos {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+        }
+
+
+        
+        /**/
+        @media(max-width:1024px) {
+            .productos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:600px) {
+
+            .productos {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-box {
+                flex-direction: column;
+                width: 95%;
+            }
+
+            .img-section,
+            .info {
+                width: 100%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="nav">
+
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+            <div class="catalogo" onclick="abrirCatalogo()">catálogo</div>
+
+            <div class="logo">👕 NewSkin</div>
+
+            <div class="right-menu">
+                <div class="login" onclick="iniciarSesion()">Iniciar sesión</div>
+                <div class="carrito" onclick="abrirCarrito()">🛒 Carrito (0)</div>
+            </div>
+
+        </div>
+
+        <div id="mobileMenu" class="mobile-menu">
+            <p onclick="abrirCatalogo()">Catálogo</p>
+            <p onclick="iniciarSesion()">Iniciar sesión</p>
+            <p onclick="abrirCarrito()">Carrito</p>
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="productos">
+
+            <div class="card">
+                <div class="imagen">Imagen</div>
+                <div class="nombre">Modelo 1</div>
+                <div class="precio">$45.000</div>
+                <div class="descripcion">Algodón premium, estilo urbano</div>
+                <button class="btn" onclick="abrirModal()">Ver detalles</button>
+            </div>
+
+            <div class="card">
+                <div class="imagen">Imagen</div>
+                <div class="nombre">Modelo 2</div>
+                <div class="precio">$45.000</div>
+                <div class="descripcion">Algodón premium, estilo urbano</div>
+                <button class="btn">Ver detalles</button>
+            </div>
+
+            <div class="card">
+                <div class="imagen">Imagen</div>
+                <div class="nombre">Modelo 3</div>
+                <div class="precio">$45.000</div>
+                <div class="descripcion">Algodón premium, estilo urbano</div>
+                <button class="btn">Ver detalles</button>
+            </div>
+
+            <div class="card">
+                <div class="imagen">Imagen</div>
+                <div class="nombre">Modelo 4</div>
+                <div class="precio">$45.000</div>
+                <div class="descripcion">Algodón premium, estilo urbano</div>
+                <button class="btn">Ver detalles</button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <p><b>NewSkin © 2026</b></p>
+                <p>Soacha - Bogotá</p>
+                <p>WhatsApp: 3XX XXX XXXX</p>
+            </div>
+
+            <div>
+                <span onclick="abrirInstagram()" class="social">Instagram</span> |
+                <span onclick="abrirTikTok()" class="social">TikTok</span> |
+                <span onclick="abrirFacebook()" class="social">Facebook</span>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    
+    <!-- 🧢 MODAL DETALLE PRODUCTO -->
+    <!-- ================================================= -->
+
+    <div id="modalProducto" class="modal">
+
+        <div class="modal-box">
+
+            <span class="cerrar" onclick="cerrarModal()">✖</span>
+
+            <div class="img-section">
+
+                <img id="imagenPrincipal" class="img-principal" src="https://i.imgur.com/1Yc6X5h.png">
+
+                <div class="miniaturas">
+                    <img src="https://i.imgur.com/1Yc6X5h.png" onclick="cambiarImagen(this.src)">
+                    <img src="https://i.imgur.com/1Yc6X5h.png" onclick="cambiarImagen(this.src)">
+                    <img src="https://i.imgur.com/1Yc6X5h.png" onclick="cambiarImagen(this.src)">
+                </div>
+
+            </div>
+
+            <div class="info">
+
+                <h2>Modelo 1</h2>
+
+                <p>Camiseta urbana de algodón premium ideal para look casual.</p>
+
+                <h4>Talla:</h4>
+
+                <div class="tallas">
+                    <button onclick="seleccionarTalla(this)">S</button>
+                    <button class="activa" onclick="seleccionarTalla(this)">M</button>
+                    <button onclick="seleccionarTalla(this)">L</button>
+                </div>
+
+                <div class="cantidad">
+                    <button onclick="restar()">-</button>
+                    <span id="cantidad">1</span>
+                    <button onclick="sumar()">+</button>
+
+                    <div class="precio">$45.000</div>
+                </div>
+
+                <div class="acciones">
+                    <button class="comprar">Comprar ahora</button>
+                    <button class="carrito-btn">🛒 Agregar</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+
+        function toggleMenu() {
+            let menu = document.getElementById("mobileMenu");
+            menu.style.display =
+                menu.style.display === "block" ? "none" : "block";
+        }
+
+        function abrirCatalogo() {
+            alert("Mostrando catálogo");
+        }
+
+        function iniciarSesion() {
+            alert("Abrir login");
+        }
+
+        function abrirCarrito() {
+            alert("Ir al carrito");
+        }
+
+        function abrirInstagram() {
+            alert("Cuenta Instagram");
+        }
+
+        function abrirTikTok() {
+            alert("Cuenta TikTok");
+        }
+
+        function abrirFacebook() {
+            alert("Cuenta Facebook");
+        }
+
+        /*MODAL*/
+
+        /* 🧢 ABRIR */
+        function abrirModal() {
+            document.getElementById("modalProducto").style.display = "flex";
+        }
+
+        /* 🧢 CERRAR */
+        function cerrarModal() {
+            document.getElementById("modalProducto").style.display = "none";
+        }
+
+        /* 🧢 CAMBIO IMAGEN */
+        function cambiarImagen(src) {
+            document.getElementById("imagenPrincipal").src = src;
+        }
+
+        /* 🧢 TALLA */
+        function seleccionarTalla(btn) {
+            document.querySelectorAll(".tallas button")
+                .forEach(b => b.classList.remove("activa"));
+
+            btn.classList.add("activa");
+        }
+
+        /* 🧢 CANTIDAD */
+        let cantidad = 1;
+
+        function sumar() {
+            cantidad++;
+            document.getElementById("cantidad").innerText = cantidad;
+        }
+
+        function restar() {
+            if (cantidad > 1) {
+                cantidad--;
+                document.getElementById("cantidad").innerText = cantidad;
+            }
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
