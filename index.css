@@ -15,13 +15,19 @@ header{
     background:white;
     border:1px solid #ccc;
     padding:20px 40px;
-    position:relative; 
+    position:relative;
 }
 
 .nav{
     display:flex;
     align-items:center;
-    justify-content:space-between; 
+    justify-content:space-between;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:24px;
+    cursor:pointer;
 }
 
 .catalogo{
@@ -29,24 +35,35 @@ header{
 }
 
 .logo{
-    position:absolute; 
+    position:absolute;
     left:50%;
-    transform:translateX(-50%); 
-    margin:auto;
+    transform:translateX(-50%);
     font-size:28px;
     font-weight:bold;
 }
 
 .right-menu{
     display:flex;
-    gap: 35px;   
+    gap:20px;
     align-items:center;
 }
 
-.carrito, .login{
+.carrito,.login{
     cursor:pointer;
 }
 
+/* MENU MOVIL */
+.mobile-menu{
+    display:none;
+    background:white;
+    border-top:1px solid #ccc;
+    padding:15px;
+}
+
+.mobile-menu p{
+    padding:10px 0;
+    cursor:pointer;
+}
 
 /* ===== MAIN ===== */
 
@@ -55,9 +72,11 @@ main{
 }
 
 .productos{
-    display:flex;
-    justify-content:center;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
     gap:30px;
+    max-width:1200px;
+    margin:auto;
 }
 
 /* ===== CARD ===== */
@@ -65,7 +84,6 @@ main{
 .card{
     background:white;
     border:1px solid #ccc;
-    width:280px;
     padding:20px;
 }
 
@@ -121,6 +139,62 @@ footer{
     display:flex;
     justify-content:space-between;
 }
+
 .social{
     cursor:pointer;
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width:1024px){
+
+.logo{
+    font-size:22px;
+}
+
+.productos{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* ===== CELULAR ===== */
+
+@media (max-width:600px){
+
+header{
+    padding:15px;
+}
+
+.catalogo,
+.right-menu{
+    display:none;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.nav{
+    justify-content:space-between;
+}
+
+.logo{
+    position:static;
+    transform:none;
+    margin:auto;
+    font-size:22px;
+}
+
+/* lista vertical */
+.productos{
+    grid-template-columns:1fr;
+}
+
+.footer-content{
+    flex-direction:column;
+    text-align:center;
+    gap:15px;
+}
+
 }

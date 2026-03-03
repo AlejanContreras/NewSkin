@@ -1,8 +1,8 @@
 <!--
 LISTA DE HACERES CON EL CODIGO
 
-    - hacerlo que el diseño se visualmente para celular y tablet   *
-    - pasar el main JS para poder hacer el filtro de catalogo   *
+    - pasar el main JS para poder hacer el filtro de catalogo   * (esperando prueba)
+
     - crear pestaña de ver detalles
     - crear pestaña/pagina de carrito   *
     - crear funcionalidad a catalogo con el filtro si no se hizo antes con el main
@@ -27,7 +27,6 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
  de realizar un push para que los demas sepan de cambios e informacion
 -->
 
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -37,87 +36,60 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
     <title>NewSkin - Catálogo</title>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
     <header>
         <div class="nav">
-            <div class="catalogo" onclick="abrirCatalogo()">
-                catálogo
-            </div>
-            <div class="logo">
-                👕 NewSkin
-            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <div class="catalogo" onclick="abrirCatalogo()">catálogo</div>
+            <div class="logo">👕 NewSkin</div>
             <div class="right-menu">
-                <div class="login" onclick="iniciarSesion()">
-                    Iniciar sesión
-                </div>
-                <div class="carrito" onclick="abrirCarrito()">
-                    🛒 Carrito (0)
-                </div>
+                <div class="login" onclick="iniciarSesion()">Iniciar sesión</div>
+                <div class="carrito" onclick="abrirCarrito()">🛒 Carrito (0)</div>
             </div>
+        </div>
+
+        <div id="mobileMenu" class="mobile-menu">
+            <p onclick="abrirCatalogo()">Catálogo</p>
+            <p onclick="iniciarSesion()">Iniciar sesión</p>
+            <p onclick="abrirCarrito()">Carrito</p>
         </div>
     </header>
     <main>
         <div class="productos">
-            <div class="card">
 
-                <div class="imagen">
-                    <img src="" alt="modelo 1">
-                </div>
+            <div class="card">
+                <div class="imagen">Imagen</div>
                 <div class="nombre">Modelo 1</div>
                 <div class="precio">$45.000</div>
-                <div class="descripcion">
-                    Algodón premium, estilo urbano
-                </div>
-                <button class="btn">
-                    Ver detalles
-                </button>
-
+                <div class="descripcion">Algodón premium, estilo urbano</div>
+                <button class="btn">Ver detalles</button>
             </div>
-            <div class="card">
 
-                <div class="imagen">
-                    <img src="" alt="modelo 2">
-                </div>
+            <div class="card">
+                <div class="imagen">Imagen</div>
                 <div class="nombre">Modelo 2</div>
                 <div class="precio">$45.000</div>
-                <div class="descripcion">
-                    Algodón premium, estilo urbano
-                </div>
-                <button class="btn">
-                    Ver detalles
-                </button>
-
+                <div class="descripcion">Algodón premium, estilo urbano</div>
+                <button class="btn">Ver detalles</button>
             </div>
-            <div class="card">
 
-                <div class="imagen">
-                    <img src="" alt="modelo 3">
-                </div>
+            <div class="card">
+                <div class="imagen">Imagen</div>
                 <div class="nombre">Modelo 3</div>
                 <div class="precio">$45.000</div>
-                <div class="descripcion">
-                    Algodón premium, estilo urbano
-                </div>
-                <button class="btn">
-                    Ver detalles
-                </button>
-
+                <div class="descripcion">Algodón premium, estilo urbano</div>
+                <button class="btn">Ver detalles</button>
             </div>
-            <div class="card">
 
-                <div class="imagen">
-                    <img src="" alt="modelo 4">
-                </div>
+            <div class="card">
+                <div class="imagen">Imagen</div>
                 <div class="nombre">Modelo 4</div>
                 <div class="precio">$45.000</div>
-                <div class="descripcion">
-                    Algodón premium, estilo urbano
-                </div>
-                <button class="btn">
-                    Ver detalles
-                </button>
-
+                <div class="descripcion">Algodón premium, estilo urbano</div>
+                <button class="btn">Ver detalles</button>
             </div>
+
         </div>
     </main>
     <footer>
@@ -127,7 +99,6 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
                 <p>Soacha - Bogotá</p>
                 <p>WhatsApp: 3XX XXX XXXX</p>
             </div>
-
             <div>
                 <span onclick="abrirInstagram()" class="social">Instagram</span> |
                 <span onclick="abrirTikTok()" class="social">TikTok</span> |
@@ -135,35 +106,39 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
             </div>
         </div>
     </footer>
+
+    <script>
+
+        function toggleMenu() {
+            let menu = document.getElementById("mobileMenu");
+            menu.style.display =
+                menu.style.display === "block" ? "none" : "block";
+        }
+
+        function abrirCatalogo() {
+            alert("Mostrando catálogo");
+        }
+
+        function iniciarSesion() {
+            alert("Abrir login");
+        }
+
+        function abrirCarrito() {
+            alert("Ir al carrito");
+        }
+
+        function abrirInstagram() {
+            alert("Cuenta Instagram");
+        }
+
+        function abrirTikTok() {
+            alert("Cuenta TikTok");
+        }
+
+        function abrirFacebook() {
+            alert("Cuenta Facebook");
+        }
+
+    </script>
 </body>
-<!--Script solo de prueba para botones y funiones basica borrar cuando ya sae el verdadero JS-->
-<script>
-
-    //HEADER
-    function abrirCatalogo() {
-        alert("Mostrando catálogo");
-    }
-
-    function iniciarSesion() {
-        alert("Abrir ventana de inicio de sesión");
-    }
-
-    function abrirCarrito() {
-        alert("Ir al carrito");
-    }
-
-    //FOOTER
-    function abrirInstagram() {
-        alert("Cuenta Instagram");
-    }
-
-    function abrirTikTok() {
-        alert("Cuenta TikTok");
-    }
-
-    function abrirFacebook() {
-        alert("Cuenta Facebook");
-    }
-
-</script>
 </html>
