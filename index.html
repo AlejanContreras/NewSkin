@@ -1,8 +1,8 @@
 <!--
 LISTA DE HACERES CON EL CODIGO
 
-    - pasar el main JS para poder hacer el filtro de catalogo *
-    - crearle el responsive a las cards o el filtro para celular 
+    - pasar el main JS para poder hacer el filtro de catalogo * (probar)
+    
     - crear pestaña de ver detalles
     - crear pestaña/pagina de carrito   *
     + primera revision de colores y diseño de perez
@@ -47,6 +47,7 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
 
             <div class="catalogo" onclick="toggleCatalogoMenu()">
                 Catálogo ▼
+                <!--Que se mueva el triangulo-->
             </div>
             <!-- FILTRO -->
             <div id="catalogoMenu" class="catalogo-menu">
@@ -65,7 +66,7 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
         </div>
 
         <div id="mobileMenu" class="mobile-menu">
-            <p onclick="abrirCatalogo()">Catálogo</p>
+            <p onclick="toggleCatalogoMenu()">Catálogo</p>
             <p onclick="iniciarSesion()">Iniciar sesión</p>
             <p onclick="abrirCarrito()">Carrito</p>
         </div>
