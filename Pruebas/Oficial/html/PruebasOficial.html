@@ -1,7 +1,9 @@
 <!--
 LISTA DE HACERES CON EL CODIGO
 
-    - pasar el main JS para poder hacer el filtro de catalogo   *
+    - pasar el main JS para poder hacer el filtro de catalogo   * (prueba)
+      crearle el responsive a las cards o el filtro para celular o tablet
+
     - crear pestaña de ver detalles
     - crear pestaña/pagina de carrito   *
     - crear funcionalidad a catalogo con el filtro si no se hizo antes con el main
@@ -33,17 +35,30 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NewSkin - PRUEBA OFICIAL</title>
-    <link rel="stylesheet" href="/Pruebas/Oficial/css/header-footer_INDEX.css">
-    <link rel="stylesheet" href="/Pruebas/Oficial/css/main_INDEX.css">
-    <link rel="stylesheet" href="/Pruebas/Oficial/css/responsive_INDEX.css">
-    <!--<script src="/Pruebas/Oficial/js/respuestasBotones_INDEX.js"></script>-->
+    <link rel="stylesheet" href="/Pruebas/Oficial/css/P_header-footer_INDEX.css">
+    <link rel="stylesheet" href="/Pruebas/Oficial/css/P_main_INDEX.css">
+    <link rel="stylesheet" href="/Pruebas/Oficial/css/P_responsive_INDEX.css">
+    <link rel="stylesheet" href="/Pruebas/Oficial/css/P_catalogo-filtro_INDEX.css">
+    
 </head>
 
 <body>
     <header>
         <div class="nav">
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-            <div class="catalogo" onclick="abrirCatalogo()">catálogo</div>
+
+            <div class="catalogo" onclick="toggleCatalogoMenu()">
+                Catálogo ▼
+            </div>
+            <!-- FILTRO -->
+            <div id="catalogoMenu" class="catalogo-menu">
+                <p onclick="filtrarProductos('todos')">Todos</p>
+                <p onclick="filtrarProductos('sin_estampado')">Sin estampado</p>
+                <p onclick="filtrarProductos('con_estampado')">Con estampado</p>
+                <p onclick="filtrarProductos('doble_estampado')">Estampado doble</p>
+                <p onclick="filtrarProductos('gorra')">Gorras</p>
+            </div>
+
             <div class="logo">👕 NewSkin</div>
             <div class="right-menu">
                 <div class="login" onclick="iniciarSesion()">Iniciar sesión</div>
@@ -58,39 +73,7 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
         </div>
     </header>
     <main>
-        <div class="productos">
-
-            <div class="card">
-                <div class="imagen">Imagen</div>
-                <div class="nombre">Modelo 1</div>
-                <div class="precio">$45.000</div>
-                <div class="descripcion">Algodón premium, estilo urbano</div>
-                <button class="btn">Ver detalles</button>
-            </div>
-
-            <div class="card">
-                <div class="imagen">Imagen</div>
-                <div class="nombre">Modelo 2</div>
-                <div class="precio">$45.000</div>
-                <div class="descripcion">Algodón premium, estilo urbano</div>
-                <button class="btn">Ver detalles</button>
-            </div>
-
-            <div class="card">
-                <div class="imagen">Imagen</div>
-                <div class="nombre">Modelo 3</div>
-                <div class="precio">$45.000</div>
-                <div class="descripcion">Algodón premium, estilo urbano</div>
-                <button class="btn">Ver detalles</button>
-            </div>
-
-            <div class="card">
-                <div class="imagen">Imagen</div>
-                <div class="nombre">Modelo 4</div>
-                <div class="precio">$45.000</div>
-                <div class="descripcion">Algodón premium, estilo urbano</div>
-                <button class="btn">Ver detalles</button>
-            </div>
+        <div class="productos" id="contenedor-productos">
 
         </div>
     </main>
@@ -109,6 +92,8 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
         </div>
     </footer>
 </body>
-<script src="/Pruebas/Oficial/js/respuestasBotones_INDEX.js"></script>
-<script src="/Pruebas/Oficial/js/responsive_INDEX.js"></script>
+    <script src="/Pruebas/Oficial/js/P_respuestasBotones_INDEX.js"></script>
+    <script src="/Pruebas/Oficial/js/P_responsive_INDEX.js"></script>
+    <script src="/Pruebas/Oficial/js/P_cards-productos_INDEX.js"></script>
+    <script src="/Pruebas/Oficial/js/P_catalogo-filtro_INDEX.js"></script>
 </html>
