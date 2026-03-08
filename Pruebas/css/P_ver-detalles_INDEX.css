@@ -1,0 +1,120 @@
+/* MODAL PRODUCTO */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.6);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+}
+
+.modal-box{
+    background:white;
+    width:900px;
+    border-radius:10px;
+    display:flex;
+    gap:30px;
+    padding:25px;
+    position:relative;
+}
+
+/* cerrar */
+
+.cerrar{
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:22px;
+    cursor:pointer;
+}
+
+/* imagen */
+
+.img-section{
+    width:45%;
+}
+
+.img-principal{
+    width:100%;
+    border:1px solid #ddd;
+}
+
+.miniaturas{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+
+.miniaturas img{
+    width:70px;
+    cursor:pointer;
+    border:1px solid #ccc;
+}
+
+/* info */
+
+.info{
+    width:55%;
+}
+
+.tallas button{
+    padding:8px 15px;
+    margin-right:10px;
+    border:1px solid #aaa;
+    background:white;
+    cursor:pointer;
+}
+
+.tallas button.activa{
+    background:#444;
+    color:white;
+}
+
+.cantidad{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:15px 0;
+}
+
+.cantidad button{
+    width:35px;
+    height:35px;
+    cursor: pointer;
+}
+
+.precio-modal{
+    margin-left:auto;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.acciones{
+    display:flex;
+    gap:15px;
+}
+
+.comprar{
+    flex:1;
+    background:#444;
+    color:white;
+    padding:12px;
+    border:none;
+    cursor: pointer;
+}
+
+.carrito-btn{
+    flex:1;
+    border:1px solid #444;
+    background:white;
+    padding:12px;
+    cursor: pointer;
+}
