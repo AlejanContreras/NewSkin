@@ -1,14 +1,12 @@
 <!--
 LISTA DE HACERES CON EL CODIGO
 
-    - pasar el main JS para poder hacer el filtro de catalogo   * (prueba)
-
-    - crear pestaña de ver detalles
     - crear pestaña/pagina de carrito   *
-    - crear funcionalidad a catalogo con el filtro si no se hizo antes con el main
     + primera revision de colores y diseño de perez
+
     - pasar el iniciar sesion a JS para que se muestre registrarse o iniciar sesion mediantes una 
-       condicion con el local storage   *
+       condicion con el local storage   * (EN PROCESO FALTA INICIO SESION Y EL MODAL DE LOS DATOS USUARIO)
+
     - enviar a la resdes sociales si se seleciona alguna del footer   *
     - agregar ya la especifidad o crear bien las cards ya con las prendas y sus especificidades
     + segunda revision de colores y diseño de perez
@@ -18,10 +16,6 @@ LISTA DE HACERES CON EL CODIGO
     - ultima prueba de calidad de bolañitos y presentarlo al mundo si es posible
 
     * => significa que bolañitos haga un testo de lo q se lleva hasta el momento
-
-
-Subir a github como respaldo y por si vasquez o bolaños quieren menter mano en especial para
- bolaños haga las pruebas de calidad gitPulleando el codigo
 
 cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agregar el texto informativo
  de realizar un push para que los demas sepan de cambios e informacion
@@ -42,6 +36,8 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
     <link rel="stylesheet" href="/Pruebas/css/P_responsive_INDEX.css">
     <link rel="stylesheet" href="/Pruebas/css/P_catalogo-filtro_INDEX.css">
     <link rel="stylesheet" href="/Pruebas/css/P_ver-detalles_INDEX.css">
+    <link rel="stylesheet" href="/Pruebas/css/P_login_INDEX.css">
+    <link rel="stylesheet" href="/Pruebas/css/P_registrarse_INDEX.css">
     
 </head>
 
@@ -65,7 +61,7 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
 
             <div class="logo">👕 NewSkin</div>
             <div class="right-menu">
-                <div class="login" onclick="iniciarSesion()">Iniciar sesión</div>
+                <div class="login" id="loginBtn"></div>
                 <div class="carrito" onclick="abrirCarrito()">🛒 Carrito (0)</div>
             </div>
         </div>
@@ -101,4 +97,6 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
     <script src="/Pruebas/js/P_cards-productos_INDEX.js"></script>
     <script src="/Pruebas/js/P_catalogo-filtro_INDEX.js"></script>
     <script src="/Pruebas/js/P_ver-detalles_INDEX.js"></script>
+    <script src="/Pruebas/js/P_login_INDEX.js"></script>
+    <script src="/Pruebas/js/P_registrarse_INDEX.js"></script>
 </html>

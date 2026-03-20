@@ -73,10 +73,10 @@ const productos = [
         precio:35000,
         descripcion:"Solo prueba filtro",
         imagenes:[
-            /*"/Pruebas/img/james_2014.jpg",
+            "/Pruebas/img/james_2014.jpg",
             "/Pruebas/img/james_copaAmerica_2024.jpeg",
             "/Pruebas/img/james_porto.jpeg",
-            "/Pruebas/img/james_realVardrid.jpg"*/
+            "/Pruebas/img/james_realVardrid.jpg"
         ],
         categoria:"gorra"
     }
