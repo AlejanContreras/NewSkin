@@ -32,7 +32,7 @@ function renderUsuario() {
             </div>
         `;
 
-        accion = () => mostrarMenuUsuario(usuario);
+        accion = () => mostrarMenuUsuario();
     }
 
     // 🟡 REGISTRADO PERO NO LOGUEADO
@@ -75,13 +75,6 @@ function obtenerIniciales(nombre) {
 
     return (partes[0][0] + partes[1][0]).toUpperCase();
 }
-
-
-// ===== INFO USUARIO =====
-function mostrarMenuUsuario(usuario) {
-    alert(`Nombre: ${usuario.nombre}\nCorreo: ${usuario.email}`);
-}
-
 
 // ===== ESTADO =====
 
