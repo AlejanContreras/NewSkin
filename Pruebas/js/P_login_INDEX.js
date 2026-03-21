@@ -38,7 +38,7 @@ function renderUsuario() {
     // 🟡 REGISTRADO PERO NO LOGUEADO
     else if (usuario) {
         contenido = `Iniciar sesión`;
-        accion = abrirLogin;
+        accion = abrirInicioSesion;
     }
 
     // 🔴 USUARIO NUEVO
@@ -80,15 +80,6 @@ function obtenerIniciales(nombre) {
 // ===== INFO USUARIO =====
 function mostrarMenuUsuario(usuario) {
     alert(`Nombre: ${usuario.nombre}\nCorreo: ${usuario.email}`);
-}
-
-//TEMPORAL O ESO ESPERO JUEPUTA
-// ===== LOGIN =====
-function abrirLogin() {
-    alert("Abrir modal de iniciar sesión");
-
-    // 🔥 prueba
-    iniciarSesionUsuario();
 }
 
 
