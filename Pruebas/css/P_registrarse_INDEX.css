@@ -118,3 +118,18 @@
     cursor: pointer;
     font-size: 16px;
 }
+
+
+/* 🔥 RESPONSIVE */
+@media (max-width: 500px) {
+
+    .modalRegistro-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .filaRegistro {
+        flex-direction: column;
+    }
+
+}

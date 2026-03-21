@@ -1,5 +1,3 @@
-//REGISTRO
-
 // ===== ABRIR MODAL REGISTRO =====
 function abrirRegistro() {
 
@@ -7,10 +5,10 @@ function abrirRegistro() {
 
     const modal = document.createElement("div");
     modal.id = "modalRegistro";
-    modal.classList.add("modalRegistro"); // 🔥 CAMBIO
+    modal.classList.add("modalRegistro");
 
     modal.innerHTML = `
-        <div class="modalRegistro-box"> <!-- 🔥 CAMBIO -->
+        <div class="modalRegistro-box">
 
             <span class="cerrarRegistro">&times;</span>
 
@@ -56,8 +54,10 @@ function abrirRegistro() {
 
     document.body.appendChild(modal);
 
+    // cerrar
     modal.querySelector(".cerrarRegistro").onclick = () => modal.remove();
 
+    // eventos
     document.getElementById("btnRegistrar").onclick = registrarUsuario;
     document.getElementById("toggleTerminos").onclick = toggleTerminos;
     document.getElementById("irLogin").onclick = irALogin;
@@ -65,7 +65,7 @@ function abrirRegistro() {
 }
 
 
-// ===== GUARDAR DATOS =====
+// ===== REGISTRAR Y GUARDAR =====
 function registrarUsuario() {
 
     const nombre = document.getElementById("nombre").value.trim();
@@ -76,8 +76,9 @@ function registrarUsuario() {
     const check = document.getElementById("checkTerminos").checked;
 
     const error = document.getElementById("errorMsg");
-
     error.textContent = "";
+
+    // ===== VALIDACIONES =====
 
     const regexNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
     if (!regexNombre.test(nombre) || !regexNombre.test(apellido)) {
@@ -112,6 +113,7 @@ function registrarUsuario() {
         return;
     }
 
+    // ===== GUARDAR =====
     const usuario = {
         nombre: nombre + " " + apellido,
         email,
@@ -124,8 +126,10 @@ function registrarUsuario() {
 
     alert("Registro exitoso");
 
+    // cerrar modal
     document.getElementById("modalRegistro").remove();
 
+    // 🔥 actualizar UI (PC + móvil)
     if (typeof renderUsuario === "function") {
         renderUsuario();
     }

@@ -1,11 +1,9 @@
-//no se si deberia decir index pq afectaria tanto el index como carrito pero bueno por ahora es solo index
-
 // ===== CUANDO CARGA LA PAGINA =====
 document.addEventListener("DOMContentLoaded", () => {
     renderUsuario();
 });
 
-// 🔥 EXTRA: SI CAMBIA LOCALSTORAGE (MULTI-PANTALLA)
+// 🔥 SI CAMBIA LOCALSTORAGE
 window.addEventListener("storage", () => {
     renderUsuario();
 });
@@ -13,40 +11,61 @@ window.addEventListener("storage", () => {
 
 // ===== FUNCION PRINCIPAL =====
 function renderUsuario() {
-    const loginBtn = document.getElementById("loginBtn");
+
+    // 🔥 TODOS los botones (PC + móvil)
+    const loginBtns = document.getElementsByClassName("loginBtn");
 
     const usuario = JSON.parse(localStorage.getItem("usuario"));
     const logueado = localStorage.getItem("logueado");
+
+    let contenido;
+    let accion;
 
     // 🟢 USUARIO LOGUEADO
     if (usuario && logueado === "true") {
 
         const iniciales = obtenerIniciales(usuario.nombre);
 
-        loginBtn.innerHTML = `
+        contenido = `
             <div class="avatar">
                 ${iniciales}
             </div>
         `;
 
-        loginBtn.onclick = () => mostrarMenuUsuario(usuario);
+        accion = () => mostrarMenuUsuario(usuario);
     }
 
-    // 🟡 USUARIO REGISTRADO PERO NO LOGUEADO
+    // 🟡 REGISTRADO PERO NO LOGUEADO
     else if (usuario) {
-        loginBtn.innerHTML = `Iniciar sesión`;
-        loginBtn.onclick = abrirLogin;
+        contenido = `Iniciar sesión`;
+        accion = abrirLogin;
     }
 
     // 🔴 USUARIO NUEVO
     else {
-        loginBtn.innerHTML = `Registrarse`;
-        loginBtn.onclick = abrirRegistro;
+        contenido = `Registrarse`;
+        accion = abrirRegistro;
+    }
+
+    // 🔥 APLICAR A TODOS (PC + móvil)
+    for (let i = 0; i < loginBtns.length; i++) {
+
+        loginBtns[i].innerHTML = contenido;
+
+        loginBtns[i].onclick = function () {
+
+            // 🔥 si es menú móvil → cerrarlo
+            if (this.closest("#mobileMenu")) {
+                toggleMenu();
+            }
+
+            accion();
+        };
     }
 }
 
 
-// ===== FUNCION PARA SACAR INICIALES =====
+// ===== INICIALES =====
 function obtenerIniciales(nombre) {
     const partes = nombre.trim().split(" ");
 
@@ -58,43 +77,41 @@ function obtenerIniciales(nombre) {
 }
 
 
-// ===== MOSTRAR INFO USUARIO =====
+// ===== INFO USUARIO =====
 function mostrarMenuUsuario(usuario) {
-    const opcion = alert(
-        `Nombre: ${usuario.nombre}\nCorreo: ${usuario.email}`
-    );
+    alert(`Nombre: ${usuario.nombre}\nCorreo: ${usuario.email}`);
 }
 
-
-// ===== FUNCIONES TEMPORALES =====
+//TEMPORAL O ESO ESPERO JUEPUTA
+// ===== LOGIN =====
 function abrirLogin() {
     alert("Abrir modal de iniciar sesión");
 
-    // 🔥 PRUEBA: simular login directo
+    // 🔥 prueba
     iniciarSesionUsuario();
 }
 
 
-// ===== LOGICA DE ESTADO (IMPORTANTE) =====
+// ===== ESTADO =====
 
-// 🆕 REGISTRAR
+// 🆕 REGISTRO
 function registrarUsuario(datos) {
     localStorage.setItem("usuario", JSON.stringify(datos));
     localStorage.setItem("logueado", "false");
 
-    renderUsuario(); // 🔥 ACTUALIZA SIN RECARGAR
+    renderUsuario();
 }
 
 // 🔑 LOGIN
 function iniciarSesionUsuario() {
     localStorage.setItem("logueado", "true");
 
-    renderUsuario(); // 🔥 ACTUALIZA SIN RECARGAR
+    renderUsuario();
 }
 
 // 🔒 LOGOUT
 function cerrarSesion() {
     localStorage.setItem("logueado", "false");
 
-    renderUsuario(); // 🔥 ACTUALIZA SIN RECARGAR
+    renderUsuario();
 }
