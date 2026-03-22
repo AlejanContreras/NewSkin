@@ -1,0 +1,88 @@
+/* ===== CONTENEDOR TOAST ===== */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* ===== TOAST ===== */
+.toast {
+    min-width: 260px;
+    max-width: 320px;
+
+    padding: 14px 18px;
+    border-radius: 12px;
+
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+
+    /* 🔥 EFECTO RELIEVE (SOMBRA PRO) */
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.25),
+        0 3px 8px rgba(0,0,0,0.15);
+
+    animation: slideIn 0.3s ease;
+}
+
+
+/* ===== TIPOS ===== */
+.toast.success {
+    background: #2ecc71;
+}
+
+.toast.error {
+    background: #e74c3c;
+}
+
+.toast.info {
+    background: #3498db;
+}
+
+
+/* ===== ANIMACION ENTRADA ===== */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* ===== ANIMACION SALIDA ===== */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+}
+
+
+/* 📱 RESPONSIVE (MÓVIL) */
+@media (max-width: 500px) {
+
+    .toast-container {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        align-items: center;
+    }
+
+    .toast {
+        width: 100%;
+        text-align: center;
+    }
+}

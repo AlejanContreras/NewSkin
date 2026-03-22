@@ -3,8 +3,6 @@ LISTA DE HACERES CON EL CODIGO
 
     - crear pestaña/pagina de carrito   *
     + primera revision de colores y diseño de perez
-    - pasar el iniciar sesion a JS para que se muestre registrarse o iniciar sesion mediantes una 
-       condicion con el local storage   *
     - enviar a la resdes sociales si se seleciona alguna del footer   *
     - agregar ya la especifidad o crear bien las cards ya con las prendas y sus especificidades
     + segunda revision de colores y diseño de perez
@@ -33,6 +31,11 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
     <link rel="stylesheet" href="/Estilos/index/responsive.css">
     <link rel="stylesheet" href="/Estilos/index/catalogo.css">
     <link rel="stylesheet" href="/Estilos/index/ver_detalles.css">
+    <link rel="stylesheet" href="/Estilos/index/login.css">
+    <link rel="stylesheet" href="/Estilos/index/registrarse.css">
+    <link rel="stylesheet" href="/Estilos/index/iniciar_sesion.css">
+    <link rel="stylesheet" href="/Estilos/index/usuario.css">
+    <link rel="stylesheet" href="/Estilos/index/toast.css">
     
 </head>
 
@@ -56,14 +59,14 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
 
             <div class="logo">👕 NewSkin</div>
             <div class="right-menu">
-                <div class="login" onclick="iniciarSesion()">Iniciar sesión</div>
+                <div class="login loginBtn"></div>
                 <div class="carrito" onclick="abrirCarrito()">🛒 Carrito (0)</div>
             </div>
         </div>
 
         <div id="mobileMenu" class="mobile-menu">
             <p onclick="toggleCatalogoMenu()">Catálogo</p>
-            <p onclick="iniciarSesion()">Iniciar sesión</p>
+            <p class="loginBtn"></p>
             <p onclick="abrirCarrito()">Carrito</p>
         </div>
     </header>
@@ -92,4 +95,9 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
     <script src="/Logica/index/productos.js"></script>
     <script src="/Logica/index/filtro_catalogo.js"></script>
     <script src="/Logica/index/ver_detalles.js"></script>
+    <script src="/Logica/index/login.js"></script>
+    <script src="/Logica/index/registrarse.js"></script>
+    <script src="/Logica/index/iniciar_sesion.js"></script>
+    <script src="/Logica/index/usuario.js"></script>
+    <script src="/Logica/index/toast.js"></script>
 </html>
