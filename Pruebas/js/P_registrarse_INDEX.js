@@ -54,10 +54,8 @@ function abrirRegistro() {
 
     document.body.appendChild(modal);
 
-    // cerrar
     modal.querySelector(".cerrarRegistro").onclick = () => modal.remove();
 
-    // eventos
     document.getElementById("btnRegistrar").onclick = registrarUsuario;
     document.getElementById("toggleTerminos").onclick = toggleTerminos;
     document.getElementById("irLogin").onclick = irALogin;
@@ -83,33 +81,39 @@ function registrarUsuario() {
     const regexNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
     if (!regexNombre.test(nombre) || !regexNombre.test(apellido)) {
         error.textContent = "Nombre y apellido solo deben contener letras";
+        mostrarToast("Nombre inválido", "error");
         return;
     }
 
     const regexCelular = /^3\d{9}$/;
     if (!regexCelular.test(celular)) {
         error.textContent = "El celular debe tener 10 dígitos y comenzar con 3";
+        mostrarToast("Celular inválido", "error");
         return;
     }
 
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!regexEmail.test(email)) {
         error.textContent = "Correo electrónico inválido";
+        mostrarToast("Correo inválido", "error");
         return;
     }
 
     if (password.length < 6) {
         error.textContent = "La contraseña debe tener mínimo 6 caracteres";
+        mostrarToast("Contraseña muy corta", "error");
         return;
     }
 
     if (!nombre || !apellido || !email || !password || !celular) {
         error.textContent = "Completa todos los campos";
+        mostrarToast("Completa todos los campos", "error");
         return;
     }
 
     if (!check) {
         error.textContent = "Debes aceptar los términos";
+        mostrarToast("Acepta los términos", "error");
         return;
     }
 
@@ -124,12 +128,10 @@ function registrarUsuario() {
     localStorage.setItem("usuario", JSON.stringify(usuario));
     localStorage.setItem("logueado", "false");
 
-    alert("Registro exitoso");
+    mostrarToast("Registro exitoso", "success");
 
-    // cerrar modal
     document.getElementById("modalRegistro").remove();
 
-    // 🔥 actualizar UI (PC + móvil)
     if (typeof renderUsuario === "function") {
         renderUsuario();
     }
@@ -144,7 +146,9 @@ function toggleTerminos() {
 }
 
 function irALogin() {
-    alert("Abrir modal de login");
+    mostrarToast("Abriendo login...", "info");
+    document.getElementById("modalRegistro").remove();
+    abrirInicioSesion(); // 🔥 abre el login real
 }
 
 function togglePassword() {

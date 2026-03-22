@@ -103,6 +103,32 @@
 }
 
 
+/* ===== PASSWORD BOX (NUEVO 🔥) ===== */
+.password-boxLogin {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-boxLogin input {
+    width: 100%;
+    padding-right: 40px; /* espacio para el icono */
+}
+
+.password-boxLogin span {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    transition: 0.2s;
+}
+
+.password-boxLogin span:hover {
+    transform: scale(1.1);
+}
+
+
 /* ===== BOTONES ===== */
 .acciones-usuario {
     display: flex;
@@ -130,7 +156,7 @@
 }
 
 
-/* 🔥 BOTON CANCELAR (opcional color distinto) */
+/* 🔥 BOTON CANCELAR */
 #btnCancelar {
     background: #aaa;
 }

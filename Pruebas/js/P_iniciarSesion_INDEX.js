@@ -47,15 +47,12 @@ function abrirInicioSesion() {
 
     document.body.appendChild(modal);
 
-    // 🔥 Cerrar
     modal.querySelector(".cerrarInicioSesion").onclick = () => modal.remove();
 
-    // 🔥 Eventos botones
     document.getElementById("btnLoginA").onclick = loginConCorreo;
     document.getElementById("btnLoginB").onclick = loginConUsuario;
     document.getElementById("toggleLoginPassword").onclick = toggleLoginPassword;
 
-    // 🔥 Enter para login
     document.getElementById("loginPassword").addEventListener("keypress", function (e) {
         if (e.key === "Enter") loginConCorreo();
     });
@@ -64,7 +61,6 @@ function abrirInicioSesion() {
         if (e.key === "Enter") loginConUsuario();
     });
 
-    // 🔥 Focus automático
     document.getElementById("loginEmail").focus();
 }
 
@@ -82,11 +78,13 @@ function loginConCorreo() {
 
     if (!email || !password) {
         error.textContent = "Completa todos los campos";
+        mostrarToast("Completa todos los campos", "error");
         return;
     }
 
     if (!usuario) {
         error.textContent = "No hay usuarios registrados";
+        mostrarToast("No hay usuarios registrados", "error");
         return;
     }
 
@@ -94,13 +92,14 @@ function loginConCorreo() {
 
         localStorage.setItem("logueado", "true");
 
-        alert("Login exitoso");
+        mostrarToast("Login exitoso", "success");
         document.getElementById("modalLogin").remove();
 
         renderUsuario();
 
     } else {
         error.textContent = "Correo o contraseña incorrectos";
+        mostrarToast("Correo o contraseña incorrectos", "error");
     }
 }
 
@@ -118,11 +117,13 @@ function loginConUsuario() {
 
     if (!nombre || !celular) {
         error.textContent = "Completa todos los campos";
+        mostrarToast("Completa todos los campos", "error");
         return;
     }
 
     if (!usuario) {
         error.textContent = "No hay usuarios registrados";
+        mostrarToast("No hay usuarios registrados", "error");
         return;
     }
 
@@ -130,13 +131,14 @@ function loginConUsuario() {
 
         localStorage.setItem("logueado", "true");
 
-        alert("Login exitoso");
+        mostrarToast("Login exitoso", "success");
         document.getElementById("modalLogin").remove();
 
         renderUsuario();
 
     } else {
         error.textContent = "Datos incorrectos";
+        mostrarToast("Datos incorrectos", "error");
     }
 }
 
