@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito - NewSkin</title>
+    <link rel="stylesheet" href="/Pruebas/css/PruebasCarrito.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-left">catálogo</div>
+
+        <div class="logo" onclick="window.location.href='/Pruebas/html/PruebasOficial.html';">
+            👕 <span>NewSkin</span>
+        </div>
+
+        <div class="header-right">
+            🛒 <span>Carrito (2)</span>
+        </div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main class="container">
+
+        <div class="breadcrumb">Inicio / Carrito</div>
+
+        <h1>Carrito de Compras</h1>
+
+        <div class="carrito-box">
+
+            <!-- ENCABEZADO -->
+            <div class="carrito-header">
+                <span>Producto</span>
+                <span>Precio</span>
+                <span>Cantidad</span>
+                <span>Subtotal</span>
+            </div>
+
+            <!-- PRODUCTO 1 -->
+            <div class="producto">
+                <div class="info">
+                    <img src="https://via.placeholder.com/80" alt="">
+                    <div>
+                        <h3>Modelo 1</h3>
+                        <p>Talla: M</p>
+                        <small>Algodón premium, estilo urbano</small>
+                    </div>
+                </div>
+
+                <div class="precio">$45.000</div>
+
+                <div class="cantidad">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+
+                <div class="subtotal">
+                    $45.000
+                    <span class="eliminar">🗑</span>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 2 -->
+            <div class="producto">
+                <div class="info">
+                    <img src="https://via.placeholder.com/80" alt="">
+                    <div>
+                        <h3>Modelo 2</h3>
+                        <p>Talla: L</p>
+                        <small>Algodón premium, estilo urbano</small>
+                    </div>
+                </div>
+
+                <div class="precio">$45.000</div>
+
+                <div class="cantidad">
+                    <button>-</button>
+                    <span>2</span>
+                    <button>+</button>
+                </div>
+
+                <div class="subtotal">
+                    $90.000
+                    <span class="eliminar">🗑</span>
+                </div>
+            </div>
+
+            <!-- TOTAL -->
+            <div class="total">
+                <span>Total:</span>
+                <strong>$135.000</strong>
+            </div>
+
+        </div>
+
+        <!-- BOTONES -->
+        <div class="acciones">
+            <button class="seguir">Seguir comprando</button>
+            <button class="finalizar">Finalizar compra</button>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <p><b>NewSkin © 2026</b></p>
+                <p>Soacha - Bogotá</p>
+                <p>WhatsApp: 3XX XXX XXXX</p>
+            </div>
+            <div>
+                <span onclick="abrirInstagram()" class="social">Instagram</span> |
+                <span onclick="abrirTikTok()" class="social">TikTok</span> |
+                <span onclick="abrirFacebook()" class="social">Facebook</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

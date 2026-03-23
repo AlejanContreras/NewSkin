@@ -1,7 +1,3 @@
-function abrirCarrito() {
-    alert("Ir al carrito");
-}
-
 function abrirInstagram() {
     alert("Cuenta Instagram");
 }
