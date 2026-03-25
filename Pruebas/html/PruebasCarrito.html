@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Carrito - NewSkin</title>
-    <link rel="stylesheet" href="/Pruebas/css/PruebasCarrito.css">
+    <link rel="stylesheet" href="/Pruebas/css/P_login.css">
+    <link rel="stylesheet" href="/Pruebas/css/P_registrarse.css">
+    <link rel="stylesheet" href="/Pruebas/css/P_inicarSesion.css">
+    <link rel="stylesheet" href="/Pruebas/css/P_usuario.css">
+    <link rel="stylesheet" href="/Pruebas/css/P_toast_login.css">
+    <link rel="stylesheet" href="/Pruebas/css/P_carrito_CARRITO.css">
+    <link rel="stylesheet" href="/Pruebas/css/P_productos_CARRITO.css">
+    <!--<link rel="stylesheet" href="/Pruebas/css/P_historial_CARRITO.css">-->
 </head>
-<body>
 
-    <!-- HEADER -->
+<body>
     <header class="header">
-        <div class="header-left">catálogo</div>
+        <div class="header-left">
+            <span id="btnProductos" class="activo">Productos </span>
+            <span> - </span>
+            <span id="btnHistorial"> Historial</span>
+        </div>
 
         <div class="logo" onclick="window.location.href='/Pruebas/html/PruebasOficial.html';">
             👕 <span>NewSkin</span>
         </div>
 
         <div class="header-right">
-            🛒 <span>Carrito (2)</span>
+            <div class="login loginBtn"></div>
+            <span>🛒 Carrito (2)</span>
         </div>
     </header>
-
-    <!-- CONTENIDO -->
-    <main class="container">
+    <main>
 
         <div class="breadcrumb">Inicio / Carrito</div>
 
@@ -37,10 +47,18 @@
                 <span>Subtotal</span>
             </div>
 
-            <!-- PRODUCTO 1 -->
+            <!-- PRODUCTO -->
             <div class="producto">
+
                 <div class="info">
+
+                    <!-- EDITAR -->
+                    <div class="editar">
+                        ✏️
+                    </div>
+
                     <img src="https://via.placeholder.com/80" alt="">
+
                     <div>
                         <h3>Modelo 1</h3>
                         <p>Talla: M</p>
@@ -57,34 +75,16 @@
                 </div>
 
                 <div class="subtotal">
-                    $45.000
-                    <span class="eliminar">🗑</span>
-                </div>
-            </div>
 
-            <!-- PRODUCTO 2 -->
-            <div class="producto">
-                <div class="info">
-                    <img src="https://via.placeholder.com/80" alt="">
-                    <div>
-                        <h3>Modelo 2</h3>
-                        <p>Talla: L</p>
-                        <small>Algodón premium, estilo urbano</small>
+                    <span>$45.000</span>
+
+                    <!-- ELIMINAR -->
+                    <div class="eliminar">
+                        🗑️
                     </div>
+
                 </div>
 
-                <div class="precio">$45.000</div>
-
-                <div class="cantidad">
-                    <button>-</button>
-                    <span>2</span>
-                    <button>+</button>
-                </div>
-
-                <div class="subtotal">
-                    $90.000
-                    <span class="eliminar">🗑</span>
-                </div>
             </div>
 
             <!-- TOTAL -->
@@ -100,6 +100,7 @@
             <button class="seguir">Seguir comprando</button>
             <button class="finalizar">Finalizar compra</button>
         </div>
+        
 
     </main>
 
@@ -119,4 +120,11 @@
     </footer>
 
 </body>
+<script src="/Pruebas/js/P_respuestasBotones.js"></script>
+<script src="/Pruebas/js/P_login.js"></script>
+<script src="/Pruebas/js/P_registrarse.js"></script>
+<script src="/Pruebas/js/P_iniciarSesion.js"></script>
+<script src="/Pruebas/js/P_usuario_INDEX.js"></script>
+<script src="/Pruebas/js/P_toast_login.js"></script>
+
 </html>

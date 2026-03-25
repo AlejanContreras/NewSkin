@@ -1,0 +1,95 @@
+/* HISTORIAL */
+.historial-box {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+/* HEADER */
+.historial-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #666;
+}
+
+/* ITEM */
+.historial-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* ESTADOS */
+.estado {
+    text-align: center;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* COLORES SEGÚN ESTADO */
+.estado.enviado {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.estado.entregado {
+    background: #d4edda;
+    color: #155724;
+}
+
+.estado.cancelado {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+
+
+/*ACA ESTARIA EL CODIGO HTML DEL HISTORIAL PARA LA BASE POR SI ACASO*/
+/*
+
+<!-- HISTORIAL -->
+        <div class="historial-box">
+
+            <!-- ENCABEZADO -->
+            <div class="historial-header">
+                <span>Producto</span>
+                <span>Precio</span>
+                <span>Estado</span>
+                <span>Subtotal</span>
+            </div>
+
+            <!-- ITEM HISTORIAL -->
+            <div class="historial-item">
+
+                <div class="info">
+                    <img src="https://via.placeholder.com/80" alt="">
+
+                    <div>
+                        <h3>Modelo 1</h3>
+                        <p>Talla: M</p>
+                        <small>Algodón premium, estilo urbano</small>
+                    </div>
+                </div>
+
+                <div class="precio">$45.000</div>
+
+                <!-- ESTADO -->
+                <div class="estado enviado">
+                    Enviado
+                </div>
+
+                <div class="subtotal">
+                    <span>$45.000</span>
+                </div>
+
+            </div>
+
+        </div>
+
+*/
