@@ -2,7 +2,7 @@
 /* CREAR MODAL DINAMICO */
 /* ========================= */
 
-function crearModal(){
+function crearModal() {
 
     const modalHTML = `
     
@@ -63,211 +63,219 @@ function crearModal(){
     </div>
     
     `;
-    
+
     document.body.insertAdjacentHTML("beforeend", modalHTML);
-    
-    }
-    
-    document.addEventListener("DOMContentLoaded", crearModal);
-    
-    
-    
-    /* ========================= */
-    /* VARIABLES */
-    /* ========================= */
-    
-    let productoActual = null;
-    let cantidad = 1;
-    let tallaSeleccionada = "M";
-    
-    
-    /* ========================= */
-    /* ABRIR MODAL */
-    /* ========================= */
-    
-    function verDetalle(id){
-    
+
+}
+
+document.addEventListener("DOMContentLoaded", crearModal);
+
+
+
+/* ========================= */
+/* VARIABLES */
+/* ========================= */
+
+let productoActual = null;
+let cantidad = 1;
+let tallaSeleccionada = "M";
+
+
+/* ========================= */
+/* ABRIR MODAL */
+/* ========================= */
+
+function verDetalle(id) {
+
     productoActual = productos.find(p => p.id === id);
-    
+
     document.getElementById("modalProducto").style.display = "flex";
-    
+
     cantidad = 1;
-    
+
     actualizarCantidad();
-    
+
     cargarProducto();
-    
-    }
-    
-    
-    /* ========================= */
-    /* CARGAR DATOS PRODUCTO */
-    /* ========================= */
-    
-    function cargarProducto(){
-    
+
+}
+
+
+/* ========================= */
+/* CARGAR DATOS PRODUCTO */
+/* ========================= */
+
+function cargarProducto() {
+
     document.getElementById("modalNombre").innerText =
-    productoActual.nombre;
-    
+        productoActual.nombre;
+
     document.getElementById("modalDescripcion").innerText =
-    productoActual.descripcion;
-    
+        productoActual.descripcion;
+
     /* imagen principal */
     document.getElementById("imagenPrincipal").src =
-    productoActual.imagenes[0];
-    
+        productoActual.imagenes[0];
+
     /* precio inicial */
     document.getElementById("modalPrecio").innerText =
-    "$" + productoActual.precio.toLocaleString();
-    
+        "$" + productoActual.precio.toLocaleString();
+
     /* miniaturas */
-    
+
     const miniaturas = document.querySelector(".miniaturas");
-    
+
     miniaturas.innerHTML = "";
-    
+
     productoActual.imagenes.forEach(img => {
-    
-    miniaturas.innerHTML +=
-    `<img src="${img}" onclick="cambiarImagen('${img}')">`;
-    
+
+        miniaturas.innerHTML +=
+            `<img src="${img}" onclick="cambiarImagen('${img}')">`;
+
     });
-    
-    }
-    
-    
-    /* ========================= */
-    /* CERRAR MODAL */
-    /* ========================= */
-    
-    function cerrarModal(){
-    
+
+}
+
+
+/* ========================= */
+/* CERRAR MODAL */
+/* ========================= */
+
+function cerrarModal() {
+
     document.getElementById("modalProducto").style.display = "none";
-    
-    }
-    
-    
-    /* ========================= */
-    /* CAMBIAR IMAGEN */
-    /* ========================= */
-    
-    function cambiarImagen(src){
-    
+
+}
+
+
+/* ========================= */
+/* CAMBIAR IMAGEN */
+/* ========================= */
+
+function cambiarImagen(src) {
+
     document.getElementById("imagenPrincipal").src = src;
-    
-    }
-    
-    
-    /* ========================= */
-    /* TALLA */
-    /* ========================= */
-    
-    function seleccionarTalla(btn){
-    
+
+}
+
+
+/* ========================= */
+/* TALLA */
+/* ========================= */
+
+function seleccionarTalla(btn) {
+
     document.querySelectorAll(".tallas button")
-    .forEach(b => b.classList.remove("activa"));
-    
+        .forEach(b => b.classList.remove("activa"));
+
     btn.classList.add("activa");
-    
+
     tallaSeleccionada = btn.innerText;
-    
-    }
-    
-    
-    /* ========================= */
-    /* CANTIDAD */
-    /* ========================= */
-    
-    function sumar(){
-    
+
+}
+
+
+/* ========================= */
+/* CANTIDAD */
+/* ========================= */
+
+function sumar() {
+
     cantidad++;
-    
+
     actualizarCantidad();
-    
+
+}
+
+function restar() {
+
+    if (cantidad > 1) {
+
+        cantidad--;
+
+        actualizarCantidad();
+
     }
-    
-    function restar(){
-    
-    if(cantidad > 1){
-    
-    cantidad--;
-    
-    actualizarCantidad();
-    
-    }
-    
-    }
-    
-    function actualizarCantidad(){
-    
+
+}
+
+function actualizarCantidad() {
+
     document.getElementById("cantidad").innerText = cantidad;
-    
+
     let precioTotal = productoActual.precio * cantidad;
-    
+
     document.getElementById("modalPrecio").innerText =
-    "$" + precioTotal.toLocaleString();
-    
-    }
-    
-    
-    /* ========================= */
-    /* AGREGAR AL CARRITO */
-    /* ========================= */
-    
-    function agregarCarrito(){
-    
+        "$" + precioTotal.toLocaleString();
+
+}
+
+
+/* ========================= */
+/* AGREGAR AL CARRITO */
+/* ========================= */
+
+function agregarCarrito(){
+
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    
-    carrito.push({
-    
-    id:productoActual.id,
-    nombre:productoActual.nombre,
-    precio:productoActual.precio,
-    cantidad:cantidad,
-    talla:tallaSeleccionada,
-    imagen:productoActual.imagenes[0]
-    
-    });
-    
+
+    // buscar si ya existe mismo producto + misma talla
+    let existente = carrito.find(p => 
+        p.id === productoActual.id && p.talla === tallaSeleccionada
+    );
+
+    if(existente){
+        // si existe → suma cantidad
+        existente.cantidad += cantidad;
+    }else{
+        // si no existe → lo agrega
+        carrito.push({
+            id: productoActual.id,
+            nombre: productoActual.nombre,
+            precio: productoActual.precio,
+            cantidad: cantidad,
+            talla: tallaSeleccionada,
+            imagen: productoActual.imagenes[0]
+        });
+    }
+
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    
-    alert("Producto agregado al carrito");
-    
-    }
-    
-    
-    /* ========================= */
-    /* SALIR TOCANDO FUERA MODAL */
-    /* ========================= */
-    
-    window.addEventListener("click", function(event){
-    
+
+    //window.location.href = "carrito.html";
+    alert("se agrego producto");
+}
+
+/* ========================= */
+/* SALIR TOCANDO FUERA MODAL */
+/* ========================= */
+
+window.addEventListener("click", function (event) {
+
     const modal = document.getElementById("modalProducto");
-    
-    if(event.target === modal){
-    
-    cerrarModal();
-    
+
+    if (event.target === modal) {
+
+        cerrarModal();
+
     }
-    
-    });
-    
-    
-    /* ========================= */
-    /* COMPRAR AHORA */
-    /* ========================= */
-    
-    function comprarAhora(){
-    
+
+});
+
+
+/* ========================= */
+/* COMPRAR AHORA */
+/* ========================= */
+
+function comprarAhora() {
+
     let total = productoActual.precio * cantidad;
-    
+
     alert(
-    `Compra rápida
+        `Compra rápida
     
     Producto: ${productoActual.nombre}
     Talla: ${tallaSeleccionada}
     Cantidad: ${cantidad}
     Total: $${total.toLocaleString()}`
     );
-    
-    }
+
+}
