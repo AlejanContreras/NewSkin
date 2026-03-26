@@ -23,7 +23,7 @@ function guardarCarrito(carrito){
 
 
 // ==========================
-// RENDER PRINCIPAL (como usuario)
+// RENDER PRINCIPAL
 // ==========================
 function renderCarritoUI(){
 
@@ -32,7 +32,6 @@ function renderCarritoUI(){
     const usuario = JSON.parse(localStorage.getItem("usuario"));
     const logueado = localStorage.getItem("logueado");
 
-    // 🔴 NO LOGUEADO
     if(!usuario || logueado !== "true"){
 
         container.innerHTML = `
@@ -46,13 +45,12 @@ function renderCarritoUI(){
         return;
     }
 
-    // 🟢 LOGUEADO → mostrar carrito
     renderCarrito();
 }
 
 
 // ==========================
-// RENDER CARRITO REAL
+// RENDER CARRITO
 // ==========================
 function renderCarrito(){
 
@@ -61,7 +59,6 @@ function renderCarrito(){
 
     container.innerHTML = "";
 
-    // 🟡 CARRITO VACÍO
     if(carrito.length === 0){
         container.innerHTML = `
             <div class="no-session">
@@ -92,7 +89,10 @@ function renderCarrito(){
         producto.innerHTML = `
             <div class="info">
 
-                <div class="editar" data-id="${prod.id}">
+                <div class="editar" 
+                    data-id="${prod.id}" 
+                    data-color="${prod.color || ""}" 
+                    data-talla="${prod.talla || ""}">
                     ✏️
                 </div>
 
@@ -100,23 +100,34 @@ function renderCarrito(){
 
                 <div>
                     <h3>${prod.nombre}</h3>
-                    <p>Talla: ${prod.talla}</p>
-                    <small>Producto agregado</small>
+                    <p>Talla: ${prod.talla || "N/A"}</p>
+                    <p>Color: ${prod.color || "N/A"}</p>
                 </div>
             </div>
 
             <div class="precio">$${prod.precio.toLocaleString()}</div>
 
             <div class="cantidad">
-                <button class="disminuir" data-id="${prod.id}">-</button>
-                <span">${prod.cantidad}</span>
-                <button class="aumentar" data-id="${prod.id}">+</button>
+                <button class="disminuir" 
+                    data-id="${prod.id}" 
+                    data-color="${prod.color || ""}" 
+                    data-talla="${prod.talla || ""}">-</button>
+
+                <span>${prod.cantidad}</span>
+
+                <button class="aumentar" 
+                    data-id="${prod.id}" 
+                    data-color="${prod.color || ""}" 
+                    data-talla="${prod.talla || ""}">+</button>
             </div>
 
             <div class="subtotal">
-                <span id="subtotal">$${(prod.precio * prod.cantidad).toLocaleString()}</span>
+                <span>$${(prod.precio * prod.cantidad).toLocaleString()}</span>
 
-                <div class="eliminar" data-id="${prod.id}">
+                <div class="eliminar" 
+                    data-id="${prod.id}" 
+                    data-color="${prod.color || ""}" 
+                    data-talla="${prod.talla || ""}">
                     🗑️
                 </div>
             </div>
@@ -125,6 +136,7 @@ function renderCarrito(){
         box.appendChild(producto);
     });
 
+    // TOTAL
     const total = carrito.reduce((acc, p) => acc + (p.precio * p.cantidad), 0);
 
     const totalDiv = document.createElement("div");
@@ -137,6 +149,19 @@ function renderCarrito(){
 
     box.appendChild(totalDiv);
 
+    // ==========================
+    // 🔥 ACCIONES DINAMICAS
+    // ==========================
+    const acciones = document.createElement("div");
+    acciones.classList.add("acciones");
+
+    acciones.innerHTML = `
+        <button class="seguir">Seguir comprando</button>
+        <button class="finalizar">Finalizar compra</button>
+    `;
+
+    box.appendChild(acciones);
+
     container.appendChild(box);
 }
 
@@ -147,25 +172,39 @@ function renderCarrito(){
 document.addEventListener("click", (e) => {
 
     const id = e.target.dataset.id;
+    const color = e.target.dataset.color;
+    const talla = e.target.dataset.talla;
+
     let carrito = obtenerCarrito();
 
-    // LOGIN BTN
+    // LOGIN
     if(e.target.id === "btnLogin"){
         alert("Inicia sesión");
     }
 
-    // ELIMINAR
+    // ======================
+    // ELIMINAR 🔥
+    // ======================
     if(e.target.classList.contains("eliminar")){
         if(confirm("¿Seguro que deseas eliminar este producto?")){
-            carrito = carrito.filter(p => p.id != id);
+
+            carrito = carrito.filter(p =>
+                !(p.id == id && p.color == color && p.talla == talla)
+            );
+
             guardarCarrito(carrito);
             renderCarritoUI();
         }
     }
 
+    // ======================
     // AUMENTAR
+    // ======================
     if(e.target.classList.contains("aumentar")){
-        const prod = carrito.find(p => p.id == id);
+        const prod = carrito.find(p =>
+            p.id == id && p.color == color && p.talla == talla
+        );
+
         if(prod){
             prod.cantidad++;
             guardarCarrito(carrito);
@@ -173,9 +212,14 @@ document.addEventListener("click", (e) => {
         }
     }
 
+    // ======================
     // DISMINUIR
+    // ======================
     if(e.target.classList.contains("disminuir")){
-        const prod = carrito.find(p => p.id == id);
+        const prod = carrito.find(p =>
+            p.id == id && p.color == color && p.talla == talla
+        );
+
         if(prod && prod.cantidad > 1){
             prod.cantidad--;
             guardarCarrito(carrito);
@@ -183,9 +227,24 @@ document.addEventListener("click", (e) => {
         }
     }
 
-    // EDITAR
+    // ======================
+    // EDITAR 🔥
+    // ======================
     if(e.target.classList.contains("editar")){
-        alert("Modificar pedido");
+        abrirModalEditar(id, color, talla);
+    }
+
+    // ======================
+    // BOTONES EXTRA
+    // ======================
+
+    //EY ACA CAMBIAR LA URL PARA EL OFICIAL 
+    if(e.target.classList.contains("seguir")){
+        window.location.href = "/Pruebas/html/PRUEBASoficial.html";
+    }
+
+    if(e.target.classList.contains("finalizar")){
+        alert("Función de pago próximamente 🔥");
     }
 
 });
