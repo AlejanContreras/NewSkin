@@ -306,20 +306,3 @@ window.addEventListener("click", function (event) {
 
     if (event.target === modal) cerrarModal();
 });
-
-
-/* ========================= */
-/* COMPRAR */
-/* ========================= */
-
-function comprarAhora() {
-
-    let total = productoActual.precio * cantidad;
-
-    alert(`Compra rápida
-Producto: ${productoActual.nombre}
-Talla: ${tallaSeleccionada || "N/A"}
-Color: ${colorSeleccionado || "N/A"}
-Cantidad: ${cantidad}
-Total: $${total.toLocaleString()}`);
-}

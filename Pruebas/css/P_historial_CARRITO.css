@@ -1,38 +1,72 @@
-/* HISTORIAL */
+/* CONTENEDOR */
 .historial-box {
-    background: white;
+    background: #fff;
     border: 1px solid #ddd;
     padding: 20px;
+    border-radius: 10px;
 }
 
-/* HEADER */
-.historial-header {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    font-weight: bold;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-    color: #666;
-}
-
-/* ITEM */
+/* GRID BASE (HEADER + ITEMS) */
+.historial-header,
 .historial-item {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     align-items: center;
+}
+
+/* HEADER */
+.historial-header {
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #666;
+    text-align: center;
+}
+
+/* ITEM */
+.historial-item {
     padding: 20px 0;
     border-bottom: 1px solid #eee;
 }
 
-/* ESTADOS */
-.estado {
-    text-align: center;
-    font-weight: bold;
-    padding: 5px 10px;
+/* INFO (IZQUIERDA) */
+.historial-item .info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* IMAGEN */
+.historial-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
     border-radius: 5px;
 }
 
-/* COLORES SEGÚN ESTADO */
+/* TEXTO INFO */
+.historial-item .info div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* CENTRADO GLOBAL COLUMNAS */
+.historial-item .precio,
+.historial-item .estado,
+.historial-item .subtotal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ESTADO */
+.estado {
+    font-weight: bold;
+    padding: 6px 15px;
+    border-radius: 8px;
+}
+
+/* COLORES ESTADO */
 .estado.enviado {
     background: #fff3cd;
     color: #856404;
@@ -47,49 +81,3 @@
     background: #f8d7da;
     color: #721c24;
 }
-
-
-
-/*ACA ESTARIA EL CODIGO HTML DEL HISTORIAL PARA LA BASE POR SI ACASO*/
-/*
-
-<!-- HISTORIAL -->
-        <div class="historial-box">
-
-            <!-- ENCABEZADO -->
-            <div class="historial-header">
-                <span>Producto</span>
-                <span>Precio</span>
-                <span>Estado</span>
-                <span>Subtotal</span>
-            </div>
-
-            <!-- ITEM HISTORIAL -->
-            <div class="historial-item">
-
-                <div class="info">
-                    <img src="https://via.placeholder.com/80" alt="">
-
-                    <div>
-                        <h3>Modelo 1</h3>
-                        <p>Talla: M</p>
-                        <small>Algodón premium, estilo urbano</small>
-                    </div>
-                </div>
-
-                <div class="precio">$45.000</div>
-
-                <!-- ESTADO -->
-                <div class="estado enviado">
-                    Enviado
-                </div>
-
-                <div class="subtotal">
-                    <span>$45.000</span>
-                </div>
-
-            </div>
-
-        </div>
-
-*/

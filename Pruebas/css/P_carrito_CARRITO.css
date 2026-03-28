@@ -74,3 +74,23 @@ footer {
 .social {
     cursor: pointer;
 }
+
+
+#nav{
+    margin: 20px;
+    font-size: 20px;
+}
+
+#nav span{
+    cursor: pointer;
+}
+
+.activo{
+    font-weight: bold;
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+.header-left{
+    cursor: pointer;
+}

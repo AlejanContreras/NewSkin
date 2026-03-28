@@ -244,7 +244,7 @@ document.addEventListener("click", (e) => {
     }
 
     if(e.target.classList.contains("finalizar")){
-        alert("Función de pago próximamente 🔥");
+        abrirModalCompra();
     }
 
 });
