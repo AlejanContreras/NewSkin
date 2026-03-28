@@ -26,13 +26,11 @@ function crearModal() {
     
                 <p id="modalDescripcion"></p>
     
-                <!-- 🔥 TALLAS DINAMICAS -->
                 <div id="grupoTallas">
                     <h4>Talla:</h4>
                     <div class="tallas" id="contenedorTallas"></div>
                 </div>
 
-                <!-- 🔥 COLORES DINAMICOS -->
                 <div id="grupoColores">
                     <h4>Color:</h4>
                     <div class="colores" id="contenedorColores"></div>
@@ -52,9 +50,11 @@ function crearModal() {
     
                 <div class="acciones">
     
-                    <button class="comprar" onclick="comprarAhora()">Comprar ahora</button>
+                    <!-- 🔒 VALIDACIÓN AQUÍ -->
+                    <button class="comprar" onclick="validarCompra()">Comprar ahora</button>
     
-                    <button class="carrito-btn" onclick="agregarCarrito()">
+                    <!-- 🔒 VALIDACIÓN AQUÍ -->
+                    <button class="carrito-btn" onclick="validarCarrito()">
                     🛒 Agregar
                     </button>
     
@@ -72,6 +72,42 @@ function crearModal() {
 }
 
 document.addEventListener("DOMContentLoaded", crearModal);
+
+
+/* ========================= */
+/* 🔐 VALIDAR SESIÓN */
+/* ========================= */
+
+function usuarioLogueado(){
+    let usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
+    return usuario !== null;
+}
+
+/* ========================= */
+/* 🔒 VALIDADORES */
+/* ========================= */
+
+function validarCompra(){
+
+    if(!usuarioLogueado()){
+        alert("Debes iniciar sesión");
+        return;
+    }
+
+    // ✅ LLAMA A LA FUNCIÓN REAL (otro archivo)
+    comprarAhora();
+}
+
+function validarCarrito(){
+
+    if(!usuarioLogueado()){
+        alert("Debes iniciar sesión");
+        return;
+    }
+
+    // ✅ LLAMA A TU FUNCIÓN ORIGINAL
+    agregarCarrito();
+}
 
 
 /* ========================= */
@@ -117,7 +153,6 @@ function cargarProducto() {
     document.getElementById("modalPrecio").innerText =
         "$" + productoActual.precio.toLocaleString();
 
-    /* MINIATURAS */
     const miniaturas = document.querySelector(".miniaturas");
     miniaturas.innerHTML = "";
 
@@ -125,10 +160,6 @@ function cargarProducto() {
         miniaturas.innerHTML +=
             `<img src="${img}" onclick="cambiarImagen('${img}')">`;
     });
-
-    /* ========================= */
-    /* 🔥 TALLAS DINAMICAS */
-    /* ========================= */
 
     const contTallas = document.getElementById("contenedorTallas");
     contTallas.innerHTML = "";
@@ -148,10 +179,6 @@ function cargarProducto() {
     } else {
         document.getElementById("grupoTallas").style.display = "none";
     }
-
-    /* ========================= */
-    /* 🔥 COLORES DINAMICOS */
-    /* ========================= */
 
     const contColores = document.getElementById("contenedorColores");
     contColores.innerHTML = "";
@@ -189,6 +216,9 @@ function cerrarModal() {
 
 function cambiarImagen(src) {
     document.getElementById("imagenPrincipal").src = src;
+
+    // 🔥 mejora: guardar imagen seleccionada
+    productoActual.imagen = src;
 }
 
 
@@ -257,7 +287,6 @@ function agregarCarrito(){
 
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    // 🔥 VALIDACIONES
     if (productoActual.tallasDisponibles && !tallaSeleccionada) {
         return alert("Selecciona una talla");
     }
@@ -282,9 +311,7 @@ function agregarCarrito(){
             cantidad: cantidad,
             talla: tallaSeleccionada,
             color: colorSeleccionado,
-            imagen: productoActual.imagenes[0],
-
-            // 🔥 CLAVE PARA EDITAR
+            imagen: productoActual.imagen || productoActual.imagenes[0],
             tallasDisponibles: productoActual.tallasDisponibles || [],
             coloresDisponibles: productoActual.coloresDisponibles || []
         });
