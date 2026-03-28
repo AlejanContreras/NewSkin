@@ -50,10 +50,8 @@ function crearModal() {
     
                 <div class="acciones">
     
-                    <!-- 🔒 VALIDACIÓN AQUÍ -->
                     <button class="comprar" onclick="validarCompra()">Comprar ahora</button>
     
-                    <!-- 🔒 VALIDACIÓN AQUÍ -->
                     <button class="carrito-btn" onclick="validarCarrito()">
                     🛒 Agregar
                     </button>
@@ -75,13 +73,16 @@ document.addEventListener("DOMContentLoaded", crearModal);
 
 
 /* ========================= */
-/* 🔐 VALIDAR SESIÓN */
+/* 🔐 VALIDAR SESIÓN (CORREGIDO) */
 /* ========================= */
 
 function usuarioLogueado(){
-    let usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
-    return usuario !== null;
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
+    const logueado = localStorage.getItem("logueado");
+
+    return usuario && logueado === "true";
 }
+
 
 /* ========================= */
 /* 🔒 VALIDADORES */
@@ -94,8 +95,7 @@ function validarCompra(){
         return;
     }
 
-    // ✅ LLAMA A LA FUNCIÓN REAL (otro archivo)
-    comprarAhora();
+    comprarAhora(); // 🔥 función externa
 }
 
 function validarCarrito(){
@@ -105,7 +105,6 @@ function validarCarrito(){
         return;
     }
 
-    // ✅ LLAMA A TU FUNCIÓN ORIGINAL
     agregarCarrito();
 }
 
@@ -216,8 +215,6 @@ function cerrarModal() {
 
 function cambiarImagen(src) {
     document.getElementById("imagenPrincipal").src = src;
-
-    // 🔥 mejora: guardar imagen seleccionada
     productoActual.imagen = src;
 }
 
