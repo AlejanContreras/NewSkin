@@ -19,3 +19,4 @@ Pruebas si agrego editar_producto. js y css, se modificarion los archivos de pro
 
 28/03/2026 => Pruebas se agrego finalizar_compra y el historial .js y css
 Arreglo de logica con el login y los botones de compras en ver_detalles
+se hace dinamico y funcional el contador del carrito de la parte del header de ambos html

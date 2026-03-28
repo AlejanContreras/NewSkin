@@ -1,7 +1,4 @@
-/* ========================= */
 /* CREAR MODAL DINAMICO */
-/* ========================= */
-
 function crearModal() {
 
     const modalHTML = `
@@ -71,11 +68,7 @@ function crearModal() {
 
 document.addEventListener("DOMContentLoaded", crearModal);
 
-
-/* ========================= */
-/* 🔐 VALIDAR SESIÓN (CORREGIDO) */
-/* ========================= */
-
+/* 🔐 VALIDAR SESIÓN */
 function usuarioLogueado(){
     const usuario = JSON.parse(localStorage.getItem("usuario"));
     const logueado = localStorage.getItem("logueado");
@@ -83,11 +76,7 @@ function usuarioLogueado(){
     return usuario && logueado === "true";
 }
 
-
-/* ========================= */
 /* 🔒 VALIDADORES */
-/* ========================= */
-
 function validarCompra(){
 
     if(!usuarioLogueado()){
@@ -95,7 +84,7 @@ function validarCompra(){
         return;
     }
 
-    comprarAhora(); // 🔥 función externa
+    comprarAhora();
 }
 
 function validarCarrito(){
@@ -108,21 +97,13 @@ function validarCarrito(){
     agregarCarrito();
 }
 
-
-/* ========================= */
 /* VARIABLES */
-/* ========================= */
-
 let productoActual = null;
 let cantidad = 1;
 let tallaSeleccionada = null;
 let colorSeleccionado = null;
 
-
-/* ========================= */
 /* ABRIR MODAL */
-/* ========================= */
-
 function verDetalle(id) {
 
     productoActual = productos.find(p => p.id === id);
@@ -137,11 +118,7 @@ function verDetalle(id) {
     cargarProducto();
 }
 
-
-/* ========================= */
 /* CARGAR PRODUCTO */
-/* ========================= */
-
 function cargarProducto() {
 
     document.getElementById("modalNombre").innerText = productoActual.nombre;
@@ -199,30 +176,18 @@ function cargarProducto() {
     }
 }
 
-
-/* ========================= */
 /* CERRAR */
-/* ========================= */
-
 function cerrarModal() {
     document.getElementById("modalProducto").style.display = "none";
 }
 
-
-/* ========================= */
 /* IMAGEN */
-/* ========================= */
-
 function cambiarImagen(src) {
     document.getElementById("imagenPrincipal").src = src;
     productoActual.imagen = src;
 }
 
-
-/* ========================= */
 /* TALLA */
-/* ========================= */
-
 function seleccionarTalla(btn) {
 
     document.querySelectorAll("#contenedorTallas button")
@@ -233,11 +198,7 @@ function seleccionarTalla(btn) {
     tallaSeleccionada = btn.innerText;
 }
 
-
-/* ========================= */
 /* COLOR */
-/* ========================= */
-
 function seleccionarColor(btn) {
 
     document.querySelectorAll("#contenedorColores button")
@@ -248,11 +209,7 @@ function seleccionarColor(btn) {
     colorSeleccionado = btn.innerText;
 }
 
-
-/* ========================= */
 /* CANTIDAD */
-/* ========================= */
-
 function sumar() {
     cantidad++;
     actualizarCantidad();
@@ -275,11 +232,7 @@ function actualizarCantidad() {
         "$" + total.toLocaleString();
 }
 
-
-/* ========================= */
-/* 🔥 AGREGAR AL CARRITO */
-/* ========================= */
-
+/* AGREGAR AL CARRITO */
 function agregarCarrito(){
 
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -317,13 +270,12 @@ function agregarCarrito(){
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
     alert("Producto agregado 🔥");
+
+    // 🔥 ACTUALIZA EL CONTADOR DEL HEADER
+    actualizarContadorCarrito();
 }
 
-
-/* ========================= */
 /* CLICK FUERA */
-/* ========================= */
-
 window.addEventListener("click", function (event) {
 
     const modal = document.getElementById("modalProducto");
