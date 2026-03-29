@@ -206,7 +206,15 @@ function guardarCambios() {
 
     const nuevaCantidad = parseInt(document.getElementById("editCantidad").textContent);
 
-    if (nuevaCantidad < 1) return alert("Cantidad inválida");
+    // 🔴 ERROR
+    if (nuevaCantidad < 1){
+        mostrarToast_editarProducto({
+            titulo: "Error",
+            mensaje: "Cantidad inválida",
+            tipo: "error"
+        });
+        return;
+    }
 
     producto.cantidad = nuevaCantidad;
 
@@ -218,7 +226,12 @@ function guardarCambios() {
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    alert("cambio guardado");
+    // 🟢 SUCCESS
+    mostrarToast_editarProducto({
+        titulo: "Guardado",
+        mensaje: "Cambios guardados correctamente",
+        tipo: "success"
+    });
 
     cerrarModal();
     renderCarritoUI();

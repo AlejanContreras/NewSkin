@@ -80,7 +80,11 @@ function usuarioLogueado(){
 function validarCompra(){
 
     if(!usuarioLogueado()){
-        alert("Debes iniciar sesión");
+        mostrarToast_agregarCarrito({
+            titulo: "Error",
+            mensaje: "Debes iniciar sesión",
+            tipo: "error"
+        });
         return;
     }
 
@@ -90,7 +94,11 @@ function validarCompra(){
 function validarCarrito(){
 
     if(!usuarioLogueado()){
-        alert("Debes iniciar sesión");
+        mostrarToast_agregarCarrito({
+            titulo: "Error",
+            mensaje: "Debes iniciar sesión",
+            tipo: "error"
+        });
         return;
     }
 
@@ -238,11 +246,19 @@ function agregarCarrito(){
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
     if (productoActual.tallasDisponibles && !tallaSeleccionada) {
-        return alert("Selecciona una talla");
+        return mostrarToast_agregarCarrito({
+            titulo: "Falta información",
+            mensaje: "Selecciona una talla",
+            tipo: "error"
+        });
     }
 
     if (productoActual.coloresDisponibles && !colorSeleccionado) {
-        return alert("Selecciona un color");
+        return mostrarToast_agregarCarrito({
+            titulo: "Falta información",
+            mensaje: "Selecciona un color",
+            tipo: "error"
+        });
     }
 
     let existente = carrito.find(p => 
@@ -269,9 +285,12 @@ function agregarCarrito(){
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    alert("Producto agregado 🔥");
+    // 🔥 TOAST EN VEZ DE ALERT
+    mostrarToast_agregarCarrito({
+        titulo: "Producto agregado",
+        mensaje: `Color: ${colorSeleccionado || "N/A"} | Talla: ${tallaSeleccionada || "N/A"}`
+    });
 
-    // 🔥 ACTUALIZA EL CONTADOR DEL HEADER
     actualizarContadorCarrito();
 }
 

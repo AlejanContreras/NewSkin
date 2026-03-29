@@ -136,7 +136,6 @@ function renderCarrito(){
         box.appendChild(producto);
     });
 
-    // TOTAL
     const total = carrito.reduce((acc, p) => acc + (p.precio * p.cantidad), 0);
 
     const totalDiv = document.createElement("div");
@@ -149,9 +148,6 @@ function renderCarrito(){
 
     box.appendChild(totalDiv);
 
-    // ==========================
-    // 🔥 ACCIONES DINAMICAS
-    // ==========================
     const acciones = document.createElement("div");
     acciones.classList.add("acciones");
 
@@ -177,9 +173,13 @@ document.addEventListener("click", (e) => {
 
     let carrito = obtenerCarrito();
 
-    // LOGIN
+    // LOGIN 🔥
     if(e.target.id === "btnLogin"){
-        alert("Inicia sesión");
+        mostrarToast_productos_carrito_login({
+            titulo: "Sesión requerida",
+            mensaje: "Debes iniciar sesión",
+            tipo: "error"
+        });
     }
 
     // ======================
@@ -194,6 +194,12 @@ document.addEventListener("click", (e) => {
 
             guardarCarrito(carrito);
             renderCarritoUI();
+
+            mostrarToast_productos_carrito_login({
+                titulo: "Eliminado",
+                mensaje: "Producto eliminado del carrito",
+                tipo: "success"
+            });
         }
     }
 
@@ -237,8 +243,6 @@ document.addEventListener("click", (e) => {
     // ======================
     // BOTONES EXTRA
     // ======================
-
-    //EY ACA CAMBIAR LA URL PARA EL OFICIAL 
     if(e.target.classList.contains("seguir")){
         window.location.href = "/Pruebas/html/PRUEBASoficial.html";
     }

@@ -127,7 +127,7 @@ function calcularTotal(){
 
 
 // =========================
-// PAGAR
+// PAGAR (MODIFICADO CON TOAST)
 // =========================
 function pagar(){
 
@@ -135,36 +135,84 @@ function pagar(){
         document.getElementById("totalCompra").innerText.replace(/\./g,"")
     );
 
+    // 🔴 NO SELECCIONÓ NADA
     if(total === 0){
-        alert("seleccione al menos un producto");
+        mostrarToast_finalizar_compra({
+            titulo: "Error",
+            mensaje: "Seleccione al menos un producto",
+            tipo: "error"
+        });
         return;
     }
 
-    const dinero = parseInt(prompt("Digite el dinero:"));
+    // 🧾 MOSTRAR TOTAL
+    mostrarToast_finalizar_compra({
+        titulo: "Resumen de pago",
+        mensaje: `Total a pagar: $${total.toLocaleString()}`,
+        duracion: 4000
+    });
 
-    if(isNaN(dinero)){
-        alert("valor invalido");
-        return;
-    }
+    setTimeout(() => {
 
-    // 🔴 NO ALCANZA
-    if(dinero < total){
-        alert("no tiene saldo suficiente haga una recarga o quite una prenda");
-    }
+        const dineroInput = prompt("Digite el dinero:");
 
-    // 🟢 JUSTO
-    else if(dinero === total){
-        alert("pago realizado sus prendas seran enviadas");
-        completarCompra();
-    }
+        // 🔴 CANCELADO
+        if (dineroInput === null) {
+            mostrarToast_finalizar_compra({
+                titulo: "Cancelado",
+                mensaje: "Pago cancelado por el usuario",
+                tipo: "error"
+            });
+            return;
+        }
 
-    // 🟡 SOBRA
-    else{
-        let sobra = dinero - total;
+        const dinero = parseInt(dineroInput);
 
-        alert(`pago realizado le sobra $${sobra.toLocaleString()} los cuales seran guardados para su proxima compra`);
-        completarCompra();
-    }
+        // 🔴 INVALIDO
+        if(isNaN(dinero)){
+            mostrarToast_finalizar_compra({
+                titulo: "Error",
+                mensaje: "Valor inválido",
+                tipo: "error"
+            });
+            return;
+        }
+
+        // 🔴 NO ALCANZA
+        if(dinero < total){
+            mostrarToast_finalizar_compra({
+                titulo: "Saldo insuficiente",
+                mensaje: "No tiene saldo suficiente, quite productos o recargue",
+                tipo: "error"
+            });
+            return;
+        }
+
+        // 🟢 JUSTO
+        if(dinero === total){
+            mostrarToast_finalizar_compra({
+                titulo: "Pago exitoso",
+                mensaje: "Sus productos serán enviados",
+                tipo: "success"
+            });
+
+            completarCompra();
+        }
+
+        // 🟡 SOBRA
+        else{
+            let sobra = dinero - total;
+
+            mostrarToast_finalizar_compra({
+                titulo: "Pago exitoso",
+                mensaje: `Le sobran $${sobra.toLocaleString()}`,
+                tipo: "success"
+            });
+
+            completarCompra();
+        }
+
+    }, 300);
 }
 
 
