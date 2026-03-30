@@ -174,12 +174,24 @@ document.addEventListener("click", (e) => {
     let carrito = obtenerCarrito();
 
     // LOGIN 🔥
-    if(e.target.id === "btnLogin"){
+    if (e.target.id === "btnLogin") {
+
+        const usuario = JSON.parse(localStorage.getItem("usuario"));
+        const logueado = localStorage.getItem("logueado");
+
         mostrarToast_productos_carrito_login({
             titulo: "Sesión requerida",
             mensaje: "Debes iniciar sesión",
             tipo: "error"
         });
+        // 🔥 ABRIR MODAL SEGÚN ESTADO
+        if (usuario && logueado !== "true") {
+            // usuario existe pero no ha iniciado sesión
+            abrirInicioSesion();
+        } else if (!usuario) {
+            // usuario nuevo
+            abrirRegistro();
+        }
     }
 
     // ======================

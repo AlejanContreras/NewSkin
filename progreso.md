@@ -22,3 +22,5 @@ Arreglo de logica con el login y los botones de compras en ver_detalles
 se hace dinamico y funcional el contador del carrito de la parte del header de ambos html
 
 29/03/2026 => se le agregaron toast a todos los archivos siendo el remplazo de los alerts
+
+30/03/2026 => se hizo responsive todo el carrito

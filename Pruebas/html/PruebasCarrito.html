@@ -3,7 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito - NewSkin</title>
+    <link rel="website icon" type="jpg" href="https://i.pinimg.com/736x/f6/bf/cd/f6bfcd062144fc391a9fd2374e61634c.jpg">
+    <!--Cambie le link porque esta el de stagionatura xd-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Pruebas/css/P_login.css">
     <link rel="stylesheet" href="/Pruebas/css/P_registrarse.css">
     <link rel="stylesheet" href="/Pruebas/css/P_inicarSesion.css">
@@ -15,25 +20,37 @@
     <link rel="stylesheet" href="/Pruebas/css/P_finalizar_compra_CARRITO.css">
     <link rel="stylesheet" href="/Pruebas/css/P_historial_CARRITO.css">
     <link rel="stylesheet" href="/Pruebas/css/P_toast_carritocompras.css">
+    <link rel="stylesheet" href="/Pruebas/css/P_responsive_carrito_CARRITO.css">
 </head>
 
 <body>
     <header class="header">
+
+        <div class="menu-toggle_carrito" onclick="toggleMenu_carrito()">☰</div>
+    
         <div class="header-left">
             <span id="btnProductos" class="activo">Productos </span>
             <span> - </span>
             <span id="btnHistorial"> Historial</span>
         </div>
-
+    
         <div class="logo" onclick="window.location.href='/Pruebas/html/PruebasOficial.html';">
             👕 <span>NewSkin</span>
         </div>
-
+    
         <div class="header-right">
             <div class="login loginBtn"></div>
             <span>🛒 Carrito (<span id="contadorCarrito">0</span>)</span>
         </div>
+    
     </header>
+    
+    <div id="mobileMenu_carrito" class="mobile-menu_carrito">
+        <p id="btnProductosMobile_carrito">Productos</p>
+        <p id="btnHistorialMobile_carrito">Historial</p>
+        <p class="loginBtn"></p>
+    </div>
+
     <main>
     
         <div class="breadcrumb"><samp onclick="window.location.href='/Pruebas/html/PruebasOficial.html';">Inicio</samp><samp> / Carrito</samp></div>
@@ -72,4 +89,5 @@
     <script src="/Pruebas/js/P_historial_carrito_CARRIT.JS"></script>
     <script src="/Pruebas/js/P_carrito.js"></script>
     <script src="/Pruebas/js/P_toast_carritocompras.js"></script>
+    <script src="/Pruebas/js/P_responsive_INDEX.js"></script>
 </html>
