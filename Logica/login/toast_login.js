@@ -1,3 +1,4 @@
+/*login*/
 // ===== CREAR CONTENEDOR SI NO EXISTE =====
 function obtenerContenedorToast() {
 
@@ -32,4 +33,33 @@ function mostrarToast(mensaje, tipo = "info") {
         }, 300);
 
     }, 3000);
+}
+
+
+/*productos carrito*/
+function mostrarToast_productos_carrito_login({
+    titulo = "",
+    mensaje = "",
+    tipo = "success",
+    duracion = 3000
+}) {
+
+    const toast = document.createElement("div");
+    toast.className = `toast_productos_carrito_login ${tipo}`;
+
+    toast.innerHTML = `
+        <div class="toast-contenido">
+            <strong>${titulo}</strong>
+            <p>${mensaje}</p>
+        </div>
+    `;
+
+    document.body.appendChild(toast);
+
+    setTimeout(() => toast.classList.add("show"), 10);
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+        setTimeout(() => toast.remove(), 300);
+    }, duracion);
 }

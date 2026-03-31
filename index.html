@@ -1,9 +1,7 @@
 <!--
 LISTA DE HACERES CON EL CODIGO
 
-    - crear pestaña/pagina de carrito   *
     + primera revision de colores y diseño de perez
-    - enviar a la resdes sociales si se seleciona alguna del footer   *
     - agregar ya la especifidad o crear bien las cards ya con las prendas y sus especificidades
     + segunda revision de colores y diseño de perez
     - subirlo a Apps Script y crear su "base de datos" en la hoja de calculo   *
@@ -24,19 +22,19 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NewSkin</title>
-    <link rel="website icon" type="png" href="https://i.ibb.co/bvD1SGz/Captura-de-pantalla-20240928-093419.png">
-    <!--Cambie le link porque esta el de stagionatura xd-->
+    <link rel="website icon" type="png" href="/Pruebas/img/NS_blanco.jpeg">
+
     <link rel="stylesheet" href="/Estilos/index/header-footer.css">
     <link rel="stylesheet" href="/Estilos/index/main.css">
     <link rel="stylesheet" href="/Estilos/index/responsive.css">
     <link rel="stylesheet" href="/Estilos/index/catalogo.css">
     <link rel="stylesheet" href="/Estilos/index/ver_detalles.css">
-    <link rel="stylesheet" href="/Estilos/index/login.css">
-    <link rel="stylesheet" href="/Estilos/index/registrarse.css">
-    <link rel="stylesheet" href="/Estilos/index/iniciar_sesion.css">
-    <link rel="stylesheet" href="/Estilos/index/usuario.css">
-    <link rel="stylesheet" href="/Estilos/index/toast.css">
-    
+    <link rel="stylesheet" href="/Estilos/login/login.css">
+    <link rel="stylesheet" href="/Estilos/login/registrarse.css">
+    <link rel="stylesheet" href="/Estilos/login/iniciar_sesion.css">
+    <link rel="stylesheet" href="/Estilos/login/usuario.css">
+    <link rel="stylesheet" href="/Estilos/login//toast_login.css">
+    <link rel="stylesheet" href="/Estilos/carrito/toast_carrito_compras.css">
 </head>
 
 <body>
@@ -45,8 +43,7 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
             <div class="catalogo" onclick="toggleCatalogoMenu()">
-                Catálogo ▼
-                <!--Que se mueva el triangulo-->
+                Catálogo <span id="flechaCatalogo">▶</span>
             </div>
             <!-- FILTRO -->
             <div id="catalogoMenu" class="catalogo-menu">
@@ -57,17 +54,23 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
                 <p onclick="filtrarProductos('gorra')">Gorras</p>
             </div>
 
-            <div class="logo">👕 NewSkin</div>
+            <div class="logo">
+                <img src="/Pruebas/img/NewSkinPrueba.png" alt="NEW SKIN">
+            </div>
             <div class="right-menu">
                 <div class="login loginBtn"></div>
-                <div class="carrito" onclick="abrirCarrito()">🛒 Carrito (0)</div>
+                <!--cambiar link-->
+                <div class="carrito" onclick="window.location.href='carrito.html';">
+                    🛒 Carrito (<span class="contadorCarrito">0</span>)
+                </div>
             </div>
         </div>
 
         <div id="mobileMenu" class="mobile-menu">
             <p onclick="toggleCatalogoMenu()">Catálogo</p>
             <p class="loginBtn"></p>
-            <p onclick="abrirCarrito()">Carrito</p>
+            <!--Cambiar link-->
+            <p onclick="window.location.href='carrito.html';">Carrito (<span class="contadorCarrito">0</span>)</p>
         </div>
     </header>
     <main>
@@ -83,21 +86,24 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
                 <p>WhatsApp: 3XX XXX XXXX</p>
             </div>
             <div>
-                <span onclick="abrirInstagram()" class="social">Instagram</span> |
-                <span onclick="abrirTikTok()" class="social">TikTok</span> |
-                <span onclick="abrirFacebook()" class="social">Facebook</span>
+                <a href="https://www.instagram.com/newskin.col?igsh=bjlxbjMxemZkdnFq" target="_blank" class="social">Instagram</a> |
+                <a href="https://www.tiktok.com/@newskin2?_r=1&_t=ZS-958Opl9dTUN" target="_blank" class="social">TikTok</a> |
+                <a href="https://www.facebook.com/share/1AdoXUvwRw/" target="_blank" class="social">Facebook</a>
             </div>
         </div>
     </footer>
 </body>
-    <script src="/Logica/index/respuestasBotones.js"></script>
     <script src="/Logica/index/responsive.js"></script>
     <script src="/Logica/index/productos.js"></script>
     <script src="/Logica/index/filtro_catalogo.js"></script>
     <script src="/Logica/index/ver_detalles.js"></script>
-    <script src="/Logica/index/login.js"></script>
-    <script src="/Logica/index/registrarse.js"></script>
-    <script src="/Logica/index/iniciar_sesion.js"></script>
-    <script src="/Logica/index/usuario.js"></script>
-    <script src="/Logica/index/toast.js"></script>
+    <script src="/Logica/login/login.js"></script>
+    <script src="/Logica/login/registrarse.js"></script>
+    <script src="/Logica/login/iniciar_sesion.js"></script>
+    <script src="/Logica/login/usuario.js"></script>
+    <script src="/Logica/login/toast_login.js"></script>
+    <script src="/Logica/index/comprar_ahora.js"></script>
+    <script src="/Logica/carrito/carrito_contador.js"></script>
+    <script src="/Logica/carrito/toast_carrito_compras.js"></script>
+
 </html>

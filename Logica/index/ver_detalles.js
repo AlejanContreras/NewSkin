@@ -1,7 +1,4 @@
-/* ========================= */
 /* CREAR MODAL DINAMICO */
-/* ========================= */
-
 function crearModal() {
 
     const modalHTML = `
@@ -26,12 +23,14 @@ function crearModal() {
     
                 <p id="modalDescripcion"></p>
     
-                <h4>Talla:</h4>
-    
-                <div class="tallas">
-                    <button onclick="seleccionarTalla(this)">S</button>
-                    <button class="activa" onclick="seleccionarTalla(this)">M</button>
-                    <button onclick="seleccionarTalla(this)">L</button>
+                <div id="grupoTallas">
+                    <h4>Talla:</h4>
+                    <div class="tallas" id="contenedorTallas"></div>
+                </div>
+
+                <div id="grupoColores">
+                    <h4>Color:</h4>
+                    <div class="colores" id="contenedorColores"></div>
                 </div>
     
                 <div class="cantidad">
@@ -48,9 +47,9 @@ function crearModal() {
     
                 <div class="acciones">
     
-                    <button class="comprar" onclick="comprarAhora()">Comprar ahora</button>
+                    <button class="comprar" onclick="validarCompra()">Comprar ahora</button>
     
-                    <button class="carrito-btn" onclick="agregarCarrito()">
+                    <button class="carrito-btn" onclick="validarCarrito()">
                     🛒 Agregar
                     </button>
     
@@ -65,26 +64,54 @@ function crearModal() {
     `;
 
     document.body.insertAdjacentHTML("beforeend", modalHTML);
-
 }
 
 document.addEventListener("DOMContentLoaded", crearModal);
 
+/* 🔐 VALIDAR SESIÓN */
+function usuarioLogueado(){
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
+    const logueado = localStorage.getItem("logueado");
 
+    return usuario && logueado === "true";
+}
 
-/* ========================= */
+/* 🔒 VALIDADORES */
+function validarCompra(){
+
+    if(!usuarioLogueado()){
+        mostrarToast_agregarCarrito({
+            titulo: "Error",
+            mensaje: "Debes iniciar sesión",
+            tipo: "error"
+        });
+        return;
+    }
+
+    comprarAhora();
+}
+
+function validarCarrito(){
+
+    if(!usuarioLogueado()){
+        mostrarToast_agregarCarrito({
+            titulo: "Error",
+            mensaje: "Debes iniciar sesión",
+            tipo: "error"
+        });
+        return;
+    }
+
+    agregarCarrito();
+}
+
 /* VARIABLES */
-/* ========================= */
-
 let productoActual = null;
 let cantidad = 1;
-let tallaSeleccionada = "M";
+let tallaSeleccionada = null;
+let colorSeleccionado = null;
 
-
-/* ========================= */
 /* ABRIR MODAL */
-/* ========================= */
-
 function verDetalle(id) {
 
     productoActual = productos.find(p => p.id === id);
@@ -92,182 +119,185 @@ function verDetalle(id) {
     document.getElementById("modalProducto").style.display = "flex";
 
     cantidad = 1;
+    tallaSeleccionada = null;
+    colorSeleccionado = null;
 
     actualizarCantidad();
-
     cargarProducto();
-
 }
 
-
-/* ========================= */
-/* CARGAR DATOS PRODUCTO */
-/* ========================= */
-
+/* CARGAR PRODUCTO */
 function cargarProducto() {
 
-    document.getElementById("modalNombre").innerText =
-        productoActual.nombre;
+    document.getElementById("modalNombre").innerText = productoActual.nombre;
+    document.getElementById("modalDescripcion").innerText = productoActual.descripcion;
 
-    document.getElementById("modalDescripcion").innerText =
-        productoActual.descripcion;
+    document.getElementById("imagenPrincipal").src = productoActual.imagenes[0];
 
-    /* imagen principal */
-    document.getElementById("imagenPrincipal").src =
-        productoActual.imagenes[0];
-
-    /* precio inicial */
     document.getElementById("modalPrecio").innerText =
         "$" + productoActual.precio.toLocaleString();
 
-    /* miniaturas */
-
     const miniaturas = document.querySelector(".miniaturas");
-
     miniaturas.innerHTML = "";
 
     productoActual.imagenes.forEach(img => {
-
         miniaturas.innerHTML +=
             `<img src="${img}" onclick="cambiarImagen('${img}')">`;
-
     });
 
+    const contTallas = document.getElementById("contenedorTallas");
+    contTallas.innerHTML = "";
+
+    if (productoActual.tallasDisponibles) {
+
+        productoActual.tallasDisponibles.forEach(t => {
+
+            const btn = document.createElement("button");
+            btn.textContent = t;
+
+            btn.onclick = () => seleccionarTalla(btn);
+
+            contTallas.appendChild(btn);
+        });
+
+    } else {
+        document.getElementById("grupoTallas").style.display = "none";
+    }
+
+    const contColores = document.getElementById("contenedorColores");
+    contColores.innerHTML = "";
+
+    if (productoActual.coloresDisponibles) {
+
+        productoActual.coloresDisponibles.forEach(c => {
+
+            const btn = document.createElement("button");
+            btn.textContent = c;
+
+            btn.onclick = () => seleccionarColor(btn);
+
+            contColores.appendChild(btn);
+        });
+
+    } else {
+        document.getElementById("grupoColores").style.display = "none";
+    }
 }
 
-
-/* ========================= */
-/* CERRAR MODAL */
-/* ========================= */
-
+/* CERRAR */
 function cerrarModal() {
-
     document.getElementById("modalProducto").style.display = "none";
-
 }
 
-
-/* ========================= */
-/* CAMBIAR IMAGEN */
-/* ========================= */
-
+/* IMAGEN */
 function cambiarImagen(src) {
-
     document.getElementById("imagenPrincipal").src = src;
-
+    productoActual.imagen = src;
 }
 
-
-/* ========================= */
 /* TALLA */
-/* ========================= */
-
 function seleccionarTalla(btn) {
 
-    document.querySelectorAll(".tallas button")
+    document.querySelectorAll("#contenedorTallas button")
         .forEach(b => b.classList.remove("activa"));
 
     btn.classList.add("activa");
 
     tallaSeleccionada = btn.innerText;
-
 }
 
+/* COLOR */
+function seleccionarColor(btn) {
 
-/* ========================= */
+    document.querySelectorAll("#contenedorColores button")
+        .forEach(b => b.classList.remove("activa"));
+
+    btn.classList.add("activa");
+
+    colorSeleccionado = btn.innerText;
+}
+
 /* CANTIDAD */
-/* ========================= */
-
 function sumar() {
-
     cantidad++;
-
     actualizarCantidad();
-
 }
 
 function restar() {
-
     if (cantidad > 1) {
-
         cantidad--;
-
         actualizarCantidad();
-
     }
-
 }
 
 function actualizarCantidad() {
 
     document.getElementById("cantidad").innerText = cantidad;
 
-    let precioTotal = productoActual.precio * cantidad;
+    let total = productoActual.precio * cantidad;
 
     document.getElementById("modalPrecio").innerText =
-        "$" + precioTotal.toLocaleString();
-
+        "$" + total.toLocaleString();
 }
 
-
-/* ========================= */
 /* AGREGAR AL CARRITO */
-/* ========================= */
-
-function agregarCarrito() {
+function agregarCarrito(){
 
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    carrito.push({
+    if (productoActual.tallasDisponibles && !tallaSeleccionada) {
+        return mostrarToast_agregarCarrito({
+            titulo: "Falta información",
+            mensaje: "Selecciona una talla",
+            tipo: "error"
+        });
+    }
 
-        id: productoActual.id,
-        nombre: productoActual.nombre,
-        precio: productoActual.precio,
-        cantidad: cantidad,
-        talla: tallaSeleccionada,
-        imagen: productoActual.imagenes[0]
+    if (productoActual.coloresDisponibles && !colorSeleccionado) {
+        return mostrarToast_agregarCarrito({
+            titulo: "Falta información",
+            mensaje: "Selecciona un color",
+            tipo: "error"
+        });
+    }
 
-    });
+    let existente = carrito.find(p => 
+        p.id === productoActual.id &&
+        p.talla === tallaSeleccionada &&
+        p.color === colorSeleccionado
+    );
+
+    if(existente){
+        existente.cantidad += cantidad;
+    }else{
+        carrito.push({
+            id: productoActual.id,
+            nombre: productoActual.nombre,
+            precio: productoActual.precio,
+            cantidad: cantidad,
+            talla: tallaSeleccionada,
+            color: colorSeleccionado,
+            imagen: productoActual.imagen || productoActual.imagenes[0],
+            tallasDisponibles: productoActual.tallasDisponibles || [],
+            coloresDisponibles: productoActual.coloresDisponibles || []
+        });
+    }
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    alert("Producto agregado al carrito");
+    // 🔥 TOAST EN VEZ DE ALERT
+    mostrarToast_agregarCarrito({
+        titulo: "Producto agregado",
+        mensaje: `Color: ${colorSeleccionado || "N/A"} | Talla: ${tallaSeleccionada || "N/A"}`
+    });
 
+    actualizarContadorCarrito();
 }
 
-
-/* ========================= */
-/* SALIR TOCANDO FUERA MODAL */
-/* ========================= */
-
+/* CLICK FUERA */
 window.addEventListener("click", function (event) {
 
     const modal = document.getElementById("modalProducto");
 
-    if (event.target === modal) {
-
-        cerrarModal();
-
-    }
-
+    if (event.target === modal) cerrarModal();
 });
-
-
-/* ========================= */
-/* COMPRAR AHORA */
-/* ========================= */
-
-function comprarAhora() {
-
-    let total = productoActual.precio * cantidad;
-
-    alert(
-        `Compra rápida
-    
-    Producto: ${productoActual.nombre}
-    Talla: ${tallaSeleccionada}
-    Cantidad: ${cantidad}
-    Total: $${total.toLocaleString()}`
-    );
-
-}

@@ -1,3 +1,4 @@
+/* ===== RESET ===== */
 *{
     margin:0;
     padding:0;
@@ -10,7 +11,6 @@ body{
 }
 
 /* ===== HEADER ===== */
-
 header{
     background:white;
     border:1px solid #ccc;
@@ -24,35 +24,51 @@ header{
     justify-content:space-between;
 }
 
+/* BOTON MENU MOBILE */
 .menu-toggle{
     display:none;
     font-size:24px;
     cursor:pointer;
 }
 
+/* CATALOGO */
 .catalogo{
     cursor:pointer;
 }
 
+/* LOGO */
 .logo{
     position:absolute;
     left:50%;
     transform:translateX(-50%);
-    font-size:28px;
-    font-weight:bold;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+    max-width:150px;
 }
 
+.logo img{
+    width:100%;       /* ocupa el contenedor */
+    height:auto;      /* mantiene proporción */
+    object-fit:contain;
+}
+
+/* MENU DERECHO */
 .right-menu{
     display:flex;
     gap:20px;
     align-items:center;
 }
 
-.carrito,.login{
+.carrito,
+.login{
     cursor:pointer;
 }
 
-/* MENU MOVIL */
+/* ===== MENU MOVIL ===== */
 .mobile-menu{
     display:none;
     background:white;
@@ -65,9 +81,7 @@ header{
     cursor:pointer;
 }
 
-
 /* ===== FOOTER ===== */
-
 footer{
     margin-top:60px;
     border-top:1px solid #ccc;
@@ -82,5 +96,6 @@ footer{
 
 .social{
     cursor:pointer;
+    text-decoration: none; 
+    color: inherit;        
 }
-

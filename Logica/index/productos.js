@@ -1,5 +1,4 @@
 /* ===== LISTA DE PRODUCTOS ===== */
-/* Base de datos temporal */
 
 const productos = [
 
@@ -9,7 +8,10 @@ const productos = [
         precio:45000,
         descripcion:"Camiseta limpia",
         imagenes:["img/modelo1.jpg"],
-        categoria:"sin_estampado"
+        categoria:"sin_estampado",
+
+        coloresDisponibles:["Generico"],
+        tallasDisponibles:["S","M","L"]
     },
     
     {
@@ -18,7 +20,10 @@ const productos = [
         precio:50000,
         descripcion:"Estampado frontal",
         imagenes:["img/modelo2.jpg"],
-        categoria:"con_estampado"
+        categoria:"con_estampado",
+
+        coloresDisponibles:["Generico"],
+        tallasDisponibles:["S","M","L"]
     },
     
     {
@@ -27,7 +32,10 @@ const productos = [
         precio:55000,
         descripcion:"Doble estampado",
         imagenes:["img/modelo3.jpg"],
-        categoria:"doble_estampado"
+        categoria:"doble_estampado",
+
+        coloresDisponibles:["Generico"],
+        tallasDisponibles:["S","M","L"]
     },
     
     {
@@ -36,7 +44,10 @@ const productos = [
         precio:45000,
         descripcion:"Diseño simple",
         imagenes:["img/modelo4.jpg"],
-        categoria:"sin_estampado"
+        categoria:"sin_estampado",
+
+        coloresDisponibles:["Generico"],
+        tallasDisponibles:["S","M","L"]
     },
     
     {
@@ -45,7 +56,10 @@ const productos = [
         precio:52000,
         descripcion:"Arte urbano",
         imagenes:["img/modelo5.jpg"],
-        categoria:"con_estampado"
+        categoria:"con_estampado",
+
+        coloresDisponibles:["Generico"],
+        tallasDisponibles:["S","M","L"]
     },
     
     {
@@ -54,7 +68,10 @@ const productos = [
         precio:60000,
         descripcion:"Doble print",
         imagenes:["img/modelo6.jpg"],
-        categoria:"doble_estampado"
+        categoria:"doble_estampado",
+
+        coloresDisponibles:["Generico"],
+        tallasDisponibles:["S","M","L"]
     },
     
     {
@@ -63,9 +80,11 @@ const productos = [
         precio:43000,
         descripcion:"Sin diseño",
         imagenes:["img/modelo7.jpg"],
-        categoria:"sin_estampado"
+        categoria:"sin_estampado",
+
+        coloresDisponibles:["Generico"],
+        tallasDisponibles:["S","M","L"]
     },
-    
     
     {
         id:8,
@@ -78,11 +97,12 @@ const productos = [
             "/Pruebas/img/james_porto.jpeg",
             "/Pruebas/img/james_realVardrid.jpg"
         ],
-        categoria:"gorra"
+        categoria:"gorra",
+
+        coloresDisponibles:["Amarillo","Azul","Rojo"],
+        tallasDisponibles:["S","M","L"]
     }
-    
-    ];
-    
+];  
     
     /* ===== OBTENER CONTENEDOR ===== */
     
@@ -128,6 +148,7 @@ const productos = [
         });
     
     }
+    
     
     /* ===== CARGAR AL INICIAR ===== */
     

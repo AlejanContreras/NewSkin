@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - NewSkin</title>
+    <link rel="website icon" type="png" href="/Pruebas/img/NS_blanco.jpeg">
+
+    <link rel="stylesheet" href="/Estilos/login/login.css">
+    <link rel="stylesheet" href="/Estilos/login/registrarse.css">
+    <link rel="stylesheet" href="/Estilos/login/iniciar_sesion.css">
+    <link rel="stylesheet" href="/Estilos/login/usuario.css">
+    <link rel="stylesheet" href="/Estilos/login/toast_login.css">
+    <link rel="stylesheet" href="/Estilos/carrito/estilos_carrito.css">
+    <link rel="stylesheet" href="/Estilos/carrito/productos.css">
+    <link rel="stylesheet" href="/Estilos/carrito/historial.css">
+    <link rel="stylesheet" href="/Estilos/carrito/editar_producto.css">
+    <link rel="stylesheet" href="/Estilos/carrito/finalizar_compra.css">
+    <link rel="stylesheet" href="/Estilos/carrito/toast_carrito_compras.css">
+    <link rel="stylesheet" href="/Estilos/carrito/responsive_carrito.css">
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="menu-toggle_carrito" onclick="toggleMenu_carrito()">☰</div>
+    
+        <div class="header-left">
+            <span id="btnProductos" class="activo">Productos </span>
+            <span> - </span>
+            <span id="btnHistorial"> Historial</span>
+        </div>
+    
+        <div class="logo" onclick="window.location.href='index.html';">
+            <img src="/Pruebas/img/NewSkinPrueba.png" alt="NEW SKIN">
+        </div>
+    
+        <div class="header-right">
+            <div class="login loginBtn"></div>
+            <span>🛒 Carrito (<span class="contadorCarrito">0</span>)</span>
+        </div>
+    
+    </header>
+    
+    <div id="mobileMenu_carrito" class="mobile-menu_carrito">
+        <p id="btnProductosMobile_carrito">Productos</p>
+        <p id="btnHistorialMobile_carrito">Historial</p>
+        <p class="loginBtn"></p>
+    </div>
+
+    <main>
+    
+        <div class="breadcrumb"><samp onclick="window.location.href='index.html';">Inicio</samp><samp> / Carrito</samp></div>
+
+        <h1>Carrito de Compras</h1>
+        <div id="carritoContainer"></div>
+        <div class="acciones"></div>
+    
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div>
+                <p><b>NewSkin © 2026</b></p>
+                <p>Soacha - Bogotá</p>
+                <p>WhatsApp: 3XX XXX XXXX</p>
+            </div>
+            <div>
+                <a href="https://www.instagram.com/newskin.col?igsh=bjlxbjMxemZkdnFq" target="_blank" class="social">Instagram</a> |
+                <a href="https://www.tiktok.com/@newskin2?_r=1&_t=ZS-958Opl9dTUN" target="_blank" class="social">TikTok</a> |
+                <a href="https://www.facebook.com/share/1AdoXUvwRw/" target="_blank" class="social">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+    <script src="/Logica/login/login.js"></script>
+    <script src="/Logica/login/registrarse.js"></script>
+    <script src="/Logica/login/iniciar_sesion.js"></script>
+    <script src="/Logica/login/usuario.js"></script>
+    <script src="/Logica/login/toast_login.js"></script>
+    <script src="/Logica/carrito/productos_carrito.js"></script>
+    <script src="/Logica/carrito/productos_e_historial.js"></script>
+    <script src="/Logica/carrito/editar_producto.js"></script>
+    <script src="/Logica/carrito/finalizar_compra.js"></script>
+    <script src="/Logica/carrito/historial.js"></script>
+    <script src="/Logica/carrito/carrito_contador.js"></script>
+    <script src="/Logica/carrito/toast_carrito_compras.js"></script>
+    <script src="/Logica/index/responsive.js"></script>
+</html>

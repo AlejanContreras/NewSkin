@@ -248,25 +248,3 @@
 .carrito-btn:hover{
     background:#f5f5f5;
 }
-
-/* ========================= */
-/* 🔥 RESPONSIVE */
-/* ========================= */
-
-/*@media (max-width: 768px) {
-
-    .modal-box{
-        flex-direction:column;
-        width:95%;
-    }
-
-    .img-section,
-    .info{
-        width:100%;
-    }
-
-    .miniaturas img{
-        width:60px;
-    }
-}
-*/
