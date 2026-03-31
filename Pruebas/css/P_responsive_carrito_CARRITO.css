@@ -72,6 +72,10 @@
     .mobile-menu_carrito.active {
         display: block;
     }
+    #btnHistorialMobile_carrito{
+        margin-bottom: 10px;
+    }
+
 }
 
 /*productos*/
