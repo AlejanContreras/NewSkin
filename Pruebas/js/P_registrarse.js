@@ -36,7 +36,31 @@ function abrirRegistro() {
 
                 <div id="contenidoTerminos" class="contenido-terminosRegistro">
                     <p>
-                        Aquí van los términos y condiciones.
+                        TÉRMINOS Y CONDICIONES – NEWSKIN
+                        <br><br>
+                        1. INFORMACIÓN GENERAL
+                            NewSkin es una tienda web en desarrollo con fines académicos y demostrativos. Los productos, precios y disponibilidad mostrados pueden no corresponder a una oferta comercial real.
+                        <br>
+                        2. USO DEL SITIO
+                            El usuario se compromete a hacer un uso adecuado de la página, sin realizar acciones que afecten su funcionamiento, seguridad o integridad.
+                        <br>
+                        3. PRODUCTOS Y PRECIOS
+                            Los productos exhibidos son representaciones visuales. Los precios y características pueden cambiar sin previo aviso.
+                        <br>
+                        4. PEDIDOS Y COMPRAS
+                            Las acciones de “compra” dentro del sitio pueden ser simulaciones con fines académicos. No garantizan una transacción real ni generan obligación comercial.
+                        <br>
+                        5. DATOS DEL USUARIO
+                            La información ingresada por el usuario será utilizada únicamente con fines de prueba dentro del sistema. No se garantiza almacenamiento permanente ni uso comercial.
+                        <br>
+                        6. RESPONSABILIDAD
+                            NewSkin no se hace responsable por errores en la información, fallos técnicos o interrupciones del servicio.
+                        <br>
+                        7. MODIFICACIONES
+                            Estos términos pueden ser modificados en cualquier momento sin previo aviso.
+                        <br>
+                        8. CONTACTO
+                            Para cualquier duda o información, el usuario puede comunicarse a través de los canales disponibles en la página.
                     </p>
                 </div>
             </div>
@@ -54,7 +78,13 @@ function abrirRegistro() {
 
     document.body.appendChild(modal);
 
-    modal.querySelector(".cerrarRegistro").onclick = () => modal.remove();
+    /* 🔥 BLOQUEAR SCROLL DEL FONDO */
+    document.body.classList.add("modal-abierto");
+
+    modal.querySelector(".cerrarRegistro").onclick = () => {
+        modal.remove();
+        document.body.classList.remove("modal-abierto"); /* 🔥 desbloquear */
+    };
 
     document.getElementById("btnRegistrar").onclick = registrarUsuario;
     document.getElementById("toggleTerminos").onclick = toggleTerminos;
@@ -75,8 +105,6 @@ function registrarUsuario() {
 
     const error = document.getElementById("errorMsg");
     error.textContent = "";
-
-    // ===== VALIDACIONES =====
 
     const regexNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
     if (!regexNombre.test(nombre) || !regexNombre.test(apellido)) {
@@ -117,7 +145,6 @@ function registrarUsuario() {
         return;
     }
 
-    // ===== GUARDAR =====
     const usuario = {
         nombre: nombre + " " + apellido,
         email,
@@ -131,6 +158,7 @@ function registrarUsuario() {
     mostrarToast("Registro exitoso", "success");
 
     document.getElementById("modalRegistro").remove();
+    document.body.classList.remove("modal-abierto"); /* 🔥 desbloquear */
 
     if (typeof renderUsuario === "function") {
         renderUsuario();
@@ -147,8 +175,11 @@ function toggleTerminos() {
 
 function irALogin() {
     mostrarToast("Abriendo login...", "info");
+
     document.getElementById("modalRegistro").remove();
-    abrirInicioSesion(); // 🔥 abre el login real
+    document.body.classList.remove("modal-abierto"); /* 🔥 desbloquear */
+
+    abrirInicioSesion();
 }
 
 function togglePassword() {

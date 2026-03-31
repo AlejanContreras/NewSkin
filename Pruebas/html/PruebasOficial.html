@@ -45,8 +45,7 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
             <div class="catalogo" onclick="toggleCatalogoMenu()">
-                Catálogo ▼
-                <!--Que se mueva el triangulo-->
+                Catálogo <span id="flechaCatalogo">▶</span>
             </div>
             <!-- FILTRO -->
             <div id="catalogoMenu" class="catalogo-menu">
@@ -57,11 +56,13 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
                 <p onclick="filtrarProductos('gorra')">Gorras</p>
             </div>
 
-            <div class="logo">👕 NewSkin</div>
+            <div class="logo">
+                <img src="/Pruebas/img/NewSkinPrueba.png" alt="NEW SKIN">
+            </div>
             <div class="right-menu">
                 <div class="login loginBtn"></div>
                 <div class="carrito" onclick="window.location.href='/Pruebas/html/PruebasCARRITO.html';">
-                    🛒 Carrito (<span id="contadorCarrito">0</span>)
+                    🛒 Carrito (<span class="contadorCarrito">0</span>)
                 </div>
             </div>
         </div>
@@ -69,7 +70,7 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
         <div id="mobileMenu" class="mobile-menu">
             <p onclick="toggleCatalogoMenu()">Catálogo</p>
             <p class="loginBtn"></p>
-            <p onclick="window.location.href='/Pruebas/html/PruebasCARRITO.html';">Carrito (<span id="contadorCarrito">0</span>)</p>
+            <p onclick="window.location.href='/Pruebas/html/PruebasCARRITO.html';">Carrito (<span class="contadorCarrito">0</span>)</p>
         </div>
     </header>
     <main>
@@ -85,9 +86,9 @@ cual quier cambio fallo registro o cosa para apuntar crear un archivo .MD agrega
                 <p>WhatsApp: 3XX XXX XXXX</p>
             </div>
             <div>
-                <span onclick="abrirInstagram()" class="social">Instagram</span> |
-                <span onclick="abrirTikTok()" class="social">TikTok</span> |
-                <span onclick="abrirFacebook()" class="social">Facebook</span>
+                <a href="https://www.instagram.com/newskin.col?igsh=bjlxbjMxemZkdnFq" target="_blank" class="social">Instagram</a> |
+                <a href="https://www.tiktok.com/@newskin2?_r=1&_t=ZS-958Opl9dTUN" target="_blank" class="social">TikTok</a> |
+                <a href="https://www.facebook.com/share/1AdoXUvwRw/" target="_blank" class="social">Facebook</a>
             </div>
         </div>
     </footer>

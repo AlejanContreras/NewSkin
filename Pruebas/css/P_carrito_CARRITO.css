@@ -21,10 +21,23 @@ body {
     background: white;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
+.logo{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+    max-width:140px; /* 🔥 controlas el ancho real */
+}
+
+.logo img{
+    width:100%;       /* ocupa el contenedor */
+    height:auto;      /* mantiene proporción */
+    object-fit:contain;
 }
 
 .header-right {
@@ -73,6 +86,8 @@ footer {
 
 .social {
     cursor: pointer;
+    text-decoration: none; 
+    color: inherit;        
 }
 
 

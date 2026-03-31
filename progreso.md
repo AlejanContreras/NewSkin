@@ -24,3 +24,6 @@ se hace dinamico y funcional el contador del carrito de la parte del header de a
 29/03/2026 => se le agregaron toast a todos los archivos siendo el remplazo de los alerts
 
 30/03/2026 => se hizo responsive todo el carrito
+detalles: catalogo, el triangulo se mueve, cuando toca afuera de la pantalla se sale el menu
+logo ya es una imagen, contador de carrito en celular funcional, link a las redes
+faltan attelgar el espacio de avatar con historial y el toogle activo cuando se pasa de cell a pc, y confirmacion de implementacion info avatar carrito
