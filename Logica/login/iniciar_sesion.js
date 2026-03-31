@@ -64,7 +64,6 @@ function abrirInicioSesion() {
     document.getElementById("loginEmail").focus();
 }
 
-
 // ===== LOGIN CORREO =====
 function loginConCorreo() {
 
@@ -92,6 +91,9 @@ function loginConCorreo() {
 
         localStorage.setItem("logueado", "true");
 
+        // 🔥🔥🔥 SOLUCIÓN
+        window.dispatchEvent(new Event("actualizarCarritoUI"));
+
         mostrarToast("Login exitoso", "success");
         document.getElementById("modalLogin").remove();
 
@@ -102,7 +104,6 @@ function loginConCorreo() {
         mostrarToast("Correo o contraseña incorrectos", "error");
     }
 }
-
 
 // ===== LOGIN USUARIO =====
 function loginConUsuario() {
@@ -131,6 +132,8 @@ function loginConUsuario() {
 
         localStorage.setItem("logueado", "true");
 
+        window.dispatchEvent(new Event("actualizarCarritoUI"));
+
         mostrarToast("Login exitoso", "success");
         document.getElementById("modalLogin").remove();
 
@@ -141,7 +144,6 @@ function loginConUsuario() {
         mostrarToast("Datos incorrectos", "error");
     }
 }
-
 
 // ===== PASSWORD =====
 function toggleLoginPassword() {

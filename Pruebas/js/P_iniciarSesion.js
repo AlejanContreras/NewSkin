@@ -92,6 +92,9 @@ function loginConCorreo() {
 
         localStorage.setItem("logueado", "true");
 
+        // 🔥🔥🔥 SOLUCIÓN
+        window.dispatchEvent(new Event("actualizarCarritoUI"));
+
         mostrarToast("Login exitoso", "success");
         document.getElementById("modalLogin").remove();
 
@@ -130,6 +133,9 @@ function loginConUsuario() {
     if (nombre === usuario.nombre && celular === usuario.celular) {
 
         localStorage.setItem("logueado", "true");
+
+        // 🔥🔥🔥 SOLUCIÓN
+        window.dispatchEvent(new Event("actualizarCarritoUI"));
 
         mostrarToast("Login exitoso", "success");
         document.getElementById("modalLogin").remove();

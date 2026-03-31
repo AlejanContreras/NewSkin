@@ -1,46 +1,32 @@
 /*carrito header,main y footer*/
 /* ===== TABLET ===== */
 @media (max-width:1024px) {
-    .header {
-        padding: 15px 20px;
-    }
-
+    .header {padding: 15px 20px;}
     .logo {
         width:100%;
         max-width:115px;
     }
-
     .logo img{
         width:100%;       
         height:auto;      
         object-fit:contain;
     }
-
     main {
         margin: 30px auto;
         padding: 0 15px;
     }
-
-    footer {
-        padding: 25px;
-    }
+    footer {padding: 25px;}
 }
 /* ===== CELULAR ===== */
 @media (max-width:600px) {
-
     .header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
-    .menu-toggle_carrito {
-        display: block;
-    }
-    .header-left,
-    .header-right {
-        display: none;
-    }
+    .menu-toggle_carrito {display: block;}
+    .header-left, .header-right {display: none;}
     .logo {
         font-size: 20px;
         margin: 0 auto;
@@ -61,50 +47,35 @@
         text-align: center;
         font-size: 16px;
     }
-    footer {
-        padding: 20px;
-    }
+    footer {padding: 20px;}
     .footer-content {
         flex-direction: column;
         text-align: center;
         gap: 15px;
     }
-    .mobile-menu_carrito.active {
-        display: block;
-    }
-    #btnHistorialMobile_carrito{
-        margin-bottom: 10px;
-    }
-
+    .mobile-menu_carrito.active {display: block;}
+    #btnHistorialMobile_carrito{margin-bottom: 10px;}
 }
 
 /*productos*/
 @media (max-width:1024px){
-
     .carrito-header{
         grid-template-columns: 2fr 1fr 1fr 1fr 8%;
         font-size:14px;
     }
-
     .producto{
         grid-template-columns: 2fr 1fr 1fr 1fr;
         gap:10px;
     }
-
     .info img{
         width:70px;
         height:70px;
     }
-
-    .total{
-        font-size:18px;
-    }
+    .total{font-size:18px;}
 }
 
 @media (max-width:600px){
-    .carrito-header{
-        display:none;
-    }
+    .carrito-header{display:none;}
     .producto{
         display:grid;
         grid-template-columns:1fr 1fr 1fr;
@@ -120,7 +91,7 @@
         display:flex;
         align-items:center;
         gap:10px;
-        position:relative; /* para el ✏️ */
+        position:relative;
     }   
     .info img{
         width:70px;
@@ -135,13 +106,9 @@
         align-items:center;
         text-align:center;
     }
-    .info h3{
-        font-size:16px;
-    }
+    .info h3{font-size:16px;}
     
-    .info small{
-        font-size:12px;
-    }
+    .info small{font-size:12px;}
     .editar{
         position:absolute;
         right:0;
@@ -191,7 +158,6 @@
     
 /*historal*/    
 @media (max-width:600px){
-
     .historial-header{
         display:none;
     }
@@ -226,9 +192,7 @@
             "precio estado subtotal";
         gap:10px;
     }
-    .historial-item .info{
-        grid-area:info;
-    }
+    .historial-item .info{grid-area:info;}
     .historial-item .precio{
         grid-area:precio;
         display:flex;

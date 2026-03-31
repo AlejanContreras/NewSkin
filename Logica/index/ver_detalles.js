@@ -285,7 +285,6 @@ function agregarCarrito(){
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    // 🔥 TOAST EN VEZ DE ALERT
     mostrarToast_agregarCarrito({
         titulo: "Producto agregado",
         mensaje: `Color: ${colorSeleccionado || "N/A"} | Talla: ${tallaSeleccionada || "N/A"}`
@@ -294,7 +293,6 @@ function agregarCarrito(){
     actualizarContadorCarrito();
 }
 
-/* CLICK FUERA */
 window.addEventListener("click", function (event) {
 
     const modal = document.getElementById("modalProducto");

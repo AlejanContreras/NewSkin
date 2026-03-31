@@ -15,18 +15,14 @@
 
     transition: 0.3s;
 }
-
 .avatar:hover {
     background-color: #555;
 }
-
-/* 🔥 RESPONSIVE AVATAR */
-@media (max-width: 500px) {
-
+/* RESPONSIVE*/
+@media (max-width: 600px) {
     .avatar {
         width: 32px;
         height: 32px;
         font-size: 13px;
     }
-
 }

@@ -1,7 +1,4 @@
-/* ========================= */
 /* MODAL PRODUCTO */
-/* ========================= */
-
 .modal {
     display: none;
     position: fixed;
@@ -17,14 +14,9 @@
 
     z-index: 999;
 
-    /* 🔥 FIX: evita que se desborde */
     overflow-y: auto;
 }
-
-/* ========================= */
 /* CAJA MODAL */
-/* ========================= */
-
 .modal-box{
     background:white;
     width:900px;
@@ -35,17 +27,11 @@
     padding:25px;
     position:relative;
 
-    /* 🔥 sombra más pro */
     box-shadow: 0 15px 40px rgba(0,0,0,0.25);
 
-    /* 🔥 animación */
     animation: aparecer 0.25s ease;
 }
-
-/* ========================= */
 /* ANIMACION */
-/* ========================= */
-
 @keyframes aparecer {
     from {
         opacity: 0;
@@ -56,11 +42,7 @@
         transform: scale(1);
     }
 }
-
-/* ========================= */
 /* CERRAR */
-/* ========================= */
-
 .cerrar{
     position:absolute;
     right:20px;
@@ -69,33 +51,24 @@
     cursor:pointer;
     transition: 0.2s;
 }
-
 .cerrar:hover{
     transform: scale(1.2);
 }
-
-/* ========================= */
 /* IMAGEN */
-/* ========================= */
-
 .img-section{
     width:45%;
 }
-
 .img-principal{
     width:100%;
     border:1px solid #ddd;
     border-radius:8px;
 }
-
 /* miniaturas */
-
 .miniaturas{
     display:flex;
     gap:10px;
     margin-top:10px;
 }
-
 .miniaturas img{
     width:70px;
     cursor:pointer;
@@ -103,33 +76,23 @@
     border-radius:6px;
     transition:0.2s;
 }
-
 .miniaturas img:hover{
     border-color:#444;
     transform: scale(1.05);
 }
-
-/* ========================= */
 /* INFO */
-/* ========================= */
-
 .info{
     width:55%;
     display:flex;
     flex-direction:column;
     gap:10px;
 }
-
-/* ========================= */
-/* 🔥 COLORES */
-/* ========================= */
-
+/* COLORES */
 .colores{
     display:flex;
     gap:10px;
     margin-bottom:10px;
 }
-
 .colores button{
     padding:6px 12px;
     border:1px solid #aaa;
@@ -138,20 +101,14 @@
     border-radius:6px;
     transition:0.2s;
 }
-
 .colores button.activa{
     background:#444;
     color:white;
 }
-
 .colores button:hover{
     background:#ddd;
 }
-
-/* ========================= */
 /* TALLAS */
-/* ========================= */
-
 .tallas button{
     padding:8px 15px;
     margin-right:10px;
@@ -161,27 +118,20 @@
     border-radius:6px;
     transition:0.2s;
 }
-
 .tallas button.activa{
     background:#444;
     color:white;
 }
-
 .tallas button:hover{
     background:#ddd;
 }
-
-/* ========================= */
 /* CANTIDAD */
-/* ========================= */
-
 .cantidad{
     display:flex;
     align-items:center;
     gap:10px;
     margin:15px 0;
 }
-
 .cantidad button{
     width:35px;
     height:35px;
@@ -191,35 +141,26 @@
     border-radius:6px;
     font-size:16px;
 }
-
 .cantidad button:hover{
     background:#ddd;
 }
-
 #cantidad{
     font-size:16px;
     min-width:20px;
     text-align:center;
 }
-
-/* precio */
-
+/* PRECIO */
 .precio-modal{
     margin-left:auto;
     font-size:22px;
     font-weight:bold;
 }
-
-/* ========================= */
 /* BOTONES */
-/* ========================= */
-
 .acciones{
     display:flex;
     gap:15px;
     margin-top:10px;
 }
-
 .comprar{
     flex:1;
     background:#444;
@@ -230,11 +171,9 @@
     border-radius:6px;
     transition:0.2s;
 }
-
 .comprar:hover{
     background:#000;
 }
-
 .carrito-btn{
     flex:1;
     border:1px solid #444;
@@ -244,7 +183,6 @@
     border-radius:6px;
     transition:0.2s;
 }
-
 .carrito-btn:hover{
     background:#f5f5f5;
 }

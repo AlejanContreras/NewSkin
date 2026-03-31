@@ -1,7 +1,4 @@
-/* ========================== */
 /* CREAR MODAL */
-/* ========================== */
-
 function crearModal() {
 
     const modal = document.createElement("div");
@@ -45,11 +42,7 @@ function crearModal() {
 
 document.addEventListener("DOMContentLoaded", crearModal);
 
-
-/* ========================== */
 /* EVENTOS */
-/* ========================== */
-
 document.addEventListener("click", (e) => {
 
     if (e.target.classList.contains("editar")) {
@@ -69,11 +62,7 @@ document.addEventListener("click", (e) => {
     if (e.target === modal) cerrarModal();
 });
 
-
-/* ========================== */
 /* ABRIR MODAL */
-/* ========================== */
-
 function abrirModalEditar(id, color, talla) {
 
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -91,10 +80,7 @@ function abrirModalEditar(id, color, talla) {
 
     document.getElementById("editNombre").textContent = producto.nombre;
 
-    /* ====================== */
     /* TALLAS */
-    /* ====================== */
-
     const contTalla = document.getElementById("editTalla");
     contTalla.innerHTML = "";
 
@@ -122,10 +108,7 @@ function abrirModalEditar(id, color, talla) {
         document.getElementById("grupoTalla").style.display = "none";
     }
 
-    /* ====================== */
     /* COLORES */
-    /* ====================== */
-
     const contColor = document.getElementById("editColor");
     contColor.innerHTML = "";
 
@@ -153,10 +136,7 @@ function abrirModalEditar(id, color, talla) {
         document.getElementById("grupoColor").style.display = "none";
     }
 
-    /* ====================== */
     /* CANTIDAD */
-    /* ====================== */
-
     let cantidadActual = producto.cantidad;
     const spanCantidad = document.getElementById("editCantidad");
 
@@ -174,18 +154,13 @@ function abrirModalEditar(id, color, talla) {
         }
     };
 
-    /* 🔥 CLAVE */
     const btnGuardar = document.getElementById("btnGuardar");
     btnGuardar.dataset.id = producto.id;
     btnGuardar.dataset.color = producto.color;
     btnGuardar.dataset.talla = producto.talla;
 }
 
-
-/* ========================== */
 /* GUARDAR */
-/* ========================== */
-
 function guardarCambios() {
 
     const btn = document.getElementById("btnGuardar");
@@ -236,11 +211,6 @@ function guardarCambios() {
     cerrarModal();
     renderCarritoUI();
 }
-
-
-/* ========================== */
-/* CERRAR */
-/* ========================== */
 
 function cerrarModal() {
     document.getElementById("modalEditar").style.display = "none";

@@ -1,15 +1,12 @@
 /*login*/
 // ===== CREAR CONTENEDOR SI NO EXISTE =====
 function obtenerContenedorToast() {
-
     let contenedor = document.querySelector(".toast-container");
-
     if (!contenedor) {
         contenedor = document.createElement("div");
         contenedor.className = "toast-container";
         document.body.appendChild(contenedor);
     }
-
     return contenedor;
 }
 
@@ -24,7 +21,6 @@ function mostrarToast(mensaje, tipo = "info") {
 
     contenedor.appendChild(toast);
 
-    // 🔥 AUTO ELIMINAR
     setTimeout(() => {
         toast.style.animation = "fadeOut 0.3s ease forwards";
 
@@ -34,7 +30,6 @@ function mostrarToast(mensaje, tipo = "info") {
 
     }, 3000);
 }
-
 
 /*productos carrito*/
 function mostrarToast_productos_carrito_login({
@@ -55,7 +50,6 @@ function mostrarToast_productos_carrito_login({
     `;
 
     document.body.appendChild(toast);
-
     setTimeout(() => toast.classList.add("show"), 10);
 
     setTimeout(() => {

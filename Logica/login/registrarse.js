@@ -78,7 +78,6 @@ function abrirRegistro() {
 
     document.body.appendChild(modal);
 
-    /* 🔥 BLOQUEAR SCROLL DEL FONDO */
     document.body.classList.add("modal-abierto");
 
     modal.querySelector(".cerrarRegistro").onclick = () => {
@@ -91,7 +90,6 @@ function abrirRegistro() {
     document.getElementById("irLogin").onclick = irALogin;
     document.getElementById("togglePassword").onclick = togglePassword;
 }
-
 
 // ===== REGISTRAR Y GUARDAR =====
 function registrarUsuario() {
@@ -158,16 +156,13 @@ function registrarUsuario() {
     mostrarToast("Registro exitoso", "success");
 
     document.getElementById("modalRegistro").remove();
-    document.body.classList.remove("modal-abierto"); /* 🔥 desbloquear */
-
+    document.body.classList.remove("modal-abierto"); 
     if (typeof renderUsuario === "function") {
         renderUsuario();
     }
 }
 
-
 // ===== FUNCIONES =====
-
 function toggleTerminos() {
     const contenido = document.getElementById("contenidoTerminos");
     contenido.classList.toggle("activo");
@@ -177,7 +172,7 @@ function irALogin() {
     mostrarToast("Abriendo login...", "info");
 
     document.getElementById("modalRegistro").remove();
-    document.body.classList.remove("modal-abierto"); /* 🔥 desbloquear */
+    document.body.classList.remove("modal-abierto");
 
     abrirInicioSesion();
 }

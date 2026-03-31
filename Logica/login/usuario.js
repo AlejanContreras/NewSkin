@@ -16,14 +16,11 @@ function crearModal(id, contenidoHTML) {
     `;
 
     document.body.appendChild(modal);
-
     modal.querySelector(".close").onclick = () => modal.remove();
-
     modal.onclick = (e) => {
         if (e.target === modal) modal.remove();
     };
 }
-
 
 // ===== MOSTRAR MENU USUARIO =====
 function mostrarMenuUsuario() {
@@ -67,7 +64,6 @@ function mostrarMenuUsuario() {
     document.getElementById("togglePasswordUser").onclick = togglePasswordUsuario;
 }
 
-
 // ===== MOSTRAR/OCULTAR PASSWORD =====
 function togglePasswordUsuario() {
 
@@ -83,7 +79,6 @@ function togglePasswordUsuario() {
     }
 }
 
-
 // ===== ACTIVAR EDICION =====
 function activarEdicion() {
 
@@ -96,7 +91,6 @@ function activarEdicion() {
     document.getElementById("btnGuardar").style.display = "inline-block";
     document.getElementById("btnCancelar").style.display = "inline-block";
 }
-
 
 // ===== CANCELAR EDICION =====
 function cancelarEdicion() {
@@ -118,7 +112,6 @@ function cancelarEdicion() {
     document.getElementById("btnCancelar").style.display = "none";
 }
 
-
 // ===== GUARDAR CAMBIOS =====
 function guardarCambiosUsuario() {
 
@@ -133,7 +126,6 @@ function guardarCambiosUsuario() {
     };
 
     localStorage.setItem("usuario", JSON.stringify(nuevoUsuario));
-
     cancelarEdicion();
 
     if (typeof renderUsuario === "function") {
@@ -143,18 +135,14 @@ function guardarCambiosUsuario() {
     mostrarToast("Datos actualizados correctamente", "success");
 }
 
-
 // ===== CERRAR SESION =====
 function cerrarSesionUsuario() {
-
     localStorage.setItem("logueado", "false");
-
     const modal = document.getElementById("menuUsuarioModal");
     if (modal) modal.remove();
 
     if (typeof renderUsuario === "function") {
         renderUsuario();
     }
-
     mostrarToast("Sesión cerrada", "info");
 }

@@ -8,7 +8,6 @@ function actualizarContadorCarrito() {
         total += p.cantidad;
     });
 
-    /* 🔥 actualizar TODOS los contadores (desktop + mobile) */
     const contadores = document.querySelectorAll(".contadorCarrito");
 
     contadores.forEach(contador => {

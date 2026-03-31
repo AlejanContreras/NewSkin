@@ -1,8 +1,25 @@
 function comprarAhora() {
 
+    // ===== VALIDACIONES 🔥 =====
+    if (productoActual.tallasDisponibles && !tallaSeleccionada) {
+        return mostrarToast_ComprarAhora({
+            titulo: "Falta información",
+            mensaje: "Selecciona una talla",
+            tipo: "error"
+        });
+    }
+
+    if (productoActual.coloresDisponibles && !colorSeleccionado) {
+        return mostrarToast_ComprarAhora({
+            titulo: "Falta información",
+            mensaje: "Selecciona un color",
+            tipo: "error"
+        });
+    }
+
     let total = productoActual.precio * cantidad;
 
-    // 🧾 1. MOSTRAR TOAST GRANDE PRIMERO
+    // 🧾 1. TOAST GRANDE (INFO)
     mostrarToast_ComprarAhora({
         titulo: "Resumen de compra",
         tipo: "infoGrande",
@@ -19,7 +36,7 @@ function comprarAhora() {
         `
     });
 
-    // 🧠 2. ESPERAR ANTES DEL PROMPT
+    // 🧠 2. ESPERA
     setTimeout(() => {
 
         const dineroInput = prompt("Digite el dinero:");

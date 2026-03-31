@@ -1,4 +1,3 @@
-/* ===== MODAL FONDO ===== */
 .modalInicioSesion {
     position: fixed;
     top: 0;
@@ -16,11 +15,8 @@
 
     backdrop-filter: blur(3px);
 }
-
-
-/* ===== CAJA DEL MODAL ===== */
 .modalInicioSesion-box {
-    width: 550px; /* 🔥 más ancho */
+    width: 550px; 
     max-width: 90%;
 
     background: #fff;
@@ -35,9 +31,7 @@
 
     text-align: center;
 }
-
 .modalInicioSesion-box h2{margin-bottom: 20px;}
-
 /* ===== ANIMACIÓN ===== */
 @keyframes aparecerModal {
     from {
@@ -49,9 +43,6 @@
         transform: scale(1);
     }
 }
-
-
-/* ===== BOTÓN CERRAR ===== */
 .cerrarInicioSesion {
     position: absolute;
     top: 15px;
@@ -61,64 +52,45 @@
     cursor: pointer;
     color: #333;
 }
-
 .cerrarInicioSesion:hover {
     color: #000;
 }
-
-
-/* ===== PASSWORD BOX ===== */
 .password-boxLogin {
     position: relative;
     display: flex;
     align-items: center;
 }
-
 .password-boxLogin input {
     width: 100%;
 }
-
 .password-boxLogin span {
     position: absolute;
     right: 12px;
     cursor: pointer;
     font-size: 14px;
 }
-
-
-/* ===== LOGIN OPCIONES ===== */
 .login-opciones {
     display: flex;
-    gap: 35px; /* 🔥 más espacio */
+    gap: 35px; 
 }
-
-/* 🔥 columnas */
 .login-col {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
-
-/* 🔥 izquierda (correo) */
 .login-col:first-child {
     flex: 1;
     border-right: 1px solid #ddd;
     padding-right: 15px;
 }
-
-/* 🔥 derecha (usuario MÁS GRANDE) */
 .login-col:last-child {
     flex: 1.4;
     padding-left: 15px;
 }
-
 .login-col h4 {
     margin-bottom: 5px;
     font-size: 16px;
 }
-
-
-/* ===== INPUTS ===== */
 .login-col input {
     padding: 12px;
     border-radius: 10px;
@@ -126,13 +98,9 @@
     outline: none;
     transition: 0.2s;
 }
-
 .login-col input:focus {
     border-color: #333;
 }
-
-
-/* ===== BOTONES ===== */
 .login-col button {
     margin-top: 5px;
     padding: 12px;
@@ -143,30 +111,23 @@
     cursor: pointer;
     transition: 0.2s;
 }
-
 .login-col button:hover {
     background: #000;
 }
-
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 500px) {
-
+/* RESPONSIVE */
+@media (max-width: 600px) {
     .modalInicioSesion-box {
         padding: 30px 20px;
     }
-
     .login-opciones {
         flex-direction: column;
         gap: 20px;
     }
-
     .login-col:first-child {
         border-right: none;
         border-bottom: 1px solid #ddd;
         padding-bottom: 15px;
     }
-
     .login-col:last-child {
         padding-left: 0;
         padding-top: 10px;

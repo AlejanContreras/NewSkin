@@ -1,11 +1,9 @@
-/* CONTENEDOR */
 .historial-box {
     background: #fff;
     border: 1px solid #ddd;
     padding: 20px;
     border-radius: 10px;
 }
-
 /* GRID BASE (HEADER + ITEMS) */
 .historial-header,
 .historial-item {
@@ -13,7 +11,6 @@
     grid-template-columns: 2fr 1fr 1fr 1fr;
     align-items: center;
 }
-
 /* HEADER */
 .historial-header {
     font-weight: bold;
@@ -22,20 +19,17 @@
     color: #666;
     text-align: center;
 }
-
 /* ITEM */
 .historial-item {
     padding: 20px 0;
     border-bottom: 1px solid #eee;
 }
-
 /* INFO (IZQUIERDA) */
 .historial-item .info {
     display: flex;
     align-items: center;
     gap: 15px;
 }
-
 /* IMAGEN */
 .historial-item img {
     width: 70px;
@@ -43,13 +37,11 @@
     object-fit: cover;
     border-radius: 5px;
 }
-
 /* TEXTO INFO */
 .historial-item .info div {
     display: flex;
     flex-direction: column;
 }
-
 /* CENTRADO GLOBAL COLUMNAS */
 .historial-item .precio,
 .historial-item .estado,
@@ -58,25 +50,21 @@
     justify-content: center;
     align-items: center;
 }
-
 /* ESTADO */
 .estado {
     font-weight: bold;
     padding: 6px 15px;
     border-radius: 8px;
 }
-
 /* COLORES ESTADO */
 .estado.enviado {
     background: #fff3cd;
     color: #856404;
 }
-
 .estado.entregado {
     background: #d4edda;
     color: #155724;
 }
-
 .estado.cancelado {
     background: #f8d7da;
     color: #721c24;

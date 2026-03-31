@@ -29,3 +29,4 @@ logo ya es una imagen, contador de carrito en celular funcional, link a las rede
 
 31/03/2026 => detalles: espacio entre historial y avatar en carrito, toogle activo del index
 se a pasado todo el codigo al index y al carrito osea ya version oficial
+se arreglo un error en comprar ahora y con la sesion iniciada en carrito

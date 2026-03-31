@@ -1,6 +1,4 @@
-// =========================
 // CREAR MODAL FINALIZAR PAGO
-// =========================
 function crearModalCompra(){
 
     const html = `
@@ -43,10 +41,7 @@ function crearModalCompra(){
 
 document.addEventListener("DOMContentLoaded", crearModalCompra);
 
-
-// =========================
 // ABRIR MODAL
-// =========================
 function abrirModalCompra(){
 
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -82,10 +77,7 @@ function abrirModalCompra(){
     document.getElementById("modalFinalizarPago").style.display = "flex";
 }
 
-
-// =========================
 // SELECCIONAR TODO
-// =========================
 function seleccionarTodo(){
 
     const checks = document.querySelectorAll(".check-producto");
@@ -103,10 +95,7 @@ function seleccionarTodo(){
     calcularTotal();
 }
 
-
-// =========================
 // CALCULAR TOTAL
-// =========================
 function calcularTotal(){
 
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -125,17 +114,14 @@ function calcularTotal(){
         total.toLocaleString();
 }
 
-
-// =========================
-// PAGAR (MODIFICADO CON TOAST)
-// =========================
+// PAGAR
 function pagar(){
 
     const total = parseInt(
         document.getElementById("totalCompra").innerText.replace(/\./g,"")
     );
 
-    // 🔴 NO SELECCIONÓ NADA
+    // NO SELECCIONÓ NADA
     if(total === 0){
         mostrarToast_finalizar_compra({
             titulo: "Error",
@@ -145,7 +131,7 @@ function pagar(){
         return;
     }
 
-    // 🧾 MOSTRAR TOTAL
+    // MOSTRAR TOTAL
     mostrarToast_finalizar_compra({
         titulo: "Resumen de pago",
         mensaje: `Total a pagar: $${total.toLocaleString()}`,
@@ -156,7 +142,7 @@ function pagar(){
 
         const dineroInput = prompt("Digite el dinero:");
 
-        // 🔴 CANCELADO
+        // CANCELADO
         if (dineroInput === null) {
             mostrarToast_finalizar_compra({
                 titulo: "Cancelado",
@@ -168,7 +154,7 @@ function pagar(){
 
         const dinero = parseInt(dineroInput);
 
-        // 🔴 INVALIDO
+        // INVALIDO
         if(isNaN(dinero)){
             mostrarToast_finalizar_compra({
                 titulo: "Error",
@@ -215,10 +201,7 @@ function pagar(){
     }, 300);
 }
 
-
-// =========================
 // COMPLETAR COMPRA
-// =========================
 function completarCompra(){
 
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -248,10 +231,7 @@ function completarCompra(){
     }
 }
 
-
-// =========================
 // CERRAR MODAL
-// =========================
 function cerrarModalCompra(){
     document.getElementById("modalFinalizarPago").style.display = "none";
 }

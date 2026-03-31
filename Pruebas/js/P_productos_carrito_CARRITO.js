@@ -9,6 +9,11 @@ window.addEventListener("storage", () => {
     renderCarritoUI();
 });
 
+// 🔥 NUEVO: actualizar en la misma pestaña
+window.addEventListener("actualizarCarritoUI", () => {
+    renderCarritoUI();
+});
+
 
 // ==========================
 // OBTENER / GUARDAR
@@ -19,6 +24,9 @@ function obtenerCarrito(){
 
 function guardarCarrito(carrito){
     localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    // 🔥 DISPARAR ACTUALIZACIÓN
+    window.dispatchEvent(new Event("actualizarCarritoUI"));
 }
 
 
@@ -173,7 +181,9 @@ document.addEventListener("click", (e) => {
 
     let carrito = obtenerCarrito();
 
+    // ======================
     // LOGIN 🔥
+    // ======================
     if (e.target.id === "btnLogin") {
 
         const usuario = JSON.parse(localStorage.getItem("usuario"));
@@ -184,12 +194,10 @@ document.addEventListener("click", (e) => {
             mensaje: "Debes iniciar sesión",
             tipo: "error"
         });
-        // 🔥 ABRIR MODAL SEGÚN ESTADO
+
         if (usuario && logueado !== "true") {
-            // usuario existe pero no ha iniciado sesión
             abrirInicioSesion();
         } else if (!usuario) {
-            // usuario nuevo
             abrirRegistro();
         }
     }
@@ -205,7 +213,6 @@ document.addEventListener("click", (e) => {
             );
 
             guardarCarrito(carrito);
-            renderCarritoUI();
 
             mostrarToast_productos_carrito_login({
                 titulo: "Eliminado",
@@ -226,7 +233,6 @@ document.addEventListener("click", (e) => {
         if(prod){
             prod.cantidad++;
             guardarCarrito(carrito);
-            renderCarritoUI();
         }
     }
 
@@ -241,7 +247,6 @@ document.addEventListener("click", (e) => {
         if(prod && prod.cantidad > 1){
             prod.cantidad--;
             guardarCarrito(carrito);
-            renderCarritoUI();
         }
     }
 

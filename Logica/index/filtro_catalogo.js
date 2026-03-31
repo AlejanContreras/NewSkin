@@ -8,7 +8,6 @@ function toggleCatalogoMenu(){
         ? "none"
         : "block";
 
-    /* 🔥 mover triangulo */
     const flecha = document.getElementById("flechaCatalogo");
     flecha.classList.toggle("abierto");
 }
@@ -19,7 +18,6 @@ function filtrarProductos(categoria){
     const menu = document.getElementById("catalogoMenu");
     menu.style.display = "none";
 
-    /* 🔥 resetear flecha */
     const flecha = document.getElementById("flechaCatalogo");
     flecha.classList.remove("abierto");
 
@@ -54,20 +52,16 @@ function filtrarProductos(categoria){
     mostrarProductos(filtrados);
 }
 
-
 /* ===== MOSTRAR TODO AL CARGAR ===== */
 document.addEventListener("DOMContentLoaded", () => {
     filtrarProductos("todos");
 });
 
-
-/* CERRAR MENU AL HACER CLICK AFUERA (FUNCIONA EN DESKTOP Y MOBILE) */
 document.addEventListener("click", function(e){
 
     const menu = document.getElementById("catalogoMenu");
     const flecha = document.getElementById("flechaCatalogo");
 
-    /* detectar TODOS los botones que abren catálogo */
     const botonesCatalogo = document.querySelectorAll(".catalogo, .mobile-menu p");
 
     let clickEnBoton = false;
@@ -78,7 +72,6 @@ document.addEventListener("click", function(e){
         }
     });
 
-    /* si el click NO fue dentro del menú NI en botones */
     if(
         !menu.contains(e.target) &&
         !clickEnBoton

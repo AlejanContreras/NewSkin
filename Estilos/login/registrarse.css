@@ -1,4 +1,3 @@
-/* ===== FONDO MODAL ===== */
 .modalRegistro {
     position: fixed;
     top: 0;
@@ -14,9 +13,8 @@
 
     z-index: 999;
 
-    overflow-y: auto; /* 🔥 permite mover el modal en pantallas pequeñas */
+    overflow-y: auto; 
 }
-/* ===== CAJA MODAL ===== */
 .modalRegistro-box {
     background: #fff;
     padding: 30px;
@@ -29,16 +27,13 @@
 
     position: relative;
 
-    max-height: 90vh;   /* 🔥 límite de altura */
-    overflow-y: auto;   /* 🔥 scroll interno */
+    max-height: 90vh; 
+    overflow-y: auto;   
 }
-
 /* ===== TITULO ===== */
 .modalRegistro-box h2 {
     text-align: center;
 }
-
-/* ===== BOTON CERRAR ===== */
 .cerrarRegistro {
     position: absolute;
     top: 10px;
@@ -46,25 +41,18 @@
     font-size: 22px;
     cursor: pointer;
 }
-
-/* ===== FILA NOMBRE ===== */
 .filaRegistro {
     display: flex;
     gap: 10px;
 }
-
 .filaRegistro input {
     width: 100%;
 }
-
-/* ===== INPUTS ===== */
 .modalRegistro-box input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
 }
-
-/* ===== BOTON ===== */
 .modalRegistro-box button {
     padding: 12px;
     border: none;
@@ -73,23 +61,17 @@
     border-radius: 8px;
     cursor: pointer;
 }
-
 .modalRegistro-box button:hover {
     background: #000;
 }
-
-/* ===== TERMINOS ===== */
 .terminos-boxRegistro {
     font-size: 13px;
 }
-
 #toggleTerminos {
     color: blue;
     cursor: pointer;
     text-decoration: none;
 }
-
-/* 🔥 CONTENEDOR SCROLL TERMINOS */
 .contenido-terminosRegistro {
     display: none;
     margin-top: 10px;
@@ -98,46 +80,37 @@
     padding: 10px;
     border-radius: 6px;
 
-    max-height: 150px;   /* 🔥 altura fija */
-    overflow-y: auto;    /* 🔥 scroll SOLO aquí */
+    max-height: 150px;   
+    overflow-y: auto;  
 }
-
 .contenido-terminosRegistro.activo {
     display: block;
 }
-
-/* ===== LOGIN LINK ===== */
 .login-linkRegistro {
     text-align: center;
     font-size: 14px;
 }
-
 #irLogin {
     color: blue;
     cursor: pointer;
     text-decoration: none;
 }
-
-/* ===== PASSWORD ===== */
 .password-boxRegistro {
     position: relative;
     display: flex;
     align-items: center;
 }
-
 .password-boxRegistro input {
     width: 100%;
     padding-right: 40px;
 }
-
 #togglePassword {
     position: absolute;
     right: 10px;
     cursor: pointer;
     font-size: 16px;
 }
-
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media (max-width: 500px) {
 
     .modalRegistro-box {
@@ -149,8 +122,6 @@
         flex-direction: column;
     }
 }
-
-/* ===== BLOQUEAR SCROLL FONDO ===== */
 body.modal-abierto {
     overflow: hidden;
 }

@@ -39,7 +39,6 @@
     opacity: 0.8;
 }
 
-
 /*comprar ahora*/
 #contenedorToast_ComprarAhora {
     position: fixed;
@@ -95,7 +94,7 @@
     padding: 20px 24px;
 
     font-size: 15px;
-    /* 👇 mueve un poco hacia la izquierda */
+
     transform: translateX(0) translateX(-20%);
 }
 .toast_grande .toast_mensaje {
@@ -159,7 +158,6 @@
     opacity: 1;
     transform: translateY(0);
 }
-
 
 /*editar producto*/
 .toast_editarProducto {

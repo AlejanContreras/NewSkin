@@ -1,18 +1,14 @@
-// ===== CUANDO CARGA LA PAGINA =====
 document.addEventListener("DOMContentLoaded", () => {
     renderUsuario();
 });
 
-// 🔥 SI CAMBIA LOCALSTORAGE
 window.addEventListener("storage", () => {
     renderUsuario();
 });
 
-
 // ===== FUNCION PRINCIPAL =====
 function renderUsuario() {
 
-    // 🔥 TODOS los botones (PC + móvil)
     const loginBtns = document.getElementsByClassName("loginBtn");
 
     const usuario = JSON.parse(localStorage.getItem("usuario"));
@@ -47,14 +43,12 @@ function renderUsuario() {
         accion = abrirRegistro;
     }
 
-    // 🔥 APLICAR A TODOS (PC + móvil)
     for (let i = 0; i < loginBtns.length; i++) {
 
         loginBtns[i].innerHTML = contenido;
 
         loginBtns[i].onclick = function () {
 
-            // 🔥 si es menú móvil → cerrarlo
             if (this.closest("#mobileMenu")) {
                 toggleMenu();
             }
@@ -64,15 +58,12 @@ function renderUsuario() {
     }
 }
 
-
 // ===== INICIALES =====
 function obtenerIniciales(nombre) {
     const partes = nombre.trim().split(" ");
-
     if (partes.length === 1) {
         return partes[0][0].toUpperCase();
     }
-
     return (partes[0][0] + partes[1][0]).toUpperCase();
 }
 

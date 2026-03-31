@@ -1,4 +1,3 @@
-/* ===== CONTENEDOR TOAST ===== */
 .toast-container {
     position: fixed;
     top: 20px;
@@ -9,9 +8,6 @@
     flex-direction: column;
     gap: 12px;
 }
-
-
-/* ===== TOAST ===== */
 .toast {
     min-width: 260px;
     max-width: 320px;
@@ -23,28 +19,22 @@
     font-size: 14px;
     font-weight: 500;
 
-    /* 🔥 EFECTO RELIEVE (SOMBRA PRO) */
     box-shadow: 
         0 10px 25px rgba(0,0,0,0.25),
         0 3px 8px rgba(0,0,0,0.15);
 
     animation: slideIn 0.3s ease;
 }
-
-
 /* ===== TIPOS ===== */
 .toast.success {
     background: #2ecc71;
 }
-
 .toast.error {
     background: #e74c3c;
 }
-
 .toast.info {
     background: #3498db;
 }
-
 
 /* ===== ANIMACION ENTRADA ===== */
 @keyframes slideIn {
@@ -57,8 +47,6 @@
         transform: translateX(0);
     }
 }
-
-
 /* ===== ANIMACION SALIDA ===== */
 @keyframes fadeOut {
     from {
@@ -70,9 +58,7 @@
     }
 }
 
-
-/* 📱 RESPONSIVE (MÓVIL) */
-@media (max-width: 500px) {
+@media (max-width: 600px) {
 
     .toast-container {
         top: 10px;
@@ -86,7 +72,6 @@
         text-align: center;
     }
 }
-
 
 /*productos carrito*/
 .toast_productos_carrito_login {

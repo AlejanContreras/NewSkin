@@ -1,15 +1,12 @@
-/* ===== RESET ===== */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 body{
     background:#f5f5f5;
 }
-
 /* ===== HEADER ===== */
 header{
     background:white;
@@ -17,26 +14,20 @@ header{
     padding:20px 40px;
     position:relative;
 }
-
 .nav{
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
-
 /* BOTON MENU MOBILE */
 .menu-toggle{
     display:none;
     font-size:24px;
     cursor:pointer;
 }
-
-/* CATALOGO */
 .catalogo{
     cursor:pointer;
 }
-
-/* LOGO */
 .logo{
     position:absolute;
     left:50%;
@@ -49,25 +40,21 @@ header{
     width:100%;
     max-width:150px;
 }
-
 .logo img{
-    width:100%;       /* ocupa el contenedor */
-    height:auto;      /* mantiene proporción */
+    width:100%;       
+    height:auto;      
     object-fit:contain;
 }
-
 /* MENU DERECHO */
 .right-menu{
     display:flex;
     gap:20px;
     align-items:center;
 }
-
 .carrito,
 .login{
     cursor:pointer;
 }
-
 /* ===== MENU MOVIL ===== */
 .mobile-menu{
     display:none;
@@ -75,12 +62,10 @@ header{
     border-top:1px solid #ccc;
     padding:15px;
 }
-
 .mobile-menu p{
     padding:10px 0;
     cursor:pointer;
 }
-
 /* ===== FOOTER ===== */
 footer{
     margin-top:60px;
@@ -88,12 +73,10 @@ footer{
     padding:30px 40px;
     background:white;
 }
-
 .footer-content{
     display:flex;
     justify-content:space-between;
 }
-
 .social{
     cursor:pointer;
     text-decoration: none; 

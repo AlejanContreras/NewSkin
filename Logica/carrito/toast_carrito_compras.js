@@ -50,7 +50,6 @@ function mostrarToast_agregarCarrito({ titulo, mensaje, tipo = "success" }) {
     }, 3000);
 }
 
-
 /*comprar ahora*/
 function mostrarToast_ComprarAhora({
     titulo = "",
@@ -69,7 +68,6 @@ function mostrarToast_ComprarAhora({
 
     const toast = document.createElement("div");
 
-    // 🔥 CLASE DINÁMICA
     toast.className = `toast_ComprarAhora ${tipo === "infoGrande" ? "toast_grande" : tipo}`;
 
     toast.innerHTML = `
@@ -88,7 +86,6 @@ function mostrarToast_ComprarAhora({
         setTimeout(() => toast.remove(), 400);
     }, duracion);
 }
-
 
 /*finalizar compra*/
 function mostrarToast_finalizar_compra({
@@ -123,7 +120,6 @@ function mostrarToast_finalizar_compra({
         setTimeout(() => toast.remove(), 400);
     }, duracion);
 }
-
 
 /*editar producto*/
 function mostrarToast_editarProducto({

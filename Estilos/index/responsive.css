@@ -42,7 +42,6 @@
 }
 
         /*VER DETALLES*/
-
 /* ===== CELULAR ===== */
 @media (max-width:600px) {
 
@@ -163,7 +162,6 @@
 
 /*toast comprar ahora*/
 @media (max-width: 600px){
-    
     /*toast abajo*/
     #contenedorToast_ComprarAhora{
         top: auto;
@@ -173,7 +171,6 @@
         transform: translateX(-50%);
         align-items: center;
     } 
-    
     .toast_grande{
         width: 90%;
         min-width: auto;
