@@ -30,3 +30,10 @@ logo ya es una imagen, contador de carrito en celular funcional, link a las rede
 31/03/2026 => detalles: espacio entre historial y avatar en carrito, toogle activo del index
 se a pasado todo el codigo al index y al carrito osea ya version oficial
 se arreglo un error en comprar ahora y con la sesion iniciada en carrito
+
+1/04/2026 => todo el codigo en apps script, las imagenes en la web no me sirve ni con el img bb ni con postimg, chat gpt ha modificado todos los codigos JS para que sea funcionales al 98% en apps script
+el img bb ya funciona algo lento para cargar pero ya funcionan las imagenes
+ya pude arreglar el union de index con carrito en apps script porque estaba haciendo mal el procedimiento de implementacion xd :c
+arreglo del carrito_contador en el carrito.html y en pruebas
+
+estoy pensado en amarte una vez mas pero mi corazon dices q no dice que no no noooo borar esta mierda jajaj, estoy pensado crear otro NS en appsscript pero revelde de chatgpt y subir todo los codgios de js asi como estan a secas proque con el arreglo de seguridad ya nada funciona al 100% puto chat

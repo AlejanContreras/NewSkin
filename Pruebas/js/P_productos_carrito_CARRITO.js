@@ -214,6 +214,8 @@ document.addEventListener("click", (e) => {
 
             guardarCarrito(carrito);
 
+            actualizarContadorCarrito(); // 🔥 AÑADIDO
+
             mostrarToast_productos_carrito_login({
                 titulo: "Eliminado",
                 mensaje: "Producto eliminado del carrito",
@@ -233,6 +235,7 @@ document.addEventListener("click", (e) => {
         if(prod){
             prod.cantidad++;
             guardarCarrito(carrito);
+            actualizarContadorCarrito(); // 🔥 AÑADIDO
         }
     }
 
@@ -247,6 +250,7 @@ document.addEventListener("click", (e) => {
         if(prod && prod.cantidad > 1){
             prod.cantidad--;
             guardarCarrito(carrito);
+            actualizarContadorCarrito(); // 🔥 AÑADIDO
         }
     }
 

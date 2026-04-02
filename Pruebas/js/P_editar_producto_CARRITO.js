@@ -226,6 +226,8 @@ function guardarCambios() {
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
+    actualizarContadorCarrito(); // 🔥 AÑADIDO
+
     // 🟢 SUCCESS
     mostrarToast_editarProducto({
         titulo: "Guardado",

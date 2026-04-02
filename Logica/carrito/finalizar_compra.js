@@ -202,6 +202,7 @@ function pagar(){
 }
 
 // COMPLETAR COMPRA
+// COMPLETAR COMPRA
 function completarCompra(){
 
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -224,13 +225,14 @@ function completarCompra(){
     localStorage.setItem("carrito", JSON.stringify(nuevosCarrito));
     localStorage.setItem("historial", JSON.stringify(historial));
 
+    actualizarContadorCarrito();
+
     cerrarModalCompra();
 
     if(typeof renderCarritoUI === "function"){
         renderCarritoUI();
     }
 }
-
 // CERRAR MODAL
 function cerrarModalCompra(){
     document.getElementById("modalFinalizarPago").style.display = "none";

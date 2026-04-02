@@ -6,7 +6,7 @@ const productos = [
         nombre: "Modelo Básico",
         precio: 45000,
         descripcion: "Camiseta limpia",
-        imagenes: ["img/modelo1.jpg"],
+        imagenes: ["Pruebas/img/NS_negro.jpeg"],
         categoria: "sin_estampado",
 
         coloresDisponibles: ["Generico"],

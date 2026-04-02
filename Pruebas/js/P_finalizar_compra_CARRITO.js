@@ -241,6 +241,8 @@ function completarCompra(){
     localStorage.setItem("carrito", JSON.stringify(nuevosCarrito));
     localStorage.setItem("historial", JSON.stringify(historial));
 
+    actualizarContadorCarrito(); // 🔥 AÑADIDO AQUÍ
+
     cerrarModalCompra();
 
     if(typeof renderCarritoUI === "function"){
