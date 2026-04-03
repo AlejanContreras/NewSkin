@@ -1,3 +1,4 @@
+
 // ===== ABRIR MODAL LOGIN =====
 function abrirInicioSesion() {
 
@@ -42,6 +43,12 @@ function abrirInicioSesion() {
 
             <p id="errorLogin" style="color:red; font-size:13px;"></p>
 
+            <!-- 🔥 INICIO: LINK A REGISTRO -->
+            <p class="registro-linkLogin">
+                ¿No tienes cuenta? <span id="irRegistro">Registrarse</span>
+            </p>
+            <!-- 🔥 FIN: LINK A REGISTRO -->
+
         </div>
     `;
 
@@ -53,6 +60,13 @@ function abrirInicioSesion() {
     document.getElementById("btnLoginB").onclick = loginConUsuario;
     document.getElementById("toggleLoginPassword").onclick = toggleLoginPassword;
 
+    // 🔥 INICIO: EVENTO PARA IR A REGISTRO
+    document.getElementById("irRegistro").onclick = () => {
+        document.getElementById("modalLogin").remove();
+        abrirRegistro();
+    };
+    // 🔥 FIN: EVENTO PARA IR A REGISTRO
+
     document.getElementById("loginPassword").addEventListener("keypress", function (e) {
         if (e.key === "Enter") loginConCorreo();
     });
@@ -63,7 +77,6 @@ function abrirInicioSesion() {
 
     document.getElementById("loginEmail").focus();
 }
-
 
 // ===== LOGIN CORREO =====
 function loginConCorreo() {
@@ -92,7 +105,6 @@ function loginConCorreo() {
 
         localStorage.setItem("logueado", "true");
 
-        // 🔥🔥🔥 SOLUCIÓN
         window.dispatchEvent(new Event("actualizarCarritoUI"));
 
         mostrarToast("Login exitoso", "success");
@@ -105,7 +117,6 @@ function loginConCorreo() {
         mostrarToast("Correo o contraseña incorrectos", "error");
     }
 }
-
 
 // ===== LOGIN USUARIO =====
 function loginConUsuario() {
@@ -134,7 +145,6 @@ function loginConUsuario() {
 
         localStorage.setItem("logueado", "true");
 
-        // 🔥🔥🔥 SOLUCIÓN
         window.dispatchEvent(new Event("actualizarCarritoUI"));
 
         mostrarToast("Login exitoso", "success");
@@ -147,7 +157,6 @@ function loginConUsuario() {
         mostrarToast("Datos incorrectos", "error");
     }
 }
-
 
 // ===== PASSWORD =====
 function toggleLoginPassword() {

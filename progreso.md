@@ -36,4 +36,6 @@ el img bb ya funciona algo lento para cargar pero ya funcionan las imagenes
 ya pude arreglar el union de index con carrito en apps script porque estaba haciendo mal el procedimiento de implementacion xd :c
 arreglo del carrito_contador en el carrito.html y en pruebas
 
-estoy pensado en amarte una vez mas pero mi corazon dices q no dice que no no noooo borar esta mierda jajaj, estoy pensado crear otro NS en appsscript pero revelde de chatgpt y subir todo los codgios de js asi como estan a secas proque con el arreglo de seguridad ya nada funciona al 100% puto chat
+2/04/2026 => cree un appsScript NS revelde de chatgpt jaja subi tal cual los codigo ya es funciona e hice que ya funcionara el responsive tanto en el revelde como el q chat 
+
+3/04/2026 => arreglo del inicio de sesion
