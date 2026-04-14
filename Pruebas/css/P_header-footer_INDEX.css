@@ -7,15 +7,16 @@
 }
 
 body{
-    background:#f5f5f5;
+    background:#dad9d1; /*🎨 #f5f5f5;*/
 }
 
 /* ===== HEADER ===== */
 header{
-    background:white;
-    border:1px solid #ccc;
+    background:#000000; /*🎨 white;*/
+    border:1px solid #6d6c68;/*🎨 #ccc*/
     padding:20px 40px;
     position:relative;
+    color:#dad9d1; /*🎨 comentar linea*/
 }
 
 .nav{
@@ -69,11 +70,13 @@ header{
 }
 
 /* ===== MENU MOVIL ===== */
+/*burger*/
 .mobile-menu{
     display:none;
-    background:white;
-    border-top:1px solid #ccc;
+    background:#000000; /*🎨 white;*/
+    border-top:1px solid #6d6c68; /*🎨 #ccc*/
     padding:15px;
+    color: /*white;*/ #dad9d1; /*🎨 comentar linea*/
 }
 
 .mobile-menu p{
@@ -84,9 +87,10 @@ header{
 /* ===== FOOTER ===== */
 footer{
     margin-top:60px;
-    border-top:1px solid #ccc;
+    border-top:1px solid #6d6c68; /*🎨 #ccc*/
     padding:30px 40px;
-    background:white;
+    background:#000000; /*🎨 white;*/
+    color: #dad9d1; /*🎨 comentar linea*/
 }
 
 .footer-content{

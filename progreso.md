@@ -39,3 +39,6 @@ arreglo del carrito_contador en el carrito.html y en pruebas
 2/04/2026 => cree un appsScript NS revelde de chatgpt jaja subi tal cual los codigo ya es funciona e hice que ya funcionara el responsive tanto en el revelde como el q chat 
 
 3/04/2026 => arreglo del inicio de sesion
+
+14/04/2026 => MAC: colores pagina: fondo > #dad9d1, botones > #0049e6, pie pagina > #000000, borde header,footer con main > #6d6c68
+sacar color para cuando el mouse este sore el boton de ver detalles y tener color para la card
