@@ -52,7 +52,7 @@ header{
 }
 
 .logo img{
-    width:100%;       /* ocupa el contenedor */
+    width:40%;       /* ocupa el contenedor */
     height:auto;      /* mantiene proporción */
     object-fit:contain;
 }

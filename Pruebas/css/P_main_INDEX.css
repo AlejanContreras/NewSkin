@@ -16,7 +16,7 @@ main{
 /* ===== CARD ===== */
 
 .card{
-    background:white;
+    background:#1A1A1B; /*🎨 blanco */
     border:1px solid #ccc;
     padding:20px;
 }
