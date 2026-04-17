@@ -16,7 +16,7 @@ main{
 /* ===== CARD ===== */
 
 .card{
-    background:white;
+    background:#1A1A1B; /*🎨 blanco */
     border:1px solid #ccc;
     padding:20px;
 }
@@ -50,12 +50,14 @@ main{
 .btn{
     width:100%;
     padding:10px;
-    background:#555;
-    color:white;
+    background: #0049e6; /*🎨 #555;*/
+    color: white;
     border:none;
     cursor:pointer;
 }
 
 .btn:hover{
-    background:#333;
+    background:#0640bf;/* 🎨 #333; 
+    escoger un mejor color para cuando el mouse este sobre el boton
+    */
 }
