@@ -4,86 +4,92 @@ const productos = [
 
     {
         id:1,
-        nombre:"Modelo Básico",
+        nombre:"Porsche Regular Fit",
         precio:45000,
-        descripcion:"Camiseta limpia",
-        imagenes:["img/modelo1.jpg"],
+        descripcion:"camisa limpia regular FIt",
+        imagenes:["/Pruebas/img/camisetas/sin estampado/Porsche_Cafe.jpeg"],
         categoria:"sin_estampado",
 
-        coloresDisponibles:["Generico"],
+        coloresDisponibles:["Cafe"],
         tallasDisponibles:["S","M","L"]
     },
     
     {
         id:2,
-        nombre:"Street Style",
+        nombre:"Predict The Future",
         precio:50000,
-        descripcion:"Estampado frontal",
-        imagenes:["img/modelo2.jpg"],
-        categoria:"con_estampado",
+        descripcion:"camisa regular fit",
+        imagenes:["/Pruebas/img/camisetas/sin estampado/PredictTheFuture_Morado.jpeg"],
+        categoria:"sin_estampado",
 
-        coloresDisponibles:["Generico"],
+        coloresDisponibles:["Morado"],
         tallasDisponibles:["S","M","L"]
     },
     
     {
         id:3,
-        nombre:"Urban Pro",
+        nombre:"Mundo NBA",
         precio:55000,
-        descripcion:"Doble estampado",
-        imagenes:["img/modelo3.jpg"],
-        categoria:"doble_estampado",
+        descripcion:"camiseta estampada regular Fit de NBA",
+        imagenes:["/Pruebas/img/camisetas/con estampado/NBA_cargandoBalon.jpeg"],
+        categoria:"con_estampado",
 
-        coloresDisponibles:["Generico"],
+        coloresDisponibles:["Blanco","Negro"],
         tallasDisponibles:["S","M","L"]
     },
     
     {
         id:4,
-        nombre:"Minimal",
+        nombre:"Camiseta NBA",
         precio:45000,
-        descripcion:"Diseño simple",
-        imagenes:["img/modelo4.jpg"],
-        categoria:"sin_estampado",
+        descripcion:"Diseño simple del logo de NBA",
+        imagenes:["/Pruebas/img/camisetas/con estampado/NBA_logo.jpeg"],
+        categoria:"con_estampado",
 
-        coloresDisponibles:["Generico"],
+        coloresDisponibles:["Gris"],
         tallasDisponibles:["S","M","L"]
     },
     
     {
         id:5,
-        nombre:"Grafiti",
+        nombre:"The Uncle",
         precio:52000,
-        descripcion:"Arte urbano",
-        imagenes:["img/modelo5.jpg"],
-        categoria:"con_estampado",
+        descripcion:"camiseta con estapado doble de rico mc pato",
+        imagenes:["/Pruebas/img/camisetas/estampado doble/TheUncle_espalda.jpeg",
+            "/Pruebas/img/camisetas/estampado doble/TheUncle_Frente.jpeg"
+        ],
+        categoria:"doble_estampado",
 
-        coloresDisponibles:["Generico"],
+        coloresDisponibles:["Negro","Gris Oscuro"],
         tallasDisponibles:["S","M","L"]
     },
     
     {
         id:6,
-        nombre:"Dark Style",
+        nombre:"De Oriente",
         precio:60000,
-        descripcion:"Doble print",
-        imagenes:["img/modelo6.jpg"],
+        descripcion:"Camiseta de Spider Man, con estapado doble",
+        imagenes:["/Pruebas/img/camisetas/estampado doble/SpiderMan_delante.jpeg",
+            "/Pruebas/img/camisetas/estampado doble/SpiderMan_detras.jpeg"
+        ],
         categoria:"doble_estampado",
 
-        coloresDisponibles:["Generico"],
+        coloresDisponibles:["Negro"],
         tallasDisponibles:["S","M","L"]
     },
     
     {
         id:7,
-        nombre:"Basic White",
+        nombre:"Plam Angels",
         precio:43000,
-        descripcion:"Sin diseño",
-        imagenes:["img/modelo7.jpg"],
-        categoria:"sin_estampado",
+        descripcion:"Camiseta Plam Angels Oversize",
+        imagenes:["/Pruebas/img/camisetas/estampado doble/PalmAngeles_letrasDorado.jpeg",
+            "/Pruebas/img/camisetas/estampado doble/PalmAngeles_letrasBlancas.jpeg"
+        ],
+        categoria:"doble_estampado",
 
-        coloresDisponibles:["Generico"],
-        tallasDisponibles:["S","M","L"]
+        coloresDisponibles:["Negro con Dorado", "Negro con Blanco"],
+        tallasDisponibles:["S","M","L","XL"]
     },
     
     {
@@ -92,10 +98,10 @@ const productos = [
         precio:35000,
         descripcion:"Solo prueba filtro",
         imagenes:[
-            "/Pruebas/img/james_2014.jpg",
-            "/Pruebas/img/james_copaAmerica_2024.jpeg",
-            "/Pruebas/img/james_porto.jpeg",
-            "/Pruebas/img/james_realVardrid.jpg"
+            "/Pruebas/img/pruebasIMGjames/james_2014.jpg",
+            "/Pruebas/img/pruebasIMGjames/james_copaAmerica_2024.jpeg",
+            "/Pruebas/img/pruebasIMGjames/james_porto.jpeg",
+            "/Pruebas/img/pruebasIMGjames/james_realVardrid.jpg"
         ],
         categoria:"gorra",
 
