@@ -6,8 +6,8 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 body {
-    background: #f5f5f5;
-    color: #333;
+    background: #dad9d1;
+    color: black;
 }
 /* HEADER */
 .header {
@@ -15,8 +15,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    border: 1px solid #ccc;
-    background: white;
+    border: 1px solid #6d6c68;
+    background: #000000;
+    color: white;
 }
 .logo{
     position:absolute;
@@ -29,11 +30,10 @@ body {
 
     width:100%;
     max-width:140px; 
-    cursor: pointer;
 }
 .logo img{
-    width:100%;       
-    height:auto;      
+    width:37%;       
+    height:auto;     
     object-fit:contain;
 }
 .header-right {
@@ -41,7 +41,9 @@ body {
     gap: 10px;
     align-items: center;
 }
-.login{cursor: pointer;}
+.login{
+    cursor: pointer;
+}
 /*MAIN*/
 main {
     max-width: 1200px;
@@ -49,17 +51,20 @@ main {
     padding: 0 20px; 
 }
 .breadcrumb {
-    color: #777;
+    color: #2a2a2a;
     margin-bottom: 10px;
     cursor: pointer;
 }
-h1 {margin-bottom: 20px;}
+h1 {
+    margin-bottom: 20px;
+}
 /* FOOTER */
 footer {
     margin-top: 60px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #6d6c68;
     padding: 30px 40px;
-    background: white;
+    background:#000000; 
+    color: white;
 }
 .footer-content {
     display: flex;
@@ -77,8 +82,8 @@ footer {
 #nav span{cursor: pointer;}
 .activo{
     font-weight: bold;
-    color: black;
-    border-bottom: 2px solid black;
+    color: whitesmoke;
+    border-bottom: 2px solid whitesmoke;
 }
 .header-left{cursor: pointer;}
 .menu-toggle_carrito{

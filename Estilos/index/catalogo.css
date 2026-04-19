@@ -9,8 +9,8 @@
     position:absolute;
     top:70px;
     left:40px;
-    background:white;
-    border:1px solid #ccc;
+    background:/*white*/#000000;
+    border:1px solid /*#ccc*/#6d6c68;
     width:200px;
     box-shadow:0 5px 10px rgba(0,0,0,0.1);
     z-index:1000;
@@ -23,11 +23,11 @@
 }
 /* hover */
 .catalogo-menu p:hover{
-    background:#f0f0f0;
+    background:#030c21;
 }
 /* OPCION ACTIVA */
 .catalogo-menu p.activo{
-    background:#dcdcdc;
+    background:#030914;
     font-weight:bold;
 }
 /*mover triangulo*/

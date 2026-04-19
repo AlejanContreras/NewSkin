@@ -42,3 +42,7 @@ arreglo del carrito_contador en el carrito.html y en pruebas
 
 14/04/2026 => MAC: colores pagina: fondo > #dad9d1, botones > #0049e6, pie pagina > #000000, borde header,footer con main > #6d6c68
 sacar color para cuando el mouse este sore el boton de ver detalles y tener color para la card
+
+18/04/2026 => mirando colores arreglando pequeños errores de diseño, estoy esperando respues de perez para los colores y finiquitar eso pues en el apartado del index, ya con eso corregido ya me toca arreglar colores tambien del carrito, como siempre todo esto en pruebas para cagarla y mover todo
+
+19/04/2026 => color del hover del catalogo: #030c21, colores de selecion del catalogo: #030914, color cards: #11131f, color de las palabras en blanco

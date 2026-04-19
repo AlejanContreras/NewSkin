@@ -26,7 +26,7 @@
 /* ========================= */
 
 .modal-box{
-    background:white;
+    background: #00133a;
     width:900px;
     max-width:95%; /* 🔥 responsive */
     border-radius:12px;
@@ -84,7 +84,7 @@
 
 .img-principal{
     width:100%;
-    border:1px solid #ddd;
+    border:1px solid #030c21;
     border-radius:8px;
 }
 
@@ -105,7 +105,7 @@
 }
 
 .miniaturas img:hover{
-    border-color:#444;
+    border-color:#030c21;
     transform: scale(1.05);
 }
 
@@ -132,8 +132,8 @@
 
 .colores button{
     padding:6px 12px;
-    border:1px solid #aaa;
-    background:white;
+    border:1px solid #030c21;
+    background: #2f365d;
     cursor:pointer;
     border-radius:6px;
     transition:0.2s;
@@ -145,7 +145,7 @@
 }
 
 .colores button:hover{
-    background:#ddd;
+    background:#0049e6;
 }
 
 /* ========================= */
@@ -155,8 +155,8 @@
 .tallas button{
     padding:8px 15px;
     margin-right:10px;
-    border:1px solid #aaa;
-    background:white;
+    border:1px solid #030c21;
+    background: #2f365d;
     cursor:pointer;
     border-radius:6px;
     transition:0.2s;
@@ -168,7 +168,7 @@
 }
 
 .tallas button:hover{
-    background:#ddd;
+    background:#0049e6;
 }
 
 /* ========================= */
@@ -187,13 +187,13 @@
     height:35px;
     cursor: pointer;
     border:none;
-    background:#eee;
+    background:#2f365d;
     border-radius:6px;
     font-size:16px;
 }
 
 .cantidad button:hover{
-    background:#ddd;
+    background: #0049e6;
 }
 
 #cantidad{

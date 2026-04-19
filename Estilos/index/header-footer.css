@@ -5,14 +5,15 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 body{
-    background:#f5f5f5;
+    background:#dad9d1;
 }
 /* ===== HEADER ===== */
 header{
-    background:white;
-    border:1px solid #ccc;
+    background:#000000;
+    border:1px solid #6d6c68;
     padding:20px 40px;
     position:relative;
+    color:white; 
 }
 .nav{
     display:flex;
@@ -25,9 +26,7 @@ header{
     font-size:24px;
     cursor:pointer;
 }
-.catalogo{
-    cursor:pointer;
-}
+.catalogo{cursor:pointer;}
 .logo{
     position:absolute;
     left:50%;
@@ -41,7 +40,7 @@ header{
     max-width:150px;
 }
 .logo img{
-    width:100%;       
+    width:40%;       
     height:auto;      
     object-fit:contain;
 }
@@ -51,16 +50,14 @@ header{
     gap:20px;
     align-items:center;
 }
-.carrito,
-.login{
-    cursor:pointer;
-}
+.carrito, .login{cursor:pointer;}
 /* ===== MENU MOVIL ===== */
 .mobile-menu{
     display:none;
-    background:white;
-    border-top:1px solid #ccc;
+    background:#000000;
+    border-top:1px solid #6d6c68; 
     padding:15px;
+    color: white;
 }
 .mobile-menu p{
     padding:10px 0;
@@ -69,9 +66,10 @@ header{
 /* ===== FOOTER ===== */
 footer{
     margin-top:60px;
-    border-top:1px solid #ccc;
+    border-top:1px solid #6d6c68; 
     padding:30px 40px;
-    background:white;
+    background:#000000; 
+    color: white;
 }
 .footer-content{
     display:flex;

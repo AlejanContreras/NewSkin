@@ -1,7 +1,8 @@
 .carrito-box {
-    background: white;
-    border: 1px solid #ddd;
+    background: #11131f;
+    border: 1px solid #030914;
     padding: 20px;
+    border-radius: 10px;
 }
 /* HEADER TABLA */
 .carrito-header {
@@ -9,8 +10,8 @@
     grid-template-columns: 2fr 1fr 1fr 1fr 3.5%;
     font-weight: bold;
     padding-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-    color: #666;
+    border-bottom: 1px solid #0035a8;
+    color: #cfcfcf;
 
     align-items: center;
     text-align: center;
@@ -20,7 +21,8 @@
     grid-template-columns: 2fr 1fr 1fr 1fr;
     align-items: center;
     padding: 20px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #0035a8;
+    color: white;
 }
 .info {
     display: flex;
@@ -31,9 +33,12 @@
     width: 80px;
     height: 80px;
     object-fit: cover;
-    background: #eee;
+    background: #030c21;
 }
-.info h3 {margin-bottom: 5px;}
+.info h3 {
+    margin-bottom: 5px;
+    color: white;
+}
 .info small {color: #777;}
 .editar {
     display: flex;
@@ -45,34 +50,40 @@
 }
 .precio {
     text-align: center;
+    color: white;
 }
 .cantidad {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    color: whitesmoke;
 }
 .cantidad button {
     width: 30px;
     height: 30px;
-    border: 1px solid #ccc;
-    background: white;
+    border: 1px solid #001c58;
+    background: #11131f;
     cursor: pointer;
+    color: white;
 }
 .cantidad span {
     width: 20px;
     text-align: center;
+    color: white;
 }
 .subtotal {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    color: white;
 }
 #subtotal {
     display: inline-block;
     width: 100%;
     text-align: center;
+    color: white;
 }
 .eliminar {
     display: flex;
@@ -88,8 +99,8 @@
     margin-top: 20px;
     font-size: 20px;
     gap: 10px;
+    color: white;
 }
-/* BOTONES */
 .acciones {
     display: flex;
     justify-content: flex-end;
@@ -98,19 +109,19 @@
 }
 .seguir {
     padding: 10px 20px;
-    border: 1px solid #999;
-    background: white;
+    border: 1px solid #0049e6;
+    background: #007fe6;
     cursor: pointer;
+    color: white;
 }
 .finalizar {
     padding: 10px 20px;
     border: none;
-    background: #333;
+    background: #0049e6;
     color: white;
     cursor: pointer;
 }
-
-/*ESTILOS SI LA SESION NO ESTA HABILITADAS*/
+/*STILOS SI LA SESION NO ESTA HABILITADAS*/
 /* CONTENEDOR GENERAL */
 .no-session {
     display: flex;
@@ -127,7 +138,7 @@
 }
 .no-session p {
     font-size: 16px;
-    color: #777;
+    color: #444;
     margin-bottom: 20px;
 }
 #btnLogin {
@@ -144,6 +155,4 @@
     background-color: #27ae60;
     transform: scale(1.05);
 }
-#btnLogin:active {
-    transform: scale(0.95);
-}
+#btnLogin:active {transform: scale(0.95);}

@@ -1,6 +1,6 @@
 .historial-box {
-    background: #fff;
-    border: 1px solid #ddd;
+    background: #11131f;
+    border: 1px solid #030914;
     padding: 20px;
     border-radius: 10px;
 }
@@ -15,20 +15,21 @@
 .historial-header {
     font-weight: bold;
     padding-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-    color: #666;
+    border-bottom: 1px solid #0035a8;
+    color: #cfcfcf;
     text-align: center;
 }
 /* ITEM */
 .historial-item {
     padding: 20px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #0035a8;
 }
 /* INFO (IZQUIERDA) */
 .historial-item .info {
     display: flex;
     align-items: center;
     gap: 15px;
+    color: white;
 }
 /* IMAGEN */
 .historial-item img {

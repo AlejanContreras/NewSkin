@@ -20,7 +20,7 @@
     width: 550px; 
     max-width: 90%;
 
-    background: #fff;
+    background: #00133a;
     padding: 40px 60px;
 
     border-radius: 20px;
@@ -35,6 +35,7 @@
 
 .modalInicioSesion-box h2 {
     margin-bottom: 20px;
+    color: white;
 }
 
 /* ===== ANIMACIÓN ===== */
@@ -56,11 +57,11 @@
 
     font-size: 22px;
     cursor: pointer;
-    color: #333;
+    color: balck;
 }
 
 .cerrarInicioSesion:hover {
-    color: #000;
+    color: #a12a2a;
 }
 
 .password-boxLogin {
@@ -71,6 +72,7 @@
 
 .password-boxLogin input {
     width: 100%;
+    background-color: #2f365d;
 }
 
 .password-boxLogin span {
@@ -93,7 +95,7 @@
 
 .login-col:first-child {
     flex: 1;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #11131f;
     padding-right: 15px;
 }
 
@@ -105,14 +107,16 @@
 .login-col h4 {
     margin-bottom: 5px;
     font-size: 16px;
+    color: white;
 }
 
 .login-col input {
     padding: 12px;
     border-radius: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #11131f;
     outline: none;
     transition: 0.2s;
+    background: #2f365d;
 }
 
 .login-col input:focus {
@@ -145,7 +149,7 @@
 }
 
 .registro-linkLogin span {
-    color: blue;
+    color: rgb(125, 182, 243);
     cursor: pointer;
     transition: 0.2s;
 }

@@ -42,8 +42,10 @@
         display: none;
     }
     .logo {
-        font-size: 20px;
-        margin: 0 auto;
+        position: static;
+        transform: none;
+        margin: auto;
+        font-size: 22px;
     }
     main {
         margin: 20px auto;

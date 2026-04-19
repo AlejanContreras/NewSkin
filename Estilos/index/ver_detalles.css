@@ -18,7 +18,7 @@
 }
 /* CAJA MODAL */
 .modal-box{
-    background:white;
+    background: #00133a;
     width:900px;
     max-width:95%; /* 🔥 responsive */
     border-radius:12px;
@@ -51,16 +51,14 @@
     cursor:pointer;
     transition: 0.2s;
 }
-.cerrar:hover{
-    transform: scale(1.2);
-}
+.cerrar:hover{transform: scale(1.2);}
 /* IMAGEN */
 .img-section{
     width:45%;
 }
 .img-principal{
     width:100%;
-    border:1px solid #ddd;
+    border:1px solid #030c21;
     border-radius:8px;
 }
 /* miniaturas */
@@ -77,7 +75,7 @@
     transition:0.2s;
 }
 .miniaturas img:hover{
-    border-color:#444;
+    border-color:#030c21;
     transform: scale(1.05);
 }
 /* INFO */
@@ -95,8 +93,8 @@
 }
 .colores button{
     padding:6px 12px;
-    border:1px solid #aaa;
-    background:white;
+    border:1px solid #030c21;
+    background: #2f365d;
     cursor:pointer;
     border-radius:6px;
     transition:0.2s;
@@ -105,15 +103,13 @@
     background:#444;
     color:white;
 }
-.colores button:hover{
-    background:#ddd;
-}
+.colores button:hover{background:#0049e6;}
 /* TALLAS */
 .tallas button{
     padding:8px 15px;
     margin-right:10px;
-    border:1px solid #aaa;
-    background:white;
+    border:1px solid #030c21;
+    background: #2f365d;
     cursor:pointer;
     border-radius:6px;
     transition:0.2s;
@@ -122,9 +118,7 @@
     background:#444;
     color:white;
 }
-.tallas button:hover{
-    background:#ddd;
-}
+.tallas button:hover{background:#0049e6;}
 /* CANTIDAD */
 .cantidad{
     display:flex;
@@ -137,19 +131,17 @@
     height:35px;
     cursor: pointer;
     border:none;
-    background:#eee;
+    background:#2f365d;
     border-radius:6px;
     font-size:16px;
 }
-.cantidad button:hover{
-    background:#ddd;
-}
+.cantidad button:hover{background: #0049e6;}
 #cantidad{
     font-size:16px;
     min-width:20px;
     text-align:center;
 }
-/* PRECIO */
+/* precio */
 .precio-modal{
     margin-left:auto;
     font-size:22px;
@@ -171,9 +163,7 @@
     border-radius:6px;
     transition:0.2s;
 }
-.comprar:hover{
-    background:#000;
-}
+.comprar:hover{background:#000;}
 .carrito-btn{
     flex:1;
     border:1px solid #444;
@@ -183,6 +173,4 @@
     border-radius:6px;
     transition:0.2s;
 }
-.carrito-btn:hover{
-    background:#f5f5f5;
-}
+.carrito-btn:hover{background:#f5f5f5;}

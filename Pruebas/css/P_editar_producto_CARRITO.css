@@ -17,9 +17,10 @@
 
 /* ===== CAJA MODAL ===== */
 .modal-content {
-    background: white;
+    background: #00133a;
     padding: 30px;
     border-radius: 12px;
+    color: white;
 
     width: 350px;
     max-width: 90%;
@@ -50,14 +51,14 @@
 .modal-content input {
     padding: 8px;
     border-radius: 6px;
-    border: 1px solid #ccc;
+    border: 1px solid #11131f;
     outline: none;
 }
 
 /* ===== INPUT FOCUS ===== */
 .modal-content select:focus,
 .modal-content input:focus {
-    border-color: #333;
+    border-color: #11131f;
 }
 
 /* ========================= */
@@ -80,7 +81,7 @@
 
 .opciones div {
     padding: 8px 12px;
-    border: 1px solid #ccc;
+    border: 1px solid #11131f;
     cursor: pointer;
     border-radius: 6px;
     transition: 0.2s;
@@ -112,12 +113,13 @@
 .cantidad-box button {
     width: 32px;
     height: 32px;
-    border: 1px solid #ccc;
-    background: white;
+    border: 1px solid #11131f;
+    background: #00133a;
     cursor: pointer;
     border-radius: 6px;
     font-size: 16px;
     transition: 0.2s;
+    color: white;
 }
 
 .cantidad-box button:hover {

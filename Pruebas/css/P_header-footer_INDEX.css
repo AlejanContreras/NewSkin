@@ -16,7 +16,7 @@ header{
     border:1px solid #6d6c68;/*🎨 #ccc*/
     padding:20px 40px;
     position:relative;
-    color:#dad9d1; /*🎨 comentar linea*/
+    color:white; /*🎨 comentar linea*/
 }
 
 .nav{
@@ -76,7 +76,7 @@ header{
     background:#000000; /*🎨 white;*/
     border-top:1px solid #6d6c68; /*🎨 #ccc*/
     padding:15px;
-    color: /*white;*/ #dad9d1; /*🎨 comentar linea*/
+    color: white;/* #dad9d1; /*🎨 comentar linea*/
 }
 
 .mobile-menu p{
@@ -90,7 +90,7 @@ footer{
     border-top:1px solid #6d6c68; /*🎨 #ccc*/
     padding:30px 40px;
     background:#000000; /*🎨 white;*/
-    color: #dad9d1; /*🎨 comentar linea*/
+    color: white;/*#dad9d1; /*🎨 comentar linea*/
 }
 
 .footer-content{

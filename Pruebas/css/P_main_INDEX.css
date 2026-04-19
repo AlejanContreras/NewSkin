@@ -1,6 +1,4 @@
-
 /* ===== MAIN ===== */
-
 main{
     padding:40px;
 }
@@ -16,15 +14,16 @@ main{
 /* ===== CARD ===== */
 
 .card{
-    background:#1A1A1B; /*🎨 blanco */
-    border:1px solid #ccc;
+    background:#11131f;
+    border:1px solid #6d6c68;
     padding:20px;
+    border-radius: 10px;
 }
 
 .imagen{
     width:100%;
     height:180px;
-    border:1px solid #aaa;
+    border:1px solid #6d6c68;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -34,30 +33,30 @@ main{
 .nombre{
     font-size:20px;
     font-weight:bold;
+    color: white;
 }
 
 .precio{
     font-size:18px;
     margin:5px 0;
+    color: white;
 }
 
 .descripcion{
     font-size:14px;
-    color:#555;
+    color: whitesmoke;
     margin-bottom:15px;
 }
 
 .btn{
     width:100%;
     padding:10px;
-    background: #0049e6; /*🎨 #555;*/
+    background: #0049e6;
     color: white;
     border:none;
     cursor:pointer;
 }
 
 .btn:hover{
-    background:#0640bf;/* 🎨 #333; 
-    escoger un mejor color para cuando el mouse este sobre el boton
-    */
+    background:#0035a8;
 }
