@@ -48,3 +48,5 @@ sacar color para cuando el mouse este sore el boton de ver detalles y tener colo
 19/04/2026 => color del hover del catalogo: #030c21, colores de selecion del catalogo: #030914, color cards: #11131f, color de las palabras en blanco
 
 20/04/2026 => se agrego la descripcion y los links de las imagenes, se modifico productos.js y main.css tanto en el Index Oficial y en pruebas
+
+se subio al appscript ya la version definitiva por ahora con las imagenes
