@@ -130,7 +130,7 @@ function verDetalle(id) {
 function cargarProducto() {
 
     document.getElementById("modalNombre").innerText = productoActual.nombre;
-    document.getElementById("modalDescripcion").innerText = productoActual.descripcion;
+    document.getElementById("modalDescripcion").innerHTML = productoActual.descripcion;
 
     document.getElementById("imagenPrincipal").src = productoActual.imagenes[0];
 

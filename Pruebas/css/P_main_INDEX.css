@@ -18,6 +18,10 @@ main{
     border:1px solid #6d6c68;
     padding:20px;
     border-radius: 10px;
+
+    display: flex;              
+    flex-direction: column;     
+    height: 100%;
 }
 
 .imagen{
@@ -55,8 +59,12 @@ main{
     color: white;
     border:none;
     cursor:pointer;
+
+    margin-top: auto;
 }
 
 .btn:hover{
     background:#0035a8;
 }
+
+.descripcion .noCard{display:none;}

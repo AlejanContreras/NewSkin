@@ -46,3 +46,5 @@ sacar color para cuando el mouse este sore el boton de ver detalles y tener colo
 18/04/2026 => mirando colores arreglando pequeños errores de diseño, estoy esperando respues de perez para los colores y finiquitar eso pues en el apartado del index, ya con eso corregido ya me toca arreglar colores tambien del carrito, como siempre todo esto en pruebas para cagarla y mover todo
 
 19/04/2026 => color del hover del catalogo: #030c21, colores de selecion del catalogo: #030914, color cards: #11131f, color de las palabras en blanco
+
+20/04/2026 => se agrego la descripcion y los links de las imagenes, se modifico productos.js y main.css tanto en el Index Oficial y en pruebas

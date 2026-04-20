@@ -120,9 +120,10 @@ footer {
 
 .mobile-menu_carrito{
     display:none;
-    background:white;
-    border-top:1px solid #ccc;
+    background:#000000;
+    border-top:1px solid #6d6c68;
     padding:15px;
+    color: white;
 }
 
 .mobile-menu_carrito p{
